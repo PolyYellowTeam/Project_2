@@ -163,9 +163,9 @@ Keyword NVARCHAR(30) NOT NULL
 CONSTRAINT PK_SEO PRIMARY KEY (Keyword_id)
 )
 ------------------------------------------Banner
-IF EXISTS (SELECT * FROM SYSOBJECTS WHERE name = 'Banner') DROP TABLE SEO_keywords
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE name = 'Banner') DROP TABLE Banner
 GO
-CREATE TABLE SEO_keywords
+CREATE TABLE Banner
 (
 Banner_id INT IDENTITY(1,1),
 Banner_url NVARCHAR(250) NOT NULL,
