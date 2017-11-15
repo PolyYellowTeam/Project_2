@@ -162,13 +162,13 @@ Keyword_id INT IDENTITY(1,1),
 Keyword NVARCHAR(30) NOT NULL
 CONSTRAINT PK_SEO PRIMARY KEY (Keyword_id)
 )
-------------------------------------------Banner
-IF EXISTS (SELECT * FROM SYSOBJECTS WHERE name = 'Banner') DROP TABLE Banner
+-----------------------------------------BANNERS
+IF EXISTS (SELECT * FROM SYSOBJECTS WHERE name = 'Banners') DROP TABLE Banners
 GO
-CREATE TABLE Banner
+CREATE TABLE Banners
 (
 Banner_id INT IDENTITY(1,1),
-Banner_url NVARCHAR(250) NOT NULL,
-Banner_name NVARCHAR(50) NOT NULL
+Banner_img_url VARCHAR(150) NOT NULL,
+Banner_name VARCHAR(50),
 CONSTRAINT PK_Banner PRIMARY KEY (Banner_id)
 )
