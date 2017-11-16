@@ -18,9 +18,9 @@
 	<bean id="dataSource" 
 	    	class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 			p:driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-			p:url="jdbc:sqlserver://localhost:1433; Database=HOTEL_YT01"
-			p:username="sa"
-			p:password="123">
+			p:url="jdbc:sqlserver://localhost:1433; Database=SHOP"
+			p:username="adminshop"
+			p:password="1">
 	</bean>
 	
 	<!-- Cấu hình Hibernate -->
@@ -33,7 +33,7 @@
 	            <prop key="hibernate.show_sql">false</prop>
 	       </props>
 	    </property>
-		<property name="packagesToScan" value="poly.entity"/>
+		<property name="packagesToScan" value="com.Entities"/>
 	</bean>
 	
 	<!-- Transaction Manager -->

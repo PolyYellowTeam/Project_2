@@ -4,24 +4,24 @@
 <hibernate-configuration>
 	<session-factory name="SessionFactory">
 		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-		<property name="hibernate.connection.password">123456</property>
+		<property name="hibernate.connection.password">1</property>
 		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=SHOP</property>
-		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.username">adminshop</property>
 		<property name="hibernate.default_schema">dbo</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
-		<mapping class="entities.Categories" />
-		<mapping class="entities.CartDetails" />
-		<mapping class="entities.Suppliers" />
-		<mapping class="entities.Carts" />
-		<mapping class="entities.Pictures" />
-		<mapping class="entities.Sysdiagrams" />
-		<mapping class="entities.Catalogs" />
-		<mapping class="entities.Customers" />
-		<mapping class="entities.Products" />
-		<mapping class="entities.Banners" />
-		<mapping class="entities.Employees" />
-		<mapping class="entities.PaymentMethod" />
-		<mapping class="entities.Accounts" />
-		<mapping class="entities.SeoKeywords" />
+		<mapping class="com.Entities.Categories" />
+		<mapping class="com.Entities.CartDetails" />
+		<mapping class="com.Entities.Suppliers" />
+		<mapping class="com.Entities.Carts" />
+		<mapping class="com.Entities.Pictures" />
+		<mapping class="com.Entities.Sysdiagrams" />
+		<mapping class="com.Entities.Catalogs" />
+		<mapping class="com.Entities.Customers" />
+		<mapping class="com.Entities.Products" />
+		<mapping class="com.Entities.Banners" />
+		<mapping class="com.Entities.Employees" />
+		<mapping class="com.Entities.PaymentMethod" />
+		<mapping class="com.Entities.Accounts" />
+		<mapping class="com.Entities.SeoKeywords" />
 	</session-factory>
 </hibernate-configuration>
