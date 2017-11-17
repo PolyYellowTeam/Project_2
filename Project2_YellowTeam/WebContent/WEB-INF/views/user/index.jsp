@@ -35,7 +35,7 @@
 									<div class="zoom-icon">
 
 										<ul class="in-by">
-											<li><h5>sizes:</h5></li>
+											<li><h5>Cỡ áo:</h5></li>
 											<li><span>S</span></li>
 											<li><span>XS</span></li>
 											<li><span>M</span></li>
@@ -46,7 +46,7 @@
 
 
 										<ul class="in-by-color">
-											<li><h5>colors:</h5></li>
+											<li><h5>Màu sắc:</h5></li>
 											<li><span> </span></li>
 											<li><span class="color"> </span></li>
 											<li><span class="color1"> </span></li>

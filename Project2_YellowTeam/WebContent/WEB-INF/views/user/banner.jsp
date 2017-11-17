@@ -16,7 +16,7 @@
 									<img src="images/ba.png" class="img-responsive" alt="">
 								</div>
 							</a>
-							<div class="cart-at grid_1 simpleCart_shelfItem">
+							<div class="cart-at grid_1 simpleCart_shelfItem" onclick="alert('ok');">
 								<div class="item_add">
 									<span class="item_price">123 $ <i> </i>
 									</span>
