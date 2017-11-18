@@ -28,7 +28,7 @@ GO
 CREATE TABLE Customers
 (
 Customer_id int IDENTITY(1,1),
-Username VARCHAR(50) NOT NULL,
+Username VARCHAR(50)UNIQUE NOT NULL,
 Customer_name NVARCHAR(150) NOT NULL,
 Gender bit not null,
 Birthday Datetime,
@@ -44,7 +44,7 @@ GO
 CREATE TABLE Employees
 (
 Emp_id INT IDENTITY(1,1),
-Username VARCHAR(50),
+Username VARCHAR(50) UNIQUE NOT NULL,
 Fullname NVARCHAR(50) NOT NULL,
 Gender NVARCHAR(20),
 Home_address NVARCHAR(200),
