@@ -4,6 +4,6 @@
  * Description: Using ajax to make a simple cart
  */
 
-function addCart(productId,){
-	
-}
+ $(document).ready(function() {
+ 	alert("hello");
+ });
