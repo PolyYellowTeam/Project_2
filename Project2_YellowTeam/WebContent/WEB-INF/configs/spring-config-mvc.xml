@@ -12,7 +12,6 @@
 			http://www.springframework.org/schema/mvc 
 			http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- maxUploadSize=20MB -->
@@ -46,20 +45,20 @@
 			<property name="paramName" value="language" />
 		</bean>
 	</mvc:interceptors>
-	
+
 	<!-- Cấu hình view -->
 	<bean id="viewResolver" p:prefix="/WEB-INF/views/layout-dispatcher.jsp?view="
 		p:suffix=".jsp"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver" />
-		
-		<!-- Cấu hình package chứa các controller -->
+
+	<!-- Cấu hình package chứa các controller -->
 	<context:component-scan base-package="com.Controllers" />
-		
+
 	<!-- Spring MVC Annotation -->
 	<context:annotation-config />
 	<mvc:annotation-driven />
 	<mvc:resources location="/resources/**" mapping="/resources/**"></mvc:resources>
-	<mvc:resources location="/resources/css/**"  mapping="/css/**"></mvc:resources>
+	<mvc:resources location="/resources/css/**" mapping="/css/**"></mvc:resources>
 	<mvc:resources location="/resources/js/**" mapping="/js/**"></mvc:resources>
 	<mvc:resources location="/resources/images/**" mapping="/images/**"></mvc:resources>
 

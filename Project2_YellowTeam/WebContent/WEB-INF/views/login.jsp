@@ -28,6 +28,6 @@
 <script src="js/jquery-ui.js"></script>
 </head>
 <body>
-	<jsp:include page="${param.view }" />
+	<jsp:include page="${param.view}" />
 </body>
 </html>
