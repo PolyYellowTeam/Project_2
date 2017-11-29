@@ -1,1 +1,4 @@
 /com/
+/entities/
+/hibernate.cfg.xml
+/hibernate.properties
