@@ -27,9 +27,7 @@
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/jquery-ui.js"></script>
 </head>
-<spring:form method="post" commandName="acc" action="login.html">
-	<spring:input type="text" path="username" title="Username" />
-	<spring:password path="password" title="Password" />
-	<input type="submit" value="Đăng nhập" />
-</spring:form>
+<body>
+	<jsp:include page="${param.view }" />
+</body>
 </html>
