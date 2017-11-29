@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.Controller;
+package com.Controllers;
 
 /**
  * @author TuanVN4

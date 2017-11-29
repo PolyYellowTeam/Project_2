@@ -7,7 +7,7 @@
 		<li><a href=""><span>Quản lý phòng</span><a></li>
 		<li><a href=""><span>Quản lý dịch vụ</span> </a></li>
 		<li><a href=""><span>Quản lý tài khoản</span></a></li>
-		<li><a href=""><span>Quản lý ...</span> </a></li>
+		<li><a href="./admin/quan-ly-don-hang"><span>Quản lý đơn hàng</span> </a></li>
 	</ul>
 </div>
 <!-- End Main Nav -->
