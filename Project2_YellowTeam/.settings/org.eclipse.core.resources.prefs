@@ -6,6 +6,7 @@ eclipse.preferences.version=1
 encoding//src/com/controller/Login_Controller.java=UTF-8
 =======
 encoding//WebContent/WEB-INF/views/login-layout.jsp=UTF-8
+encoding//WebContent/login.jsp=UTF-8
 encoding//src/com/Controllers/AdminFunctionController.java=UTF-8
 encoding//src/com/Controllers/LoginController.java=UTF-8
 encoding//src/com/Controllers/Login_Controller.java=UTF-8
