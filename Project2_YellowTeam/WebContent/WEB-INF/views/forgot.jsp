@@ -24,9 +24,8 @@
 					<td><input type="password" /></td>
 				</tr>
 				<tr>
+					<td>&nbsp;</td>
 					<td><input type="submit" value="Đặt lại mật khẩu"></td>
-					<td><a class="d-block small"
-						href="${pageContext.request.contextPath }/account">Quay lại trang đăng nhập</a></td>
 				</tr>
 			</table>
 			${registermsg}

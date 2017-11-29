@@ -9,7 +9,7 @@
 </head>
 <body>
 	<center>
-		<s:form method="post" action="account/login">
+		<s:form method="post" commandName="account" action="account/login">
 			<table>
 				<tr>
 					<td>Username</td>
@@ -24,15 +24,6 @@
 							class="form-check-input" type="checkbox">Nhớ mật khẩu
 					</label></td>
 					<td><input type="submit" value="Đăng nhập" /></td>
-				</tr>
-
-				<!-- <a class="d-block small mt-3" href="register.html">Register an Account</a> -->
-				<tr>
-					<td><a class="d-block small"
-						href="${pageContext.request.contextPath }/account/forgot">Quên mật
-							khẩu?</a></td>
-					<td><a class="d-block small"
-						href="${pageContext.request.contextPath }/account/register">Đăng ký</a></td>
 				</tr>
 			</table>
 			${loginmsg}
