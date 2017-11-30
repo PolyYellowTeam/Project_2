@@ -1,8 +1,10 @@
+
 <%
 	String view = request.getParameter("view");
-	if(view.startsWith("admin/")){
+	if (view.startsWith("admin/")) {
 		pageContext.forward("admin-layout.jsp");
-	}else{
+	} else {
 		pageContext.forward("user-layout.jsp");
 	}
+	System.out.println(view);
 %>

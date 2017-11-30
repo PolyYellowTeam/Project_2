@@ -9,7 +9,7 @@
 </head>
 <body>
 	<center>
-		<s:form method="post" commandName="acc" action="register">
+		<s:form method="post" action="register">
 			<table cellpadding="2" cellspacing="2">
 				<tr>
 					<td>Tên đăng nhập/ Email</td>
