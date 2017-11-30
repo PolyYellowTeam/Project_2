@@ -24,7 +24,8 @@
 					<td><input type="password" /></td>
 				</tr>
 				<tr>
-					<td>&nbsp;</td>
+					<td><a href="${pageContext.request.contextPath }/account">Đăng
+								nhập</a></td>
 					<td><input type="submit" value="Đăng ký"></td>
 				</tr>
 			</table>

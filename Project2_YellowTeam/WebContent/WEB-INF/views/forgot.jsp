@@ -8,6 +8,7 @@
 <title>Reset mật khẩu tài khoản</title>
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
 	<center>
 		<s:form method="post" commandName="acc" action="register">
 			<table cellpadding="2" cellspacing="2">
@@ -24,12 +25,14 @@
 					<td><input type="password" /></td>
 				</tr>
 				<tr>
-					<td>&nbsp;</td>
+					<td><a href="${pageContext.request.contextPath }/account">Đăng
+								nhập</a></td>
 					<td><input type="submit" value="Đặt lại mật khẩu"></td>
 				</tr>
 			</table>
 			${registermsg}
 		</s:form>
 	</center>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
