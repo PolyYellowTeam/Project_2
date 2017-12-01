@@ -7,6 +7,6 @@
 <title>Here is admin page</title>
 </head>
 <body>
-	<h1>Fuck you ^^</h1>
+	<h1>Home page</h1>
 </body>
 </html>

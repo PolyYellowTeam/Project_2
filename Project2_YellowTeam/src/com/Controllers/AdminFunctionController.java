@@ -16,11 +16,11 @@ import com.Entities.Carts;
 import com.Models.CartServices;
 
 @Controller
-@RequestMapping(value = "admin/")
+@RequestMapping(value = "admin")
 public class AdminFunctionController {
 	
 	//Trang chủ chức năng quản lý đơn hàng
-	@RequestMapping(value="/quan-ly-don-hang")
+	@RequestMapping(value="quan-ly-don-hang")
 	public String QuanLyGioHang() {
 		List<Carts> CartList = new CartServices().GetAllCart();
 		return "admin/quan-ly-don-hang";
