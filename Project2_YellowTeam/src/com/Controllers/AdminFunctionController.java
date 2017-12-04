@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.Entities.Carts;
-import com.Models.CartServices;
+//import com.Models.CartServices;
 
 @Controller
 @RequestMapping(value = "admin")
@@ -22,7 +22,7 @@ public class AdminFunctionController {
 	//Trang chủ chức năng quản lý đơn hàng
 	@RequestMapping(value="quan-ly-don-hang")
 	public String QuanLyGioHang() {
-		List<Carts> CartList = new CartServices().GetAllCart();
+//		List<Carts> CartList = new CartServices().GetAllCart();
 		return "admin/quan-ly-don-hang";
 	}
 }
