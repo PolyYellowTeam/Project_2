@@ -28,7 +28,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -68,7 +68,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi11.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -112,7 +112,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi12.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi12.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -153,7 +153,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi13.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi13.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -195,7 +195,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi11.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -236,7 +236,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi13.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi13.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -276,7 +276,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -316,7 +316,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi12.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi12.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -356,7 +356,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> ${pageContext.request.contextPath}/images/pi11.jpg"
+								<a href="single"> <img src="${pageContext.request.contextPath}/images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -407,7 +407,7 @@
 				<div class="col-md-4">
 					<a href="single"><div class="col-in">
 							<div class="col-in-left">
-								${pageContext.request.contextPath}/images/ni.jpg" class="img-responsive" alt="">
+								<img src="${pageContext.request.contextPath}/images/ni.jpg" class="img-responsive" alt="">
 							</div></a>
 					<div class="col-in-right grid_1 simpleCart_shelfItem">
 						<h5>fuel t-shirt mod : 9509</h5>
@@ -429,7 +429,7 @@
 			<div class="col-md-4">
 				<a href="single"><div class="col-in">
 						<div class="col-in-left">
-							${pageContext.request.contextPath}/images/ni1.jpg" class="img-responsive" alt="">
+							<img src="${pageContext.request.contextPath}/images/ni1.jpg" class="img-responsive" alt="">
 						</div></a>
 				<div class="col-in-right grid_1 simpleCart_shelfItem">
 					<h5>fuel t-shirt mod : 9509</h5>
@@ -451,7 +451,7 @@
 		<div class="col-md-4">
 			<a href="single"><div class="col-in">
 					<div class="col-in-left">
-						${pageContext.request.contextPath}/images/ni.jpg" class="img-responsive" alt="">
+						<img src="${pageContext.request.contextPath}/images/ni.jpg" class="img-responsive" alt="">
 					</div></a>
 			<div class="col-in-right grid_1 simpleCart_shelfItem">
 				<h5>fuel t-shirt mod : 9509</h5>
@@ -503,13 +503,13 @@
 <div class="bottom-content">
 
 	<div class="col-md-4">
-		${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
+		<img src="${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
 	</div>
 	<div class="col-md-4">
-		${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
+		<img src="${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
 	</div>
 	<div class="col-md-4">
-		${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
+		<img src="${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
 	</div>
 	<div class="clearfix"></div>
 </div>
