@@ -263,9 +263,9 @@
 					<a href="checkout">
 						<h3>
 							<div class="total">
-								<span class="simpleCart_total"></span> (<span
+								<!-- <span class="simpleCart_total"></span> --> (<span
 									id="simpleCart_quantity" class="simpleCart_quantity"></span>
-								items)
+								Sản phẩm)
 							</div>
 							<img src="images/cart.png" alt="" />
 						</h3>
