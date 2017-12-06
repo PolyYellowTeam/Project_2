@@ -3,7 +3,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	String a = request.getRequestURL().toString();
-	String b = a.substring(0, 40);
+	int c = a.indexOf("WEB-INF");
+	String b = a.substring(0, c);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

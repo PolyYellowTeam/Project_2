@@ -2,7 +2,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 	String a = request.getRequestURL().toString();
-	String b = a.substring(0, 40);
+	int c = a.indexOf("WEB-INF");
+	String b = a.substring(0, c);
 %>
 <!DOCTYPE html>
 <html>
