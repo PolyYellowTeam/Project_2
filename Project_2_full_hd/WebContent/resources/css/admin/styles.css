@@ -1,0 +1,168 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #2e363f;
+}
+#wrapper{
+	min-width: 670px;
+}
+	#wrapper #header{
+		height: 50px;
+		display: flex;
+		background-color: #1f262d;
+	}
+		#wrapper #header #head-left{
+			display: flex;
+			width: 70%;
+		}
+			#wrapper #header #head-left .thumbnail{
+				height: 40px;
+   			margin: 5px 3px;
+   			padding-left: 10px;
+			}
+				#wrapper #header #head-left .thumbnail img{
+					padding: 1px;
+				}
+			#wrapper #header #head-left h1{
+				font-size: 16px;
+				line-height: 50px;
+				color: #fff;
+			}
+		#wrapper #header #head-right{
+			display: flex;
+			line-height: 50px;
+			width: 30%;
+		}
+			#wrapper #header #head-right p{
+				width: 100%;
+				text-align: right;
+				padding-right: 10px;
+				font-size: 14px;
+				color: #d0d0d0;
+			}
+				#wrapper #header #head-right p span{
+					margin: 0px 3px;
+					font-weight: bold;
+					color: #fff;
+				}
+				#wrapper #header #head-right p a{
+					font-size: 12px;
+					padding-left: 3px;
+					color: #8e8e8e;
+					z-index: 1;
+				}
+				#wrapper #header #head-right p a:hover{
+					color: #fff;
+					transition: 0.3s;
+				}
+	#wrapper #main{
+		display: flex;
+		height: 100%;
+		background-color: #eee;
+	}
+		#wrapper #main #col-left{
+			width: 20%;
+			background-color: #2e363f;
+		}
+			/*#wrapper #main #col-left .clear-top{
+				height: 40px;
+				background-color: #1f262d;
+			}*/
+			#wrapper #main #col-left ul{
+				width: 100%;
+			}
+				#wrapper #main #col-left ul li{
+					font-size: 14px;
+					line-height: 40px;
+				}
+					#wrapper #main #col-left ul li a{
+						color: #D6D6D6;
+						padding-left: 5%;
+						height: 100%;
+					   width: 95%;
+					   display: inline-block;
+					}
+					#wrapper #main #col-left ul li a:hover{
+						background-color: #1e242b;
+					}
+					#wrapper #main #col-left ul li ul{
+						background-color: #414d5a;
+					}
+					#wrapper #main #col-left ul li .submenu{
+						display: none;
+					}
+						#wrapper #main #col-left ul li ul li{
+							/*padding-left: 3%;*/
+						}
+		#wrapper #main #col-right{
+			width: 80%;
+		}
+			#wrapper #main #col-right .breadcumbs{
+				height: 40px;
+				background-color: #f9f9f9;
+			}
+				#wrapper #main #col-right .breadcumbs p{
+					line-height: 40px;
+					font-weight: bold;
+					font-size: 13px;
+					padding-left: 20px;
+				}
+				#wrapper #main #col-right .breadcumbs p span{
+					margin: 0px 10px;
+					font-size: 10px;
+				}
+			#wrapper #main #col-right .table{
+				margin: 20px 1% 40px 1%;
+				background-color: #f9f9f9;
+			}
+				#wrapper #main #col-right .table .title{
+					background-color: #eee;
+				}
+					#wrapper #main #col-right .table .title h1{
+						font-size: 17px;
+					   padding: 5px 0px 2px 15px;
+					   line-height: 30px;
+					   color: #464646;
+					   border: 1px solid #cdcdcd;
+					   border-bottom: none;
+					   font-weight: bolder;
+					}
+				#wrapper #main #col-right .table .content {}
+					#wrapper #main #col-right .table .content .default-table{
+						width: 100%;
+						color: #464646;
+						border-collapse: collapse;
+					}
+						#wrapper #main #col-right .table .content .default-table thead{
+							text-align: center;
+						}
+							#wrapper #main #col-right .table .content .default-table thead td{
+								line-height: 30px;
+								font-weight: 700;
+							}
+							#wrapper #main #col-right .table .content .default-table tbody td{
+								padding-left: 5px;
+								line-height: 25px;
+							}
+						#wrapper #main #col-right .table .content .default-table td{
+							border: 1px solid #cdcdcd;
+							border-spacing: 0px; 
+							font-size: 14px;
+						}
+	#wrapper #footer{}
+		#wrapper #footer h1{
+			text-align: center;
+   		padding-right: 10px;
+   		font-size: 13px;
+   		line-height: 30px;
+   		color: #a4a5a7;
+		}

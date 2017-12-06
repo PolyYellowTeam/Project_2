@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+	String a = request.getRequestURL().toString();
+	String b = a.substring(0, 40);
+%>
 <!-- banner -->
 <jsp:include page="banner.jsp" />
 <!-- end banner -->
@@ -13,8 +16,8 @@
 			<h2 class="new">NEW ARRIVALS</h2>
 			<div class="pink">
 				<!-- requried-jsfiles-for owl -->
-				<link href="css/owl.carousel.css" rel="stylesheet">
-				<script src="js/owl.carousel.js"></script>
+				<link href="<%=b%>css/owl.carousel.css" rel="stylesheet">
+				<script src="<%=b%>js/owl.carousel.js"></script>
 				<script>
 					$(document).ready(function() {
 						$("#owl-demo").owlCarousel({
@@ -30,7 +33,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi.jpg"
+								<a href="single"> <img src="<%=b%>images/pi.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -70,7 +73,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi11.jpg"
+								<a href="single"> <img src="<%=b%>images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -114,7 +117,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi12.jpg"
+								<a href="single"> <img src="<%=b%>images/pi12.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -155,7 +158,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi13.jpg"
+								<a href="single"> <img src="<%=b%>images/pi13.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -197,7 +200,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi11.jpg"
+								<a href="single"> <img src="<%=b%>images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -238,7 +241,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi13.jpg"
+								<a href="single"> <img src="<%=b%>images/pi13.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -278,7 +281,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi.jpg"
+								<a href="single"> <img src="<%=b%>images/pi.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -318,7 +321,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi12.jpg"
+								<a href="single"> <img src="<%=b%>images/pi12.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -358,7 +361,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="images/pi11.jpg"
+								<a href="single"> <img src="<%=b%>images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -409,7 +412,7 @@
 				<div class="col-md-4">
 					<a href="single"><div class="col-in">
 							<div class="col-in-left">
-								<img src="images/ni.jpg" class="img-responsive" alt="">
+								<img src="<%=b%>images/ni.jpg" class="img-responsive" alt="">
 							</div></a>
 					<div class="col-in-right grid_1 simpleCart_shelfItem">
 						<h5>fuel t-shirt mod : 9509</h5>
@@ -431,7 +434,7 @@
 			<div class="col-md-4">
 				<a href="single"><div class="col-in">
 						<div class="col-in-left">
-							<img src="images/ni1.jpg" class="img-responsive" alt="">
+							<img src="<%=b%>images/ni1.jpg" class="img-responsive" alt="">
 						</div></a>
 				<div class="col-in-right grid_1 simpleCart_shelfItem">
 					<h5>fuel t-shirt mod : 9509</h5>
@@ -453,7 +456,7 @@
 		<div class="col-md-4">
 			<a href="single"><div class="col-in">
 					<div class="col-in-left">
-						<img src="images/ni.jpg" class="img-responsive" alt="">
+						<img src="<%=b%>images/ni.jpg" class="img-responsive" alt="">
 					</div></a>
 			<div class="col-in-right grid_1 simpleCart_shelfItem">
 				<h5>fuel t-shirt mod : 9509</h5>

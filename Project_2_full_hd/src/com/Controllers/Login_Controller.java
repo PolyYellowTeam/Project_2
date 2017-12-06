@@ -11,9 +11,9 @@ public class Login_Controller {
 		return "login/admin-login";
 	}
 	
-	@RequestMapping("admintest")
+	@RequestMapping("admin/index")
 	public String admintest() {
-		return "admin/admintest";
+		return "admin/index";
 	}
 
 }
