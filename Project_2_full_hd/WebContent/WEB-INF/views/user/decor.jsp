@@ -6,7 +6,7 @@
 		<h2 class="new">NEW ARRIVALS</h2>
 		<div class="pink">
 			<div class="col-md-3 blue">
-				<a href="single"> <img src="images/de.jpg"
+				<a href="single"> <img src="${pageContext.request.contextPath}/images/de.jpg"
 					class="img-responsive" alt=""></a>
 				<!---->
 				<div class="grid_1 simpleCart_shelfItem">
@@ -17,7 +17,7 @@
 				<!---->
 			</div>
 			<div class="col-md-3 blue">
-				<a href="single"> <img src="images/de1.jpg"
+				<a href="single"> <img src="${pageContext.request.contextPath}/images/de1.jpg"
 					class="img-responsive" alt=""></a>
 				<!---->
 				<div class="grid_1 simpleCart_shelfItem">
@@ -28,7 +28,7 @@
 				<!---->
 			</div>
 			<div class="col-md-3 blue">
-				<a href="single"> <img src="images/de2.jpg"
+				<a href="single"> <img src="${pageContext.request.contextPath}/images/de2.jpg"
 					class="img-responsive" alt=""></a>
 				<!---->
 				<div class="grid_1 simpleCart_shelfItem">
@@ -39,7 +39,7 @@
 				<!---->
 			</div>
 			<div class="col-md-3 blue">
-				<a href="single"> <img src="images/de3.jpg"
+				<a href="single"> <img src="${pageContext.request.contextPath}/images/de3.jpg"
 					class="img-responsive" alt=""></a>
 				<!---->
 				<div class="grid_1 simpleCart_shelfItem">
@@ -53,7 +53,7 @@
 		</div>
 		<div class="pink">
 			<div class="col-md-3 blue">
-				<a href="single"> <img src="images/de4.jpg"
+				<a href="single"> <img src="${pageContext.request.contextPath}/images/de4.jpg"
 					class="img-responsive" alt=""></a>
 				<!---->
 				<div class="grid_1 simpleCart_shelfItem">
@@ -64,7 +64,7 @@
 				<!---->
 			</div>
 			<div class="col-md-3 blue">
-				<a href="single"> <img src="images/de5.jpg"
+				<a href="single"> <img src="${pageContext.request.contextPath}/images/de5.jpg"
 					class="img-responsive" alt=""></a>
 				<!---->
 				<div class="grid_1 simpleCart_shelfItem">
@@ -75,7 +75,7 @@
 				<!---->
 			</div>
 			<div class="col-md-3 blue">
-				<a href="single"> <img src="images/de.jpg"
+				<a href="single"> <img src="${pageContext.request.contextPath}/images/de.jpg"
 					class="img-responsive" alt=""></a>
 				<!---->
 				<div class="grid_1 simpleCart_shelfItem">
@@ -86,7 +86,7 @@
 				<!---->
 			</div>
 			<div class="col-md-3 blue">
-				<a href="single"> <img src="images/de1.jpg"
+				<a href="single"> <img src="${pageContext.request.contextPath}/images/de1.jpg"
 					class="img-responsive" alt=""></a>
 				<!---->
 				<div class="grid_1 simpleCart_shelfItem">

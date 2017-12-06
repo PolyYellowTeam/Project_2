@@ -1,23 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-	String a = request.getRequestURL().toString();
-	int c = a.indexOf("WEB-INF");
-	String b = a.substring(0, c);
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Markito Website</title>
-<link href="<%=b%>css/bootstrap.css" rel="stylesheet" type="text/css"
+<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" type="text/css"
 	media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="<%=b%>js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="<%=b%>css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,8 +26,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	rel='stylesheet' type='text/css'>
 <!--//fonts-->
 
-<script type="text/javascript" src="<%=b%>js/move-top.js"></script>
-<script type="text/javascript" src="<%=b%>js/easing.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/move-top.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/easing.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event) {
@@ -45,16 +39,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	});
 </script>
 <!-- start menu -->
-<link href="<%=b%>css/megamenu.css" rel="stylesheet" type="text/css"
+<link href="${pageContext.request.contextPath}/css/megamenu.css" rel="stylesheet" type="text/css"
 	media="all" />
-<script type="text/javascript" src="<%=b%>js/megamenu.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/megamenu.js"></script>
 <script>
 	$(document).ready(function() {
 		$(".megamenu").megamenu();
 	});
 </script>
 
-<script src="<%=b%>js/cart.min.js">
+<script src="${pageContext.request.contextPath}/js/cart.min.js">
 	
 </script>
 </head>

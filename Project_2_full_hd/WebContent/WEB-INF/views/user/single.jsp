@@ -8,21 +8,21 @@
 				<div class="col-md-5 single-top">
 					<ul id="etalage">
 						<li><a href="optionallink"> <img
-								class="etalage_thumb_image img-responsive" src="images/si.jpg"
+								class="etalage_thumb_image img-responsive" src="${pageContext.request.contextPath}/images/si.jpg"
 								alt=""> <img class="etalage_source_image img-responsive"
-								src="images/s1.jpg" alt="">
+								src="${pageContext.request.contextPath}/images/s1.jpg" alt="">
 						</a></li>
 						<li><img class="etalage_thumb_image img-responsive"
-							src="images/si1.jpg" alt=""> <img
-							class="etalage_source_image img-responsive" src="images/s2.jpg"
+							src="${pageContext.request.contextPath}/images/si1.jpg" alt="">
+							<img class="etalage_source_image img-responsive"
+							src="${pageContext.request.contextPath}/images/s2.jpg" alt=""></li>
+						<li><img class="etalage_thumb_image img-responsive"
+							src="${pageContext.request.contextPath}/images/si2.jpg" alt=""> <img
+							class="etalage_source_image img-responsive" src="${pageContext.request.contextPath}/images/s3.jpg"
 							alt=""></li>
 						<li><img class="etalage_thumb_image img-responsive"
-							src="images/si2.jpg" alt=""> <img
-							class="etalage_source_image img-responsive" src="images/s3.jpg"
-							alt=""></li>
-						<li><img class="etalage_thumb_image img-responsive"
-							src="images/si3.jpg" alt=""> <img
-							class="etalage_source_image img-responsive" src="images/s4.jpg"
+							src="${pageContext.request.contextPath}/images/si3.jpg" alt=""> <img
+							class="etalage_source_image img-responsive" src="${pageContext.request.contextPath}/images/s4.jpg"
 							alt=""></li>
 					</ul>
 
@@ -99,7 +99,9 @@
 									fjs.parentNode.insertBefore(js, fjs);
 								}(document, 'script', 'facebook-jssdk'));
 							</script>
-							<div class="fb-comments" data-href="http://localhost:8080/Project_2_full_hd/single" data-numposts="5"></div>
+							<div class="fb-comments"
+								data-href="http://localhost:8080/Project_2_full_hd/single"
+								data-numposts="5"></div>
 						</div>
 					</div>
 					<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
@@ -149,7 +151,7 @@
 				<div class="single-bottom">
 					<h4>Product Categories</h4>
 					<div class="product-go">
-						<img class="img-responsive fashion" src="images/fa.jpg" alt="">
+						<img class="img-responsive fashion" src="${pageContext.request.contextPath}/images/fa.jpg" alt="">
 						<div class="grid-product">
 							<a href="#" class="elit">Consectetuer adipiscing elit</a> <span
 								class=" price-in"><small>$500.00</small> $400.00</span>
@@ -157,7 +159,7 @@
 						<div class="clearfix"></div>
 					</div>
 					<div class="product-go">
-						<img class="img-responsive fashion" src="images/fa1.jpg" alt="">
+						<img class="img-responsive fashion" src="${pageContext.request.contextPath}/images/fa1.jpg" alt="">
 						<div class="grid-product">
 							<a href="#" class="elit">Consectetuer adipiscing elit</a> <span
 								class=" price-in"><small>$500.00</small> $400.00</span>
@@ -165,7 +167,7 @@
 						<div class="clearfix"></div>
 					</div>
 					<div class="product-go">
-						<img class="img-responsive fashion" src="images/fa2.jpg" alt="">
+						<img class="img-responsive fashion" src="${pageContext.request.contextPath}/images/fa2.jpg" alt="">
 						<div class="grid-product">
 							<a href="#" class="elit">Consectetuer adipiscing elit</a> <span
 								class=" price-in"><small>$500.00</small> $400.00</span>

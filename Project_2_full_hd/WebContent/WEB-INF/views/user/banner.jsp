@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-	String a = request.getRequestURL().toString();
-	int c = a.indexOf("WEB-INF");
-	String b = a.substring(0, c);
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <!--banner-->
@@ -19,7 +13,7 @@
 					<div class="banner-top">
 						<a href="single">
 							<div class="banner-top-in">
-								<img src="<%=b%>images/ba.png" class="img-responsive" alt="">
+								<img src="${pageContext.request.contextPath}/images/ba.png" class="img-responsive" alt="">
 							</div>
 						</a>
 						<div class="cart-at grid_1 simpleCart_shelfItem">
@@ -35,7 +29,7 @@
 					<div class="banner-top banner-bottom">
 						<a href="single">
 							<div class="banner-top-in at">
-								<img src="<%=b%>images/ba22.png" class="img-responsive" alt="">
+								<img src="${pageContext.request.contextPath}/images/ba22.png" class="img-responsive" alt="">
 							</div>
 						</a>
 						<div class="cart-at grid_1 simpleCart_shelfItem">
@@ -59,7 +53,7 @@
 			</ul>
 		</div>
 		<!---->
-		<script src="<%=b%>js/jquery.wmuSlider.js"></script>
+		<script src="${pageContext.request.contextPath}/js/jquery.wmuSlider.js"></script>
 		<script>
 			$('.example1').wmuSlider({
 				pagination : true,

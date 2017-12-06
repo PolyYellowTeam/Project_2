@@ -6,7 +6,7 @@
 		<h2 class="new">NEW ARRIVALS</h2>
 			<div class="pink">
 				<div class="col-md-3 blue">	
-					<a href="single" > <img src="images/ph.jpg" class="img-responsive" alt=""></a>			 	
+					<a href="single" > <img src="${pageContext.request.contextPath}/images/ph.jpg" class="img-responsive" alt=""></a>			 	
 					<!---->
 						<div class="grid_1 simpleCart_shelfItem">
 							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
@@ -14,7 +14,7 @@
 					<!---->
 				</div>
 				<div class="col-md-3 blue">		
-					<a href="single" > <img src="images/ph1.jpg" class="img-responsive" alt=""></a>		 	
+					<a href="single" > <img src="${pageContext.request.contextPath}/images/ph1.jpg" class="img-responsive" alt=""></a>		 	
 					<!---->
 						<div class="grid_1 simpleCart_shelfItem">
 							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
@@ -22,7 +22,7 @@
 					<!---->
 				</div>
 				<div class="col-md-3 blue">
-					 <a href="single" > <img src="images/ph2.jpg" class="img-responsive" alt=""></a>		 	
+					 <a href="single" > <img src="${pageContext.request.contextPath}/images/ph2.jpg" class="img-responsive" alt=""></a>		 	
 						<!---->
 						<div class="grid_1 simpleCart_shelfItem">
 							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
@@ -30,7 +30,7 @@
 					<!---->
 				</div>
 				<div class="col-md-3 blue">
-					<a href="single" > <img src="images/ph3.jpg" class="img-responsive" alt=""></a>			 	
+					<a href="single" > <img src="${pageContext.request.contextPath}/images/ph3.jpg" class="img-responsive" alt=""></a>			 	
 					<!---->
 						<div class="grid_1 simpleCart_shelfItem">
 							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
@@ -41,7 +41,7 @@
 		</div>
 		<div class="pink">
 			<div class="col-md-3 blue">
-				 <a href="single" > <img src="images/ph4.jpg" class="img-responsive" alt=""></a>		 	
+				 <a href="single" > <img src="${pageContext.request.contextPath}/images/ph4.jpg" class="img-responsive" alt=""></a>		 	
 				<!---->
 						<div class="grid_1 simpleCart_shelfItem">
 							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
@@ -49,7 +49,7 @@
 					<!---->
 			</div>
 			<div class="col-md-3 blue">
-				 <a href="single" > <img src="images/ph5.jpg" class="img-responsive" alt=""></a>			 	
+				 <a href="single" > <img src="${pageContext.request.contextPath}/images/ph5.jpg" class="img-responsive" alt=""></a>			 	
 				<!---->
 						<div class="grid_1 simpleCart_shelfItem">
 							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
@@ -57,7 +57,7 @@
 					<!---->
 			</div>
 			<div class="col-md-3 blue">
-				<a href="single" > <img src="images/ph.jpg" class="img-responsive" alt=""></a>	 	
+				<a href="single" > <img src="${pageContext.request.contextPath}/images/ph.jpg" class="img-responsive" alt=""></a>	 	
 				<!---->
 						<div class="grid_1 simpleCart_shelfItem">
 							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					
@@ -65,7 +65,7 @@
 					<!---->
 			</div>
 			<div class="col-md-3 blue">
-				<a href="single" > <img src="images/ph7.jpg" class="img-responsive" alt=""></a>		 	
+				<a href="single" > <img src="${pageContext.request.contextPath}/images/ph7.jpg" class="img-responsive" alt=""></a>		 	
 				<!---->
 						<div class="grid_1 simpleCart_shelfItem">
 							<a href="#" class="cup item_add"><span class=" item_price" >123 $ <i> </i> </span></a>					

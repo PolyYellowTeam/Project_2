@@ -45,7 +45,7 @@
 				 <div class="close1"> </div>
 				 <div class="cart-sec simpleCart_shelfItem">
 						<div class="cart-item cyc">
-							 <img src="images/pic1.jpg" class="img-responsive" alt=""/>
+							 <img src="${pageContext.request.contextPath}/images/pic1.jpg" class="img-responsive" alt=""/>
 						</div>
 					   <div class="cart-item-info">
 						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
@@ -76,7 +76,7 @@
 				 <div class="close2"> </div>
 				  <div class="cart-sec simpleCart_shelfItem">
 						<div class="cart-item cyc">
-							 <img src="images/pic2.jpg" class="img-responsive" alt=""/>
+							 <img src="${pageContext.request.contextPath}/images/pic2.jpg" class="img-responsive" alt=""/>
 						</div>
 					   <div class="cart-item-info">
 						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>

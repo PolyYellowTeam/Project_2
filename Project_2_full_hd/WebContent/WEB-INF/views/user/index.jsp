@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-	String a = request.getRequestURL().toString();
-	int c = a.indexOf("WEB-INF");
-	String b = a.substring(0, c);
-%>
 <!-- banner -->
 <jsp:include page="banner.jsp" />
 <!-- end banner -->
@@ -17,8 +11,8 @@
 			<h2 class="new">NEW ARRIVALS</h2>
 			<div class="pink">
 				<!-- requried-jsfiles-for owl -->
-				<link href="<%=b%>css/owl.carousel.css" rel="stylesheet">
-				<script src="<%=b%>js/owl.carousel.js"></script>
+				<link href="css/owl.carousel.css" rel="stylesheet">
+				<script src="js/owl.carousel.js"></script>
 				<script>
 					$(document).ready(function() {
 						$("#owl-demo").owlCarousel({
@@ -34,7 +28,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -74,7 +68,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi11.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -118,7 +112,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi12.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi12.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -159,7 +153,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi13.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi13.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -201,7 +195,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi11.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -242,7 +236,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi13.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi13.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -282,7 +276,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -322,7 +316,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi12.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi12.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -362,7 +356,7 @@
 					<div class="item">
 						<div class=" box-in">
 							<div class=" grid_box">
-								<a href="single"> <img src="<%=b%>images/pi11.jpg"
+								<a href="single"> ${pageContext.request.contextPath}/images/pi11.jpg"
 									class="img-responsive" alt="">
 									<div class="zoom-icon">
 
@@ -413,7 +407,7 @@
 				<div class="col-md-4">
 					<a href="single"><div class="col-in">
 							<div class="col-in-left">
-								<img src="<%=b%>images/ni.jpg" class="img-responsive" alt="">
+								${pageContext.request.contextPath}/images/ni.jpg" class="img-responsive" alt="">
 							</div></a>
 					<div class="col-in-right grid_1 simpleCart_shelfItem">
 						<h5>fuel t-shirt mod : 9509</h5>
@@ -435,7 +429,7 @@
 			<div class="col-md-4">
 				<a href="single"><div class="col-in">
 						<div class="col-in-left">
-							<img src="<%=b%>images/ni1.jpg" class="img-responsive" alt="">
+							${pageContext.request.contextPath}/images/ni1.jpg" class="img-responsive" alt="">
 						</div></a>
 				<div class="col-in-right grid_1 simpleCart_shelfItem">
 					<h5>fuel t-shirt mod : 9509</h5>
@@ -457,7 +451,7 @@
 		<div class="col-md-4">
 			<a href="single"><div class="col-in">
 					<div class="col-in-left">
-						<img src="<%=b%>images/ni.jpg" class="img-responsive" alt="">
+						${pageContext.request.contextPath}/images/ni.jpg" class="img-responsive" alt="">
 					</div></a>
 			<div class="col-in-right grid_1 simpleCart_shelfItem">
 				<h5>fuel t-shirt mod : 9509</h5>
@@ -509,13 +503,13 @@
 <div class="bottom-content">
 
 	<div class="col-md-4">
-		<img src="images/ad1.png" class="img-responsive" alt="">
+		${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
 	</div>
 	<div class="col-md-4">
-		<img src="images/ad1.png" class="img-responsive" alt="">
+		${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
 	</div>
 	<div class="col-md-4">
-		<img src="images/ad1.png" class="img-responsive" alt="">
+		${pageContext.request.contextPath}/images/ad1.png" class="img-responsive" alt="">
 	</div>
 	<div class="clearfix"></div>
 </div>

@@ -1,25 +1,19 @@
 <%@ page pageEncoding="utf-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-	String a = request.getRequestURL().toString();
-	int c = a.indexOf("WEB-INF");
-	String b = a.substring(0, c);
-%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<meta charset="utf-8">
-	<link rel="shortcut icon" type="image/x-icon" href="<%=b%>images/admin/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/admin/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="<%=b%>css/admin/styles.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/admin/styles.css">
 </head>
 <body>
 	<div id="wrapper">
 		<div id="header">
 			<div id="head-left">
 				<div class="thumbnail">
-					<img src="<%=b%>images/admin/logo.png">
+					<img src="${pageContext.request.contextPath}/images/admin/logo.png">
 				</div>
 				<h1>FPT Telecom - Công ty Cổ phần Viễn thông FPT</h1>
 			</div>
@@ -62,5 +56,5 @@
 	</div>
 </body>
 </html>
-<script type="text/javascript" src="<%=b%>js/admin/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="<%=b%>js/admin/admin.functions.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/admin/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/admin/admin.functions.js"></script>
