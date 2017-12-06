@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="SHOP" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.Entities.Sysdiagrams" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="sysdiagrams">
+        <id name="diagramId" type="int">
+            <column name="diagram_id"/>
+            <generator class="assigned"/>
+        </id>
+        <version generated="never" name="version" type="java.lang.Integer" unsaved-value="undefined">
+            <column name="version"/>
+        </version>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="serializable" unique="false">
+            <column name="name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="principalId" optimistic-lock="true" type="int" unique="false">
+            <column name="principal_id" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="definition" optimistic-lock="true" type="binary" unique="false">
+            <column name="definition"/>
+        </property>
+    </class>
+</hibernate-mapping>

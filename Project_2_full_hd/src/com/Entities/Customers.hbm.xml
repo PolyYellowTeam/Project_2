@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="SHOP" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.Entities.Customers" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="Customers">
+        <id name="customerId" type="int">
+            <column name="Customer_id"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.Entities.Accounts" embed-xml="true" fetch="select" insert="true" name="accounts" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="50" name="Username" not-null="true" unique="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="customerName" optimistic-lock="true" type="serializable" unique="false">
+            <column name="Customer_name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="gender" optimistic-lock="true" type="boolean" unique="false">
+            <column name="Gender" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="birthday" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="23" name="Birthday"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Email" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="phone" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="Phone"/>
+        </property>
+        <property generated="never" lazy="false" name="customerAddress" optimistic-lock="true" type="serializable" unique="false">
+            <column name="Customer_Address"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cartses" optimistic-lock="true" sort="unsorted" table="Carts">
+            <key on-delete="noaction">
+                <column name="Customer_id"/>
+            </key>
+            <one-to-many class="com.Entities.Carts" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
