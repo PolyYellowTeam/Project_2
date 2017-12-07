@@ -15,7 +15,7 @@
 				<div class="thumbnail">
 					<img src="${pageContext.request.contextPath}/images/admin/logo.png">
 				</div>
-				<h1>FPT Telecom - Công ty Cổ phần Viễn thông FPT</h1>
+				<h1>Admin Panel</h1>
 			</div>
 			<div id="head-right">
 				<p>Xin chào <span>Vũ Tuân</span><a href="javascript:void(0)">Đăng xuất</a></p>
