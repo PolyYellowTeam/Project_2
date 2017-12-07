@@ -3,14 +3,15 @@
     <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <div class="breadcumbs">
 	<p>
-		Trang chủ <span>/</span> Quản lý banner
+		Trang chủ <span>/</span> Quản lý dữ liệu banner
 	</p>
 </div>
 <div class="table">
 	<div class="title">
-		<h1>Quản lý banner</h1>
+		<h1>Quản lý dữ liệu banner</h1>
 	</div>
 	<div class="content">
+	<a href="QLBAadd" style="margin-left: 5px;">Thêm mới</a>
 		<table class="default-table">
 			<thead>
 				<tr>
@@ -33,7 +34,7 @@
 						<td>${ba.banner_content }</td>
 						<td><img style="width: 69px; display: block; margin: 0 auto;" src="${pageContext.request.contextPath}/${ba.bannerImgUrl }"></td>
 						<td class="functions">
-							<a href="javascript:void(0)" onclick="edit('',500,500);">Sửa</a>
+							<a href="QLBAupdate">Sửa</a>
 						</td>
 						<td><a href="javascript:void(0)" onclick="edit('',500,500);">Xóa</a></td>
 					</tr>
