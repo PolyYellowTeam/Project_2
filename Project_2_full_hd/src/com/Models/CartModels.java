@@ -6,17 +6,37 @@
 
 package com.Models;
 
-import java.util.ArrayList;
+import java.util.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.Entities.Carts;
 
-import com.Controllers.HomeController;
+import hibernate.util.HibernateUtil;
 
-@Controller
 public class CartModels {
+	private static final SessionFactory sessionFactory = HibernateUtil.openSession().getSessionFactory();
 	
+	public List<Carts> getAllCarts(){
+		List<Carts> data = new ArrayList<Carts>();
+		Session session = sessionFactory.openSession();
+//		Transaction transaction = session.beginTransaction();
+		try {
+			String hql = "SELECT * FROM Carts";
+			Query query = session.createQuery(hql);
+			System.out.println(query);
+			data = query.list();
+//			for (Carts carts : data) {
+				System.out.println(data);
+//			}
+			return data;
+		} catch (Exception e) {
+			return null;
+		}finally {
+			session.close();
+		}
+	}
 }

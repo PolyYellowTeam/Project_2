@@ -2,9 +2,5 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-<type-mapping>
-	<sql-type jdbc-type="NVARCHAR" hibernate-type='string' not-null="false" length="250"></sql-type>
-</type-mapping>
-
-<table-filter match-catalog="SHOP" match-schema="dbo" match-name=".*"/>
+  <table-filter match-schema="SHOP" match-name=".*"/>
 </hibernate-reverse-engineering>
