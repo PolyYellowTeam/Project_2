@@ -11,8 +11,8 @@
 			<h2 class="new">NEW ARRIVALS</h2>
 			<div class="pink">
 				<!-- requried-jsfiles-for owl -->
-				<link href="css/owl.carousel.css" rel="stylesheet">
-				<script src="js/owl.carousel.js"></script>
+				<link href="${pageContext.request.contextPath}/css/owl.carousel.css" rel="stylesheet">
+				<script src="${pageContext.request.contextPath}/js/owl.carousel.js"></script>
 				<script>
 					$(document).ready(function() {
 						$("#owl-demo").owlCarousel({
