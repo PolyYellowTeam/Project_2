@@ -19,7 +19,4 @@ import com.Controllers.HomeController;
 @Controller
 public class CartModels {
 	
-	public String AddToCartUsingSession(HttpServletRequest request,@RequestParam(value="prId") String prId) {
-		return null;
-	}
 }
