@@ -139,7 +139,7 @@ body{
 					}
 				#wrapper #main #col-right .table .content {}
 					#wrapper #main #col-right .table .content .default-table{
-						width: 100%;
+						
 						color: #464646;
 						border-collapse: collapse;
 					}
@@ -177,8 +177,8 @@ body{
 form {
     margin-left:auto;
     margin-right:auto;
-    width: 50%;
-    height: 333px;
+    width: 75%;
+    height: auto;
     padding:30px;
     border: 1px solid rgba(0,0,0,.2);
     -moz-border-radius: 5px;
@@ -217,8 +217,8 @@ textarea{
 }
 
 input {
-    width: 276px;
-    height: 48px;
+    width: 269px;
+    height: 20px;
     border: 1px solid rgba(255,255,255,.4);
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -229,7 +229,7 @@ input {
     display:block;
     font-family: 'Source Sans Pro', sans-serif;
     font-size:18px;
-    color:#fff;
+    color:black;
     padding-left:20px;
     padding-right:20px;
     margin-bottom:20px;

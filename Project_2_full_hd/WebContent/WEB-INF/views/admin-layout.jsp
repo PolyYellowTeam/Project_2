@@ -43,7 +43,7 @@
 					<li><a href="javascript:void(0)">Menu 4</a></li>
 					<li><a href="javascript:void(0)">Menu 5</a></li>
 					<li><a href="javascript:void(0)">Menu 6</a></li>
-					<li><a href="QLBA">Quản lý banner</a></li>
+					<li><a href="QLBAdata">Quản lý banner</a></li>
 				</ul>
 			</div>
 			<div id="col-right">
