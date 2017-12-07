@@ -2,10 +2,14 @@ package com.Models;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.Entities.Banners;
 
@@ -13,19 +17,28 @@ import hibernate.util.HibernateUtil;
 
 public class BannerModel {
 	
-	private static final SessionFactory sessionFactory = HibernateUtil.openSession().getSessionFactory();
+	@Autowired
+	SessionFactory sessionFactory;
 	
-	public boolean loadDataBanner(){
+	@Transactional
+	
+	
+	public List<Banners> getDataBanner(){
+		List<Banners> listBa = null;
+		
+		sessionFactory = new Configuration().configure().buildSessionFactory();
+		
 		Session session = sessionFactory.openSession();
-		Transaction transaction = session.beginTransaction();
+		
 		try{
-			String hql = "FROM BANNERS";
+			String hql = "FROM Banners";
 			Query query = session.createQuery(hql);
-			List<Banners> list = query.list();
-			return true;
+			listBa = query.list();
+			
+			return listBa;
 		}catch (Exception e) {
 			e.printStackTrace();
-			return false;
+			return null;
 		}finally {
 			session.close();
 		}

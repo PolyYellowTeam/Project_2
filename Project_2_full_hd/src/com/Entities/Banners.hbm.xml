@@ -12,5 +12,14 @@
         <property generated="never" lazy="false" name="bannerName" optimistic-lock="true" type="string" unique="false">
             <column length="50" name="Banner_name"/>
         </property>
+        <property generated="never" lazy="false" name="Sale_off" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Sale_off"/>
+        </property>
+        <property generated="never" lazy="false" name="Banner_content" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="Banner_content"/>
+        </property>
+        <property generated="never" lazy="false" name="Banner_price" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Banner_price"/>
+        </property>
     </class>
 </hibernate-mapping>

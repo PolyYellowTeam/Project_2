@@ -175,5 +175,10 @@ CREATE TABLE Banners
 Banner_id INT IDENTITY(1,1),
 Banner_img_url VARCHAR(150) NOT NULL,
 Banner_name VARCHAR(50),
+Sale_off nvarchar(100),
+Banner_content nvarchar(max),
+Banner_price nvarchar(50),
 CONSTRAINT PK_Banner PRIMARY KEY (Banner_id)
 )
+
+DROP TABLE BANNERS
