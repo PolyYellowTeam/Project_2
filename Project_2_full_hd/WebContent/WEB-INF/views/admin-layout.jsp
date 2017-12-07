@@ -18,7 +18,7 @@
 				<h1>Admin Panel</h1>
 			</div>
 			<div id="head-right">
-				<p>Xin chào <span>Vũ Tuân</span><a href="javascript:void(0)">Đăng xuất</a></p>
+				<p>Xin chào, <span>Bố Toàn Đz</span><a href="javascript:void(0)">Đăng xuất</a></p>
 			</div>
 		</div>
 		<div id="main">
@@ -43,7 +43,7 @@
 					<li><a href="javascript:void(0)">Menu 4</a></li>
 					<li><a href="javascript:void(0)">Menu 5</a></li>
 					<li><a href="javascript:void(0)">Menu 6</a></li>
-					<li><a href="javascript:void(0)">Menu 7</a></li>
+					<li><a href="QLBA">Quản lý banner</a></li>
 				</ul>
 			</div>
 			<div id="col-right">
@@ -51,7 +51,7 @@
 			</div>
 		</div>
 		<div id="footer">
-			<h1>2017 &copy FPT Telecom</h1>
+			<h1>2017 &copy Yellow Team</h1>
 		</div>
 	</div>
 </body>
