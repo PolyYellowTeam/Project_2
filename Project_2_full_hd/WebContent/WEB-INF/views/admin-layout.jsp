@@ -51,6 +51,10 @@
 					<li><a href="javascript:void(0)">Menu 5</a></li>
 					<li><a href="javascript:void(0)">Menu 6</a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+					<li><a href="QLBA">Quản lý banner</a></li>
+>>>>>>> parent of ea295df... update SQL Banners... Banner Admin
 =======
 					<li><a href="QLBA">Quản lý banner</a></li>
 >>>>>>> parent of ea295df... update SQL Banners... Banner Admin
