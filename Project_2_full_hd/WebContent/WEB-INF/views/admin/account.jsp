@@ -14,29 +14,35 @@
 <title>Accounts</title>
 </head>
 <body>
-	<% 
+	<%
 		AccountsModel acc = new AccountsModel();
 	%>
 	<center>
-	<h3>Quản lý tài khoản</h3>
-	<table class="table table-hover" cellspacing="2" border="1px">
-		<tr>
-			<th>Tên đăng nhập</th>
-			<th>Mật khẩu</th>
-			<th>Quyền tài khoản</th>
-			<th>Trạng thái tài khoản</th>
-			<th>Thao tác</th>
-		</tr>
-		<c:forEach var="acc" items="<%=acc.getAll()%>">
+		<br>
+		<h3>Quản lý tài khoản</h3>
+		<br>
+		<table class="table table-hover" cellpadding="1" cellspacing="3" border="1">
 			<tr>
-				<td>${acc.username}</td>
-				<td>******</td>
-				<td>${acc.roles?'Người dùng':'Quản lý'}</td>
-				<td>${acc.status?'Active':'De-active'}</td>
-				<td><h4><a href="${pageContext.request.contextPath }/update?un=${acc.username}">Sửa</h4></td>
+				<th>Tên đăng nhập</th>
+				<th>Mật khẩu</th>
+				<th>Quyền tài khoản</th>
+				<th>Trạng thái tài khoản</th>
+				<th>Thao tác</th>
 			</tr>
-		</c:forEach>
-	</table>
+			<c:forEach var="acc" items="<%=acc.getAll()%>">
+				<tr>
+					<td>${acc.username}</td>
+					<td>******</td>
+					<td>${acc.roles?'Người dùng':'Quản lý'}</td>
+					<td>${acc.status?'Active':'De-active'}</td>
+					<td><h4>
+							<a
+								href="${pageContext.request.contextPath }/update?un=${acc.username}">Sửa</a>
+						</h4></td>
+				</tr>
+			</c:forEach>
+		</table>
+		<br> <br>
 	</center>
 </body>
 </html>

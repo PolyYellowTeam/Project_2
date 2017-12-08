@@ -66,7 +66,7 @@ public class AccountsModel {
 			return false;
 		}
 	}
-	
+
 	public boolean isAdmin2(String username) {
 		List<Accounts> data = new ArrayList<Accounts>();
 		Session session = sessionFactory.openSession();
@@ -112,12 +112,27 @@ public class AccountsModel {
 			session.close();
 		}
 	}
-	
+
 	public boolean update(Accounts account) {
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		try {
 			session.update(account);
+			transaction.commit();
+			return true;
+		} catch (Exception e) {
+			transaction.rollback();
+			return false;
+		} finally {
+			session.close();
+		}
+	}
+
+	public boolean create(Accounts account) {
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		try {
+			session.save(account);
 			transaction.commit();
 			return true;
 		} catch (Exception e) {

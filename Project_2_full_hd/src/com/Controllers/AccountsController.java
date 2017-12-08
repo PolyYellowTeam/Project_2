@@ -3,6 +3,7 @@ package com.Controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.*;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,11 @@ public class AccountsController {
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String index() {
 		return "login-page";
+	}
+
+	@RequestMapping(value = "admin/create-account", method = RequestMethod.GET)
+	public String createAccount() {
+		return "admin/create-account";
 	}
 
 	@RequestMapping(value = "register", method = RequestMethod.GET)
@@ -134,6 +140,34 @@ public class AccountsController {
 		} else {
 			System.out.println("Fail to update");
 			return "admin/account";
+		}
+	}
+
+	@RequestMapping(value = "admin/createacc", method = RequestMethod.POST)
+	public String createAccount(String username, String password, String role, String status, ModelMap mm,
+			HttpServletRequest request) {
+		username = request.getParameter("username");
+		password = request.getParameter("password");
+		role = request.getParameter("role");
+		status = request.getParameter("status");
+		boolean accrole, accstatus;
+		if (role.equalsIgnoreCase("true")) {
+			accrole = true;
+		} else {
+			accrole = false;
+		}
+		if (status.equalsIgnoreCase("true")) {
+			accstatus = true;
+		} else {
+			accstatus = false;
+		}
+		Accounts account = new Accounts(username, password, accrole, accstatus);
+		AccountsModel createacc = new AccountsModel();
+		if (createacc.create(account) == true) {
+			return "admin/account";
+		} else {
+			mm.put("createmsg", "Lỗi tạo tài khoản");
+			return "admin/create-account";
 		}
 	}
 }
