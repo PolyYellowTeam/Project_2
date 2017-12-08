@@ -1,5 +1,5 @@
 package com.Entities;
-// Generated Dec 8, 2017 3:43:31 AM by Hibernate Tools 5.2.6.Final
+// Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final
 
 import java.io.Serializable;
 import java.util.Date;
