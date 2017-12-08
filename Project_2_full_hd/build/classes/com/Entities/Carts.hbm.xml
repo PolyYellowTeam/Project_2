@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
@@ -46,4 +47,51 @@
    <one-to-many class="com.Entities.CartDetails"/>
   </set>
  </class>
+=======
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="SHOP" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.Entities.Carts" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="Carts">
+        <id name="cartId" type="int">
+            <column name="Cart_Id"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.Entities.Customers" embed-xml="true" fetch="select" insert="true" name="customers" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Customer_id"/>
+        </many-to-one>
+        <many-to-one class="com.Entities.Employees" embed-xml="true" fetch="select" insert="true" name="employees" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Emp_id"/>
+        </many-to-one>
+        <many-to-one class="com.Entities.PaymentMethod" embed-xml="true" fetch="select" insert="true" name="paymentMethod" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="Payment_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="cartDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="23" name="Cart_date" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="cartTotal" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="Cart_total" not-null="true" scale="4"/>
+        </property>
+        <property generated="never" lazy="false" name="shipAddress" optimistic-lock="true" type="string" unique="false">
+            <column name="Ship_address" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="shipDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="23" name="Ship_date" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="cartStatus" optimistic-lock="true" type="int" unique="false">
+            <column name="Cart_status" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="shipStatus" optimistic-lock="true" type="int" unique="false">
+            <column name="Ship_status" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="payStatus" optimistic-lock="true" type="int" unique="false">
+            <column name="Pay_status" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="cartDetailses" optimistic-lock="true" sort="unsorted" table="Cart_Details">
+            <key on-delete="noaction">
+                <column name="Cart_id"/>
+            </key>
+            <one-to-many class="com.Entities.CartDetails" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+>>>>>>> 173dedd0ddc711a96447a0012f581e0f7cb736ec
 </hibernate-mapping>

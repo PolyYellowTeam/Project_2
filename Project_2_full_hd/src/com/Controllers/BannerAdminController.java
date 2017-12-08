@@ -22,7 +22,6 @@ public class BannerAdminController {
 		BannerModel baModel = new BannerModel();
 		
 		List<Banners> listBa = baModel.getDataBanner();
-		
 		model.addAttribute("listBa", listBa);
 		
 		return "admin/QLBAdata";
@@ -30,24 +29,15 @@ public class BannerAdminController {
 	
 	@RequestMapping(value = {"admin/QLBAadd"}, method = RequestMethod.GET)
 	public String QLBAadd(ModelMap model){
-		model.addAttribute("banners", new Banners());
+		model.addAttribute("BA", new Banners());
 		return "admin/QLBAadd";
 	}
 	
 	@RequestMapping(value = {"admin/QLBAadd"}, method = RequestMethod.POST)
-	public String QLBAadd(ModelMap model, @ModelAttribute("banners") Banners banners,
-			@RequestParam("bannerImgUrl") MultipartFile bannerImgUrl){
+	public String QLBAadd(ModelMap model, @ModelAttribute("BA") Banners banners,
+			@RequestParam("bannerImgUrl") MultipartFile anh){
 		
 		return "admin/QLBAadd";
 	}
-	
-	
-	@RequestMapping(value = {"admin/QLBAupdate"}, method = RequestMethod.GET)
-	public String QLBAupdate(ModelMap model){
-		
-		
-		return "admin/QLBAupdate";
-	}
-	
 	
 }

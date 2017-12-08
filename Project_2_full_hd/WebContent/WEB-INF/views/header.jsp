@@ -264,7 +264,7 @@
 						<h3>
 							<div class="total">
 								<!-- <span class="simpleCart_total"></span> --> (<span
-									id="simpleCart_quantity" class="simpleCart_quantity"></span>
+									id="simpleCart_quantity" class="simpleCart_quantity">0</span>
 								Sản phẩm)
 							</div>
 							<img src="images/cart.png" alt="" />

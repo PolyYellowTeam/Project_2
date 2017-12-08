@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Dec 8, 2017 3:43:31 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -19,19 +18,19 @@ import javax.persistence.Table;
 public class Suppliers implements java.io.Serializable {
 
 	private int supplierId;
-	private Serializable supplierName;
+	private String supplierName;
 	private Boolean suStatus;
 	private Set<Products> productses = new HashSet<Products>(0);
 
 	public Suppliers() {
 	}
 
-	public Suppliers(int supplierId, Serializable supplierName) {
+	public Suppliers(int supplierId, String supplierName) {
 		this.supplierId = supplierId;
 		this.supplierName = supplierName;
 	}
 
-	public Suppliers(int supplierId, Serializable supplierName, Boolean suStatus, Set<Products> productses) {
+	public Suppliers(int supplierId, String supplierName, Boolean suStatus, Set<Products> productses) {
 		this.supplierId = supplierId;
 		this.supplierName = supplierName;
 		this.suStatus = suStatus;
@@ -50,11 +49,11 @@ public class Suppliers implements java.io.Serializable {
 	}
 
 	@Column(name = "Supplier_name", nullable = false)
-	public Serializable getSupplierName() {
+	public String getSupplierName() {
 		return this.supplierName;
 	}
 
-	public void setSupplierName(Serializable supplierName) {
+	public void setSupplierName(String supplierName) {
 		this.supplierName = supplierName;
 	}
 

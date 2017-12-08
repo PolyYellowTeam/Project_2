@@ -1,4 +1,5 @@
 <%@ page pageEncoding="utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="breadcumbs">
 	<p>
 		Trang chủ <span>/</span> Quản lý đơn hàng
@@ -27,26 +28,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Nguyễn A</td>
-					<td>1-1-1990</td>
-					<td>Hà Nội</td>
-					<td>0123456789</td>
-					<td>012123981231</td>
-					<td class="functions"><a href="javascript:void(0)"
-						onclick="edit('',500,500);">Sửa</a></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Nguyễn A</td>
-					<td>1-1-1990</td>
-					<td>Hà Nội</td>
-					<td>0123456789</td>
-					<td>012123981231</td>
-					<td class="functions"><a href="javascript:void(0)"
-						onclick="edit('',500,500);">Sửa</a></td>
-				</tr>
+				<c:forEach items="${listCarts}" var="carts">
+					<tr>
+						<td>${carts.cartId}</td>
+						<td>${carts.cartDate}</td>
+						<td>${carts.cartTotal}</td>
+						<td>${carts.shipDate}</td>
+						<td class="functions"><a href="javascript:void(0)"
+							onclick="edit('',500,500);">Sửa</a></td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 		<!--<div class="form">

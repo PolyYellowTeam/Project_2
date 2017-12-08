@@ -172,7 +172,7 @@ IF EXISTS (SELECT * FROM SYSOBJECTS WHERE name = 'Banners') DROP TABLE Banners
 GO
 CREATE TABLE Banners
 (
-Banner_id INT NOT NULL,
+Banner_id INT IDENTITY(1,1),
 Banner_img_url VARCHAR(150) NOT NULL,
 Banner_name VARCHAR(50),
 Sale_off nvarchar(100),

@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Dec 8, 2017 3:43:31 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashSet;
@@ -30,7 +29,7 @@ public class Carts implements java.io.Serializable {
 	private PaymentMethod paymentMethod;
 	private Date cartDate;
 	private BigDecimal cartTotal;
-	private Serializable shipAddress;
+	private String shipAddress;
 	private Date shipDate;
 	private int cartStatus;
 	private int shipStatus;
@@ -40,8 +39,8 @@ public class Carts implements java.io.Serializable {
 	public Carts() {
 	}
 
-	public Carts(int cartId, Date cartDate, BigDecimal cartTotal, Serializable shipAddress, Date shipDate,
-			int cartStatus, int shipStatus, int payStatus) {
+	public Carts(int cartId, Date cartDate, BigDecimal cartTotal, String shipAddress, Date shipDate, int cartStatus,
+			int shipStatus, int payStatus) {
 		this.cartId = cartId;
 		this.cartDate = cartDate;
 		this.cartTotal = cartTotal;
@@ -53,8 +52,8 @@ public class Carts implements java.io.Serializable {
 	}
 
 	public Carts(int cartId, Customers customers, Employees employees, PaymentMethod paymentMethod, Date cartDate,
-			BigDecimal cartTotal, Serializable shipAddress, Date shipDate, int cartStatus, int shipStatus,
-			int payStatus, Set<CartDetails> cartDetailses) {
+			BigDecimal cartTotal, String shipAddress, Date shipDate, int cartStatus, int shipStatus, int payStatus,
+			Set<CartDetails> cartDetailses) {
 		this.cartId = cartId;
 		this.customers = customers;
 		this.employees = employees;
@@ -130,11 +129,11 @@ public class Carts implements java.io.Serializable {
 	}
 
 	@Column(name = "Ship_address", nullable = false)
-	public Serializable getShipAddress() {
+	public String getShipAddress() {
 		return this.shipAddress;
 	}
 
-	public void setShipAddress(Serializable shipAddress) {
+	public void setShipAddress(String shipAddress) {
 		this.shipAddress = shipAddress;
 	}
 

@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Dec 8, 2017 3:43:31 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,11 +23,11 @@ public class Products implements java.io.Serializable {
 	private String productId;
 	private Categories categories;
 	private Suppliers suppliers;
-	private Serializable productName;
+	private String productName;
 	private String pictureId;
 	private int quantity;
 	private BigDecimal price;
-	private Serializable describe;
+	private String describe;
 	private Integer discount;
 	private Boolean prStatus;
 	private Set<Pictures> pictureses = new HashSet<Pictures>(0);
@@ -37,8 +36,8 @@ public class Products implements java.io.Serializable {
 	public Products() {
 	}
 
-	public Products(String productId, Categories categories, Suppliers suppliers, Serializable productName,
-			String pictureId, int quantity) {
+	public Products(String productId, Categories categories, Suppliers suppliers, String productName, String pictureId,
+			int quantity) {
 		this.productId = productId;
 		this.categories = categories;
 		this.suppliers = suppliers;
@@ -47,8 +46,8 @@ public class Products implements java.io.Serializable {
 		this.quantity = quantity;
 	}
 
-	public Products(String productId, Categories categories, Suppliers suppliers, Serializable productName,
-			String pictureId, int quantity, BigDecimal price, Serializable describe, Integer discount, Boolean prStatus,
+	public Products(String productId, Categories categories, Suppliers suppliers, String productName, String pictureId,
+			int quantity, BigDecimal price, String describe, Integer discount, Boolean prStatus,
 			Set<Pictures> pictureses, Set<CartDetails> cartDetailses) {
 		this.productId = productId;
 		this.categories = categories;
@@ -96,11 +95,11 @@ public class Products implements java.io.Serializable {
 	}
 
 	@Column(name = "Product_name", nullable = false)
-	public Serializable getProductName() {
+	public String getProductName() {
 		return this.productName;
 	}
 
-	public void setProductName(Serializable productName) {
+	public void setProductName(String productName) {
 		this.productName = productName;
 	}
 
@@ -132,11 +131,11 @@ public class Products implements java.io.Serializable {
 	}
 
 	@Column(name = "Describe")
-	public Serializable getDescribe() {
+	public String getDescribe() {
 		return this.describe;
 	}
 
-	public void setDescribe(Serializable describe) {
+	public void setDescribe(String describe) {
 		this.describe = describe;
 	}
 

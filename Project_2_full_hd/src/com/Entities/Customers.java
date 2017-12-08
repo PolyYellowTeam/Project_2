@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Dec 8, 2017 3:43:31 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,18 +25,18 @@ public class Customers implements java.io.Serializable {
 
 	private int customerId;
 	private Accounts accounts;
-	private Serializable customerName;
+	private String customerName;
 	private boolean gender;
 	private Date birthday;
 	private String email;
 	private Integer phone;
-	private Serializable customerAddress;
+	private String customerAddress;
 	private Set<Carts> cartses = new HashSet<Carts>(0);
 
 	public Customers() {
 	}
 
-	public Customers(int customerId, Accounts accounts, Serializable customerName, boolean gender, String email) {
+	public Customers(int customerId, Accounts accounts, String customerName, boolean gender, String email) {
 		this.customerId = customerId;
 		this.accounts = accounts;
 		this.customerName = customerName;
@@ -45,8 +44,8 @@ public class Customers implements java.io.Serializable {
 		this.email = email;
 	}
 
-	public Customers(int customerId, Accounts accounts, Serializable customerName, boolean gender, Date birthday,
-			String email, Integer phone, Serializable customerAddress, Set<Carts> cartses) {
+	public Customers(int customerId, Accounts accounts, String customerName, boolean gender, Date birthday,
+			String email, Integer phone, String customerAddress, Set<Carts> cartses) {
 		this.customerId = customerId;
 		this.accounts = accounts;
 		this.customerName = customerName;
@@ -80,11 +79,11 @@ public class Customers implements java.io.Serializable {
 	}
 
 	@Column(name = "Customer_name", nullable = false)
-	public Serializable getCustomerName() {
+	public String getCustomerName() {
 		return this.customerName;
 	}
 
-	public void setCustomerName(Serializable customerName) {
+	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
 
@@ -126,11 +125,11 @@ public class Customers implements java.io.Serializable {
 	}
 
 	@Column(name = "Customer_Address")
-	public Serializable getCustomerAddress() {
+	public String getCustomerAddress() {
 		return this.customerAddress;
 	}
 
-	public void setCustomerAddress(Serializable customerAddress) {
+	public void setCustomerAddress(String customerAddress) {
 		this.customerAddress = customerAddress;
 	}
 
