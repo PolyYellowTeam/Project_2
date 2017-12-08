@@ -46,11 +46,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	$(document).ready(function() {
 		$(".megamenu").megamenu();
 	});
-</script>
-
-<script src="${pageContext.request.contextPath}/js/cart.min.js">
-	
-</script>
+</script>	
+<script src="${pageContext.request.contextPath}/js/cart.min.js"></script>
 </head>
 <body>
 	<!-- header -->

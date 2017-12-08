@@ -42,4 +42,11 @@ public class CartModels {
 			session.close();
 		}
 	}
+	
+	public boolean addProductToCart(int prId,String username) {
+		sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		return true;
+	}
 }
