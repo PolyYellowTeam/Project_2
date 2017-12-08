@@ -25,6 +25,11 @@ public class AdminCartsController {
 	public String index(ModelMap model) {
 		List<Carts> listCarts = new CartModels().getAllCarts();
 		model.addAttribute("listCarts",listCarts);
+		for (Carts carts : listCarts) {
+			System.out.println(carts.getEmployees());
+		}
 		return "admin/quan-ly-don-hang";
 	}
+	
+	
 }
