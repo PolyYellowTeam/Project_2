@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
 <div class="breadcumbs">
 	<p>
 		Home <span>/</span> Banner data
@@ -13,36 +13,35 @@
 	</div>
 	<div class="content">
 		<a style="margin-left: 15px;" href="QLBAdata">Back</a>
-		<form:form action="admin/QLBAadd" modelAttribute="BA" method="post"
-			enctype="multipart/form-data">
+		<s:form method="post" action="${pageContext.request.contextPath}/admin/QLBAdata/addBA" modelAttribute="BA" enctype="multipart/form-data">
 			<div>
 				<label>Location</label>
-				<form:input path="bannerId" />
+				<s:input path="bannerId"/>
 			</div>
 			<div>
 				<label>Banner name</label>
-				<form:input path="bannerName" />
+				<s:input path="bannerName"/>
 			</div>
 			<div>
 				<label>Sale off</label>
-				<form:input path="sale_off" />
+				<s:input path="sale_off"/>
 			</div>
 			<div>
 				<label>Price</label>
-				<form:input path="banner_price" />
+				<s:input path="banner_price"/>
 			</div>
 			<div>
 				<label>Banner content</label>
-				<form:input path="banner_content" />
+				<s:input path="banner_content"/>
 			</div>
 			<div>
-				<label>Url Image</label> <input type="file" name="bannerImgUrl">
+				<label>Location</label>
+				<input style="background: yellow; margin-left: 40px; " type="file" name="bannerImgUrl" />
 			</div>
-			<label>Lỗi</label>
+			<label>${message }</label>
 			<div>
-				<button class="btn" name="cancel">Cancel</button>
-				<button class="btn" name="insert">Insert</button>
+				<button name="insert">Insert</button>
 			</div>
-		</form:form>
+		</s:form>
 	</div>
 </div>

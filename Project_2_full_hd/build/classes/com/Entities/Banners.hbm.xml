@@ -7,7 +7,7 @@
             <generator class="assigned"/>
         </id>
         <property generated="never" lazy="false" name="bannerImgUrl" optimistic-lock="true" type="string" unique="false">
-            <column length="150" name="Banner_img_url" not-null="true"/>
+            <column length="150" name="Banner_img_url"/>
         </property>
         <property generated="never" lazy="false" name="bannerName" optimistic-lock="true" type="string" unique="false">
             <column length="50" name="Banner_name"/>

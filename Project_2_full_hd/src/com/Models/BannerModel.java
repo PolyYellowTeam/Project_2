@@ -20,7 +20,8 @@ public class BannerModel {
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Transactional
+	private Session session;
+	private Transaction transaction;
 	
 	
 	public List<Banners> getDataBanner(){
@@ -28,7 +29,7 @@ public class BannerModel {
 		
 		sessionFactory = new Configuration().configure().buildSessionFactory();
 		
-		Session session = sessionFactory.openSession();
+		session = sessionFactory.openSession();
 		
 		try{
 			String hql = "FROM Banners";
@@ -44,16 +45,31 @@ public class BannerModel {
 		}
 	}
 	
+	public boolean addBanner(Banners banners){
+		session = sessionFactory.openSession();
+		transaction = session.beginTransaction();
+		try {
+			session.save(banners);
+			transaction.commit();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			session.close();
+		}
+	}
+	
 	public boolean changeBanner(Banners banners){
-		Session session = sessionFactory.openSession();
-		Transaction transaction = session.beginTransaction();
+		session = sessionFactory.openSession();
+		transaction = session.beginTransaction();
 		try {
 			session.update(banners);
 			transaction.commit();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return true;
+			return false;
 		} finally {
 			session.close();
 		}

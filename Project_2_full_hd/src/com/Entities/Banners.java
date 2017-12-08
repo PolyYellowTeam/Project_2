@@ -49,7 +49,7 @@ public class Banners implements java.io.Serializable {
 		this.bannerId = bannerId;
 	}
 
-	@Column(name = "Banner_img_url", nullable = false, length = 150)
+	@Column(name = "Banner_img_url", length = 150)
 	public String getBannerImgUrl() {
 		return this.bannerImgUrl;
 	}
@@ -67,7 +67,7 @@ public class Banners implements java.io.Serializable {
 		this.bannerName = bannerName;
 	}
 
-	@Column(name = "Banner_content")
+	@Column(name = "Banner_content", length = 500)
 	public String getbanner_content() {
 		return this.banner_content;
 	}
@@ -76,22 +76,17 @@ public class Banners implements java.io.Serializable {
 		this.banner_content = banner_content;
 	}
 
-	/**
-	 * @return the sale_off
-	 */
-	@Column(name = "Sale_off")
+
+	@Column(name = "Sale_off", length = 100)
 	public String getSale_off() {
 		return sale_off;
 	}
 
-	/**
-	 * @param sale_off the sale_off to set
-	 */
 	public void setSale_off(String sale_off) {
 		this.sale_off = sale_off;
 	}
 
-	@Column(name = "Banner_price")
+	@Column(name = "Banner_price", length = 50)
 	public String getBanner_price() {
 		return this.banner_price;
 	}
