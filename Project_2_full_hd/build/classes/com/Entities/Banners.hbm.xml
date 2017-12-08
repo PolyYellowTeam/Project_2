@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated Dec 8, 2017 3:43:31 AM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="SHOP" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.Entities.Banners" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="Banners">
         <id name="bannerId" type="int">
@@ -12,14 +12,14 @@
         <property generated="never" lazy="false" name="bannerName" optimistic-lock="true" type="string" unique="false">
             <column length="50" name="Banner_name"/>
         </property>
-        <property generated="never" lazy="false" name="saleOff" optimistic-lock="true" type="serializable" unique="false">
-            <column name="Sale_off"/>
+        <property generated="never" lazy="false" name="Sale_off" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="Sale_off"/>
         </property>
-        <property generated="never" lazy="false" name="bannerContent" optimistic-lock="true" type="serializable" unique="false">
-            <column name="Banner_content"/>
+        <property generated="never" lazy="false" name="Banner_content" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="Banner_content"/>
         </property>
-        <property generated="never" lazy="false" name="bannerPrice" optimistic-lock="true" type="serializable" unique="false">
-            <column name="Banner_price"/>
+        <property generated="never" lazy="false" name="Banner_price" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="Banner_price"/>
         </property>
     </class>
 </hibernate-mapping>

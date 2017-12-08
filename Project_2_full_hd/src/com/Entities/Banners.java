@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Dec 8, 2017 3:43:31 AM by Hibernate Tools 5.2.6.Final
+// Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,10 +16,10 @@ public class Banners implements java.io.Serializable {
 	private int bannerId;
 	private String bannerImgUrl;
 	private String bannerName;
-	private Serializable saleOff;
-	private Serializable bannerContent;
-	private Serializable bannerPrice;
-
+	private String sale_off;
+	private String banner_content;
+	private String banner_price;
+	
 	public Banners() {
 	}
 
@@ -29,14 +28,13 @@ public class Banners implements java.io.Serializable {
 		this.bannerImgUrl = bannerImgUrl;
 	}
 
-	public Banners(int bannerId, String bannerImgUrl, String bannerName, Serializable saleOff,
-			Serializable bannerContent, Serializable bannerPrice) {
+	public Banners(int bannerId, String bannerImgUrl, String bannerName, String sale_off, String banner_content, String banner_price) {
 		this.bannerId = bannerId;
 		this.bannerImgUrl = bannerImgUrl;
 		this.bannerName = bannerName;
-		this.saleOff = saleOff;
-		this.bannerContent = bannerContent;
-		this.bannerPrice = bannerPrice;
+		this.sale_off = sale_off;
+		this.banner_content = banner_content;
+		this.banner_price = banner_price;
 	}
 
 	@Id
@@ -67,32 +65,32 @@ public class Banners implements java.io.Serializable {
 	public void setBannerName(String bannerName) {
 		this.bannerName = bannerName;
 	}
-
-	@Column(name = "Sale_off")
-	public Serializable getSaleOff() {
-		return this.saleOff;
+	
+	@Column(name = "Sale_off", length = 100)
+	public String getSale_off() {
+		return this.sale_off;
 	}
 
-	public void setSaleOff(Serializable saleOff) {
-		this.saleOff = saleOff;
+	public void setSale_off(String sale_off) {
+		this.sale_off = sale_off;
+	}
+	
+	@Column(name = "Banner_content", length = 500)
+	public String getBanner_content() {
+		return this.banner_content;
 	}
 
-	@Column(name = "Banner_content")
-	public Serializable getBannerContent() {
-		return this.bannerContent;
+	public void setBanner_content(String banner_content) {
+		this.banner_content = banner_content;
+	}
+	
+	@Column(name = "Banner_price", length = 500)
+	public String getBanner_price() {
+		return this.banner_price;
 	}
 
-	public void setBannerContent(Serializable bannerContent) {
-		this.bannerContent = bannerContent;
-	}
-
-	@Column(name = "Banner_price")
-	public Serializable getBannerPrice() {
-		return this.bannerPrice;
-	}
-
-	public void setBannerPrice(Serializable bannerPrice) {
-		this.bannerPrice = bannerPrice;
+	public void setBanner_price(String banner_price) {
+		this.banner_price = banner_price;
 	}
 
 }
