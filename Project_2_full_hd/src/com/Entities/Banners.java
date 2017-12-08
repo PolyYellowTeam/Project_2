@@ -1,5 +1,5 @@
 package com.Entities;
-// Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +19,7 @@ public class Banners implements java.io.Serializable {
 	private String sale_off;
 	private String banner_content;
 	private String banner_price;
-	
+
 	public Banners() {
 	}
 
@@ -28,7 +28,8 @@ public class Banners implements java.io.Serializable {
 		this.bannerImgUrl = bannerImgUrl;
 	}
 
-	public Banners(int bannerId, String bannerImgUrl, String bannerName, String sale_off, String banner_content, String banner_price) {
+	public Banners(int bannerId, String bannerImgUrl, String bannerName, String sale_off, String banner_content,
+			String banner_price) {
 		this.bannerId = bannerId;
 		this.bannerImgUrl = bannerImgUrl;
 		this.bannerName = bannerName;
@@ -65,26 +66,32 @@ public class Banners implements java.io.Serializable {
 	public void setBannerName(String bannerName) {
 		this.bannerName = bannerName;
 	}
-	
-	@Column(name = "Sale_off", length = 100)
-	public String getSale_off() {
-		return this.sale_off;
-	}
 
-	public void setSale_off(String sale_off) {
-		this.sale_off = sale_off;
-	}
-	
-	@Column(name = "Banner_content", length = 500)
-	public String getBanner_content() {
+	@Column(name = "Banner_content")
+	public String getbanner_content() {
 		return this.banner_content;
 	}
-
+	
 	public void setBanner_content(String banner_content) {
 		this.banner_content = banner_content;
 	}
-	
-	@Column(name = "Banner_price", length = 500)
+
+	/**
+	 * @return the sale_off
+	 */
+	@Column(name = "Sale_off")
+	public String getSale_off() {
+		return sale_off;
+	}
+
+	/**
+	 * @param sale_off the sale_off to set
+	 */
+	public void setSale_off(String sale_off) {
+		this.sale_off = sale_off;
+	}
+
+	@Column(name = "Banner_price")
 	public String getBanner_price() {
 		return this.banner_price;
 	}

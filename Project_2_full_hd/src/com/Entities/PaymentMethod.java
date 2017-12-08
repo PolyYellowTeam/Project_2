@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -19,22 +18,22 @@ import javax.persistence.Table;
 public class PaymentMethod implements java.io.Serializable {
 
 	private int paymentId;
-	private Serializable paymentName;
-	private Serializable paymentSupplier;
-	private Serializable paymentDescription;
+	private String paymentName;
+	private String paymentSupplier;
+	private String paymentDescription;
 	private Set<Carts> cartses = new HashSet<Carts>(0);
 
 	public PaymentMethod() {
 	}
 
-	public PaymentMethod(int paymentId, Serializable paymentName, Serializable paymentSupplier) {
+	public PaymentMethod(int paymentId, String paymentName, String paymentSupplier) {
 		this.paymentId = paymentId;
 		this.paymentName = paymentName;
 		this.paymentSupplier = paymentSupplier;
 	}
 
-	public PaymentMethod(int paymentId, Serializable paymentName, Serializable paymentSupplier,
-			Serializable paymentDescription, Set<Carts> cartses) {
+	public PaymentMethod(int paymentId, String paymentName, String paymentSupplier, String paymentDescription,
+			Set<Carts> cartses) {
 		this.paymentId = paymentId;
 		this.paymentName = paymentName;
 		this.paymentSupplier = paymentSupplier;
@@ -54,29 +53,29 @@ public class PaymentMethod implements java.io.Serializable {
 	}
 
 	@Column(name = "Payment_name", nullable = false)
-	public Serializable getPaymentName() {
+	public String getPaymentName() {
 		return this.paymentName;
 	}
 
-	public void setPaymentName(Serializable paymentName) {
+	public void setPaymentName(String paymentName) {
 		this.paymentName = paymentName;
 	}
 
 	@Column(name = "Payment_supplier", nullable = false)
-	public Serializable getPaymentSupplier() {
+	public String getPaymentSupplier() {
 		return this.paymentSupplier;
 	}
 
-	public void setPaymentSupplier(Serializable paymentSupplier) {
+	public void setPaymentSupplier(String paymentSupplier) {
 		this.paymentSupplier = paymentSupplier;
 	}
 
 	@Column(name = "Payment_description")
-	public Serializable getPaymentDescription() {
+	public String getPaymentDescription() {
 		return this.paymentDescription;
 	}
 
-	public void setPaymentDescription(Serializable paymentDescription) {
+	public void setPaymentDescription(String paymentDescription) {
 		this.paymentDescription = paymentDescription;
 	}
 

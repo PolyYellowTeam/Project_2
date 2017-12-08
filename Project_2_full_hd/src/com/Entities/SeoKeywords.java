@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,12 +14,12 @@ import javax.persistence.Table;
 public class SeoKeywords implements java.io.Serializable {
 
 	private int keywordId;
-	private Serializable keyword;
+	private String keyword;
 
 	public SeoKeywords() {
 	}
 
-	public SeoKeywords(int keywordId, Serializable keyword) {
+	public SeoKeywords(int keywordId, String keyword) {
 		this.keywordId = keywordId;
 		this.keyword = keyword;
 	}
@@ -37,11 +36,11 @@ public class SeoKeywords implements java.io.Serializable {
 	}
 
 	@Column(name = "Keyword", nullable = false)
-	public Serializable getKeyword() {
+	public String getKeyword() {
 		return this.keyword;
 	}
 
-	public void setKeyword(Serializable keyword) {
+	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
 

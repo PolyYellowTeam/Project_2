@@ -8,30 +8,33 @@ package com.Models;
 
 import java.util.*;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.Entities.Carts;
 
 import hibernate.util.HibernateUtil;
 
 public class CartModels {
-	private static final SessionFactory sessionFactory = HibernateUtil.openSession().getSessionFactory();
+	@Autowired
+	SessionFactory sessionFactory;
+	
+	@Transactional
 	
 	public List<Carts> getAllCarts(){
 		List<Carts> data = new ArrayList<Carts>();
+		sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
-//		Transaction transaction = session.beginTransaction();
 		try {
-			String hql = "SELECT * FROM Carts";
+			String hql = "FROM Carts";
 			Query query = session.createQuery(hql);
-			System.out.println(query);
 			data = query.list();
-//			for (Carts carts : data) {
-				System.out.println(data);
-//			}
 			return data;
 		} catch (Exception e) {
 			return null;

@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -23,10 +22,10 @@ public class Employees implements java.io.Serializable {
 
 	private int empId;
 	private Accounts accounts;
-	private Serializable fullname;
-	private Serializable gender;
-	private Serializable homeAddress;
-	private Serializable email;
+	private String fullname;
+	private String gender;
+	private String homeAddress;
+	private String email;
 	private String phone;
 	private Integer roles;
 	private boolean status;
@@ -35,15 +34,15 @@ public class Employees implements java.io.Serializable {
 	public Employees() {
 	}
 
-	public Employees(int empId, Accounts accounts, Serializable fullname, boolean status) {
+	public Employees(int empId, Accounts accounts, String fullname, boolean status) {
 		this.empId = empId;
 		this.accounts = accounts;
 		this.fullname = fullname;
 		this.status = status;
 	}
 
-	public Employees(int empId, Accounts accounts, Serializable fullname, Serializable gender, Serializable homeAddress,
-			Serializable email, String phone, Integer roles, boolean status, Set<Carts> cartses) {
+	public Employees(int empId, Accounts accounts, String fullname, String gender, String homeAddress, String email,
+			String phone, Integer roles, boolean status, Set<Carts> cartses) {
 		this.empId = empId;
 		this.accounts = accounts;
 		this.fullname = fullname;
@@ -78,38 +77,38 @@ public class Employees implements java.io.Serializable {
 	}
 
 	@Column(name = "Fullname", nullable = false)
-	public Serializable getFullname() {
+	public String getFullname() {
 		return this.fullname;
 	}
 
-	public void setFullname(Serializable fullname) {
+	public void setFullname(String fullname) {
 		this.fullname = fullname;
 	}
 
 	@Column(name = "Gender")
-	public Serializable getGender() {
+	public String getGender() {
 		return this.gender;
 	}
 
-	public void setGender(Serializable gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
 	@Column(name = "Home_address")
-	public Serializable getHomeAddress() {
+	public String getHomeAddress() {
 		return this.homeAddress;
 	}
 
-	public void setHomeAddress(Serializable homeAddress) {
+	public void setHomeAddress(String homeAddress) {
 		this.homeAddress = homeAddress;
 	}
 
 	@Column(name = "Email")
-	public Serializable getEmail() {
+	public String getEmail() {
 		return this.email;
 	}
 
-	public void setEmail(Serializable email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 

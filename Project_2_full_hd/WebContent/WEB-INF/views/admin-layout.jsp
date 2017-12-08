@@ -27,22 +27,14 @@
 				<ul>
 					<li class="dropdown-menu"><a href="javascript:void(0)">Menu 1 (dropdown)</a>
 						<ul class="submenu">
-							<li><a href="javascript:void(0)">Trung tâm hệ thống thông tin</a></li>
-							<li><a href="javascript:void(0)">Submenu 1.2</a></li>
-							<li><a href="javascript:void(0)">Submenu 1.3</a></li>
+							<li><a href="${pageContext.request.contextPath}/admin/quan-ly-don-hang">Quản lý đơn hàng</a></li>
 						</ul>
 					</li>
 					<li><a href="javascript:void(0)">Menu 2 (static)</a>
 						<ul>
 							<li><a href="javascript:void(0)">Submenu 2.1</a></li>
-							<li><a href="javascript:void(0)">Submenu 2.2</a></li>
-							<li><a href="javascript:void(0)">Submenu 2.3</a></li>
 						</ul>
 					</li>
-					<li><a href="javascript:void(0)">Menu 3</a></li>
-					<li><a href="javascript:void(0)">Menu 4</a></li>
-					<li><a href="javascript:void(0)">Menu 5</a></li>
-					<li><a href="javascript:void(0)">Menu 6</a></li>
 					<li><a href="QLBAdata">Quản lý banner</a></li>
 				</ul>
 			</div>

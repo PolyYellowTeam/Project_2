@@ -14,7 +14,7 @@ import com.Models.BannerModel;
 @Controller
 public class BannerAdminController {
 
-	@RequestMapping(value = {"admin/QLBA"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"admin/QLBAdata"}, method = RequestMethod.GET)
 	public String banner(ModelMap model){
 		BannerModel baModel = new BannerModel();
 		

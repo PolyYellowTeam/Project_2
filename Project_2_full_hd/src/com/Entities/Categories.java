@@ -1,7 +1,6 @@
 package com.Entities;
-// Generated Nov 30, 2017 5:46:37 AM by Hibernate Tools 5.2.6.Final
+// Generated Dec 8, 2017 11:00:44 AM by Hibernate Tools 5.2.6.Final
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -22,20 +21,20 @@ public class Categories implements java.io.Serializable {
 
 	private String categoryId;
 	private Catalogs catalogs;
-	private Serializable categoryName;
+	private String categoryName;
 	private Boolean caStatus;
 	private Set<Products> productses = new HashSet<Products>(0);
 
 	public Categories() {
 	}
 
-	public Categories(String categoryId, Catalogs catalogs, Serializable categoryName) {
+	public Categories(String categoryId, Catalogs catalogs, String categoryName) {
 		this.categoryId = categoryId;
 		this.catalogs = catalogs;
 		this.categoryName = categoryName;
 	}
 
-	public Categories(String categoryId, Catalogs catalogs, Serializable categoryName, Boolean caStatus,
+	public Categories(String categoryId, Catalogs catalogs, String categoryName, Boolean caStatus,
 			Set<Products> productses) {
 		this.categoryId = categoryId;
 		this.catalogs = catalogs;
@@ -66,11 +65,11 @@ public class Categories implements java.io.Serializable {
 	}
 
 	@Column(name = "Category_name", nullable = false)
-	public Serializable getCategoryName() {
+	public String getCategoryName() {
 		return this.categoryName;
 	}
 
-	public void setCategoryName(Serializable categoryName) {
+	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
 
