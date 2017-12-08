@@ -58,8 +58,10 @@ public class AccountsController {
 		if (check.login(username, password) == true) {
 			if (check.isAdmin(username, password) == true) {
 				session.setAttribute("user", username);
-				return "admin-page";
+				session.setAttribute("role", "admin");
+				return "admin/index";
 			} else {
+				session.setAttribute("role", "user");
 				session.setAttribute("user", username);
 				return "user/index";
 			}
