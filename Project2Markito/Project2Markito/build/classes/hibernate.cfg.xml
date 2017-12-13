@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="SessionFactory">
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.password">123456</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=Markito</property>
+		<property name="hibernate.connection.username">minhmac</property>
+		<property name="hibernate.default_schema">dbo</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<mapping class="com.Entities.Categories" />
+		<mapping class="com.Entities.CartDetails" />
+		<mapping class="com.Entities.Suppliers" />
+		<mapping class="com.Entities.Carts" />		
+		<mapping class="com.Entities.Catalogs" />
+		<mapping class="com.Entities.Customers" />
+		<mapping class="com.Entities.Products" />
+		<mapping class="com.Entities.Banners" />
+		<mapping class="com.Entities.Employees" />
+		<mapping class="com.Entities.PaymentMethod" />
+		<mapping class="com.Entities.Accounts" />
+		<mapping class="com.Entities.SeoKeywords" />
+		<mapping class="com.Entities.Hotkeys" />
+	</session-factory>
+</hibernate-configuration>
