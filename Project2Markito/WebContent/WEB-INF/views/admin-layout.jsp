@@ -90,7 +90,8 @@
 <!--main-container-part-->
 <jsp:include page="admin/${param.view}" />
 <!--end-main-container-part-->
-
+	<span hidden id="context-path">${pageContext.request.contextPath}</span>
+	<span hidden id="site-url"></span>
 <script src="${pageContext.request.contextPath}/static/js/excanvas.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.ui.custom.js"></script>
@@ -112,7 +113,7 @@
 <script src="${pageContext.request.contextPath}/static/js/jquery.dataTables.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/matrix.tables.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/admin/functions.js"></script>
-
+<script src="${pageContext.request.contextPath}/js/main.js"></script>
 <script type="text/javascript">
     // This function is called from the pop-up menus to transfer to
     // a different page. Ignore if the value returned is a null string:

@@ -121,7 +121,7 @@
 							<li>Total <span>$61</span></li>
 						</ul>
 						<!-- <a class="btn btn-default update" href="">Update</a> --> 
-						<a class="btn btn-default check_out" href="${pageContext.request.contextPath}/Carts/confirmCheckOut">Xác nhận</a>
+						<a class="btn btn-default check_out" href="${pageContext.request.contextPath}/Carts?confirmCheckOut">Xác nhận</a>
 					</div>
 				</div>
 			</div>

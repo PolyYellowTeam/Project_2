@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.jasper.tagplugins.jstl.core.Remove;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 import com.Entities.*;
 import com.Models.CartModels;
+import com.bean.BaseClass;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -29,7 +31,7 @@ import java.util.*;
 @Controller
 @RequestMapping(value = "Carts")
 public class CartControllers {
-
+	
 	// Thêm sản phẩm vào giỏ
 	@SuppressWarnings("unchecked")
 	@RequestMapping(params = "AddToCart")
@@ -194,13 +196,11 @@ public class CartControllers {
 	}
 
 	@RequestMapping(params = "confirmCheckOut")
-	public String ConfirmCheckOut(HttpSession session, HttpServletRequest request) {
+	public String ConfirmCheckOut(HttpSession session,HttpServletRequest request) {
 		if (session.getAttribute("user") == null) {
-			String path = request.getContextPath();
-			return "redirect:../login";
+			return "redirect:"+BaseClass.getRootUrl(request)+"/login";
 		} else if (session.getAttribute("cart") == null) {
-			String path = request.getContextPath();
-			return "redirect:../login";
+			return "redirect:"+BaseClass.getRootUrl(request)+"/";
 		} else {
 			boolean CartDetails = new CartModels().checkOut(session.getAttribute("user").toString(),
 					(List<Products>) session.getAttribute("cart"));

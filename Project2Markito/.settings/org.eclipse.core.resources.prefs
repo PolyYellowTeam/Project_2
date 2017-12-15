@@ -2,7 +2,6 @@ eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/views/admin-layout.jsp=UTF-8
 encoding//src/com/Controllers/AccountsController.java=UTF-8
 encoding//src/com/Controllers/CartControllers.java=UTF-8
-encoding//src/com/Controllers/SearchController.java=UTF-8
 encoding//src/com/Entities/SeoKeywords.java=UTF-8
 encoding//src/com/Models/AccountInfor.java=UTF-8
 encoding//src/com/Models/CartModels.java=UTF-8
