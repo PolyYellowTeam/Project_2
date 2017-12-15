@@ -119,8 +119,8 @@ $(document).ready(function() {
 				switch(result.Status){
 					case 'true':
 						alert(result.Msg);
-						$('#current-cart').remove();
-						$('#checkedCart' ).load(window.location.href + '#checkedCart tbody' );
+						$('html').load(document.URL);
+						
 						break;
 					case 'false':
 						alert(result.Msg);

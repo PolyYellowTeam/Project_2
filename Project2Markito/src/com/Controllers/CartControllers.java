@@ -208,6 +208,7 @@ public class CartControllers {
 			boolean CartDetails = new CartModels().checkOut(session.getAttribute("user").toString(),
 					(List<Products>) session.getAttribute("cart"));
 			List<Products> cart = new ArrayList<Products>();
+			session.removeValue("cart");
 			session.setAttribute("cart", cart);
 			return "{\"Msg\":\"Bạn đã đặt hàng thành công\","
 			+ "\"Status\":\"true\"}";
