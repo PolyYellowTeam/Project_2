@@ -1,7 +1,7 @@
 function addToCart(productid) {
 	$.ajax({
 	url:
-		$('#site-url').val()+'/Carts/AddToCart?idProduct='+productid,
+		getUrlByTuan()+'/Carts/AddToCart?idProduct='+productid,
 	type: 'POST',
 	cache: false,
 	dataType: 'text',
@@ -23,9 +23,9 @@ function quantityUpdate (productid,action,quantity) {
 	if(productid){
 		if(action){
 			if(!quantity){
-				url = $('#site-url').val()+'/Carts/QuantityUpdate?idProduct='+productid+'&action='+action+'&quantity=';
+				url = getUrlByTuan()+'/Carts/QuantityUpdate?idProduct='+productid+'&action='+action+'&quantity=';
 			}else{
-				url = $('#site-url').val()+'/Carts/QuantityUpdate?idProduct='+productid+'&action='+action+'&quantity='+quantity;
+				url = getUrlByTuan()+'/Carts/QuantityUpdate?idProduct='+productid+'&action='+action+'&quantity='+quantity;
 			}
 		}
 	}
@@ -66,7 +66,7 @@ function setValueToUpdate (productid) {
 $(document).ready(function() {
 	$('#payment-href').on('click', function() {
 		$.ajax({
-			url:$('#site-url').val()+'/Project2Markito/Carts/paymentCheck',
+			url:getUrlByTuan()+'/Project2Markito/Carts/paymentCheck',
 			type: 'POST',
 			dataType: 'text',
 			cache: false,
