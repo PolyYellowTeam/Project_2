@@ -61,7 +61,6 @@ INSERT INTO Categories VALUES('cate48',N'Găng tay, tất, bịp tai','cas_05',1
 INSERT INTO Categories VALUES('cate49',N'Vòng tay','cas_05',1)
 INSERT INTO Categories VALUES('cate50',N'Đồng hồ thời trang','cas_05',1)
 
-Select * from Suppliers
 delete from Suppliers
 
 INSERT INTO Suppliers VALUES('Armani',1)
@@ -81,8 +80,6 @@ INSERT INTO Suppliers VALUES('Forever 21',1)
 INSERT INTO Suppliers VALUES('Topshop',1)
 INSERT INTO Suppliers VALUES('Mango',1)
 Delete from Products
-
-
 INSERT INTO Products VALUES('pr01',N'Áo da nam cao cấp AD-383','cate06',2,20,500000,'images/sanpham/aonam_01.jpg','images/sanpham/aonam_01.jpg','images/sanpham/aonam_01.jpg','Áo da của H2T là một món đồ thực sự giúp phái mạnh “ghi điểm” trước các chị em phụ nữ dù ở bất cứ khi nào. Cùng điểm qua mẫu áo da nam mới nhất nhé!',0,1)
 INSERT INTO Products VALUES('pr02',N'Áo da nam cao cấp AD-383','cate06',2,20,555000,'images/sanpham/aonam_01.jpg','images/sanpham/aonam_01.jpg','images/sanpham/aonam_01.jpg','Áo da của H2T là một món đồ thực sự giúp phái mạnh “ghi điểm” trước các chị em phụ nữ dù ở bất cứ khi nào. Cùng điểm qua mẫu áo da nam mới nhất nhé!',0,1)
 INSERT INTO Products VALUES('pr03',N'Áo da nam cao cấp AD-383','cate06',2,20,500000,'images/sanpham/aonam_01.jpg','images/sanpham/aonam_01.jpg','images/sanpham/aonam_01.jpg','Áo da của H2T là một món đồ thực sự giúp phái mạnh “ghi điểm” trước các chị em phụ nữ dù ở bất cứ khi nào. Cùng điểm qua mẫu áo da nam mới nhất nhé!',0,1)
@@ -113,11 +110,6 @@ INSERT INTO Products VALUES('pr25',N'Áo da nam cao cấp AD-383','cate06',2,20,
 
 
 
-INSERT INTO HotKeys VALUES('quan')
-INSERT INTO HotKeys VALUES('ao')
-INSERT INTO HotKeys VALUES('dep')
-INSERT INTO HotKeys VALUES('quan jeans')
-INSERT INTO HotKeys VALUES('ao khoac')
 
 
 
