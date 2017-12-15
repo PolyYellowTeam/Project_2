@@ -17,8 +17,7 @@
 							<td class="image">Mã đơn hàng</td>
 							<td class="description">Ngày đặt</td>
 							<td class="price">Tổng hóa đơn</td>
-							<td class="quantity">Trạng thái</td>
-							<td class="total">Phương thức thanh toán</td>
+							<td class="quantity">Trạng thái đơn hàng</td>
 							<td class="price">Thao tác</td>
 						</tr>
 					</thead>
@@ -36,12 +35,19 @@
 							</c:when>
 							<c:otherwise>
 								<c:forEach items="${cartCheckedList}" var="cart">
-									<tr style="margin-top: 20px;" id="${cart.cartId}">
+									<tr style="margin-top: 20px;" id="crt${cart.cartId}">
 										<td><span style="margin-left: 50px;">${cart.cartId}</span></td>
 										<td><span><fmt:formatDate type = "both" dateStyle = "short" timeStyle = "short" value = "${cart.getCartDate()}" /></span></td>
 										<td><fmt:formatNumber type="number" pattern="###,###" value="${cart.getCartTotal()}"/> VNĐ</td>
-										<td>${cart.getPaymentMethod().getPaymentName()}</td>
-										<td class="cart_delete"><a class="cart_quantity_delete" onclick=""
+										<c:choose>
+											<c:when test="${cart.getCartStatus() == 1}">
+												<td>Đơn hàng đang đợi kiểm tra</td>
+											</c:when>
+											<c:when test="${cart.getCartStatus() == 5}">
+												<td>Có thể thanh toán</td>
+											</c:when>
+										</c:choose>							
+										<td class="cart_delete"><a class="cart_quantity_delete" onclick="cancelCart('${cart.cartId}');"
 											href="javascript:void(0);"><i class="fa fa-times"></i></a></td>
 									</tr>
 								</c:forEach>
@@ -51,7 +57,7 @@
 				</table>
 			</div>
 			
-			<div class="table-responsive cart_info">
+			<div class="table-responsive cart_info" id="current-cart">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
@@ -166,7 +172,7 @@
 							<li>Total <span>$61</span></li>
 						</ul>
 						<!-- <a class="btn btn-default update" href="">Update</a> --> 
-						<a class="btn btn-default check_out" href="${pageContext.request.contextPath}/Carts?confirmCheckOut">Xác nhận</a>
+						<a class="btn btn-default check_out" href="javascript:void(0);">Xác nhận</a>
 					</div>
 				</div>
 			</div>

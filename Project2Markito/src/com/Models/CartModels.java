@@ -68,9 +68,7 @@ public class CartModels {
 			List cusIdTemp = query.list();
 			int cusId = (int) cusIdTemp.get(0);
 			session.flush();
-			session.clear();
-			
-			String hql = "FROM Carts where Customer_id = :cusId AND Cart_status = 1 ";
+			session.clear();String hql = "FROM Carts where Customer_id = :cusId AND Cart_status = 1 ";
 			query = session.createQuery(hql);
 			query.setParameter("cusId", cusId);
 			cartList = query.list();
@@ -141,6 +139,32 @@ public class CartModels {
 			e.printStackTrace();
 			return false;
 		} finally {
+			session.close();
+		}
+	}
+	
+	public boolean cancelCart(String cartId) {
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction trans = session.beginTransaction();
+		
+		try {
+			String hql = "FROM Carts where Cart_Id = :cartId";
+			Query query = session.createQuery(hql);
+			query.setParameter("cartId", cartId);
+			Carts cart = (Carts) query.uniqueResult();
+			cart.setCartStatus(0);
+			
+			session.update(cart);
+			trans.commit();
+			return true;
+		} catch (Exception e) {
+			trans.rollback();
+			e.printStackTrace();
+			return false;
+		}finally {
+			session.flush();
+			session.clear();
 			session.close();
 		}
 	}

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
@@ -34,7 +35,7 @@ public class CartControllers {
 	
 	// Thêm sản phẩm vào giỏ
 	@SuppressWarnings("unchecked")
-	@RequestMapping(params = "AddToCart")
+	@RequestMapping(params = "AddToCart",produces = "application/json; charset=utf-8",method=RequestMethod.POST)
 	public @ResponseBody String AddToCart(HttpSession session, @RequestParam("idProduct") String idProduct) {
 		List<Products> cart = null;
 
@@ -98,7 +99,7 @@ public class CartControllers {
 	
 	//Sửa giỏ hàng
 	@SuppressWarnings("unchecked")
-	@RequestMapping(params = "QuantityUpdate", produces = "application/json; charset=utf-8")
+	@RequestMapping(params = "QuantityUpdate", produces = "application/json; charset=utf-8",method=RequestMethod.POST)
 	public @ResponseBody String QuantityUpdate(HttpServletRequest request, HttpSession session,
 			@RequestParam(value = "idProduct") String idProduct, @RequestParam(value = "action") String action,
 			@RequestParam(value = "quantity", required = false) String quantity) {
@@ -185,7 +186,7 @@ public class CartControllers {
 		return returnResult;
 	}
 
-	@RequestMapping(params = "paymentCheck")
+	@RequestMapping(params = "paymentCheck",produces = "application/json; charset=utf-8",method=RequestMethod.POST)
 	public @ResponseBody String CheckOut(HttpSession session) {
 		if (session.getAttribute("user") == null) {
 			return "err";
@@ -195,7 +196,7 @@ public class CartControllers {
 
 	}
 
-	@RequestMapping(params = "confirmCheckOut")
+	@RequestMapping(params = "confirmCheckOut",produces = "application/json; charset=utf-8",method=RequestMethod.POST)
 	public @ResponseBody String ConfirmCheckOut(HttpSession session,HttpServletRequest request) {
 		if (session.getAttribute("user") == null) {
 			return "{\"Msg\":\"Bạn phải đăng nhập để đặt hàng\","
@@ -235,6 +236,19 @@ public class CartControllers {
 		model.addAttribute("cartCheckedList",cartList);
 		model.addAttribute("checkCart", productList);
 		return "cart";
+	}
+	
+	@RequestMapping(params = "cancelCart",produces = "application/json; charset=utf-8",method=RequestMethod.POST)
+	public @ResponseBody String CancelCart(HttpSession session, ModelMap model,@RequestParam(value="cartId") String cartId) {
+		if(new CartModels().cancelCart(cartId)) {
+			return "{\"status\":\"true\","
+					+ "\"Msg\":\"Đã hủy đơn hàng\""
+					+ "}";
+		}else {
+			return "{\"status\":\"false\","
+					+ "\"Msg\":\"Hủy đơn hàng thất bại\""
+					+ "}";
+		}
 	}
 
 }

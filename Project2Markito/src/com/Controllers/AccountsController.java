@@ -37,7 +37,6 @@ public class AccountsController {
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
-		System.gc();
 		return "login-page";
 	}
 

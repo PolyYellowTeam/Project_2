@@ -23,7 +23,7 @@
 						<table class="table table-bordered data-table">
 							<thead>
 								<tr>
-									<th>#</th>
+									<th>Mã đơn hàng</th>
 									<th>Nhân viên tiếp nhận</th>
 									<th>Khách hàng</th>
 									<th>Ngày tạo</th>
@@ -33,22 +33,46 @@
 									<th>Trạng thái ship</th>
 									<th>Hình thức thanh toán</th>
 									<th>Trạng thái</th>
+									<th>Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${cartList}" var="cart">
 									<tr class="gradeA">
 										<td>${cart.cartId}</td>
-										<%-- <td>${ }</td> --%>
+										<c:choose>
+											<c:when test="${not empty cart.getEmployees().getEmpId()}">
+												<td>${cart.getEmployees().getFullname()}</td>
+											</c:when>
+											<c:otherwise>
+												<td>Chưa có</td>
+											</c:otherwise>
+										</c:choose>
 										<td>${cart.getCustomers().getCustomerName()}</td>
 										<td><fmt:formatDate type = "both" 
          dateStyle = "short" timeStyle = "short" value = "${cart.getCartDate()}" /></td>
          								<td>${cart.getShipAddress()}</td>
-         								<td>${cart.getShipDate()}</td>
+         								<td><fmt:formatDate type = "DATE" 
+         dateStyle = "short" timeStyle = "short" value = "${cart.getShipDate()}" /></td>
          								<td><fmt:formatNumber type="number" pattern="###,###" value="${cart.getCartTotal()}"/> VNĐ</td>
-         								<td>${cart.getShipStatus()}</td>
-         								<td>${cart.getPaymentMethod().getPaymentName()}</td>
+         								<c:choose>
+         									<c:when test="${cart.getShipStatus() == 0}">
+         										<td>Chưa ship</td>
+         									</c:when>
+         									<c:when test="${cart.getShipStatus() == 1}">
+         										<td>Đã ship</td>
+         									</c:when>
+         								</c:choose>
+         								<c:choose>
+         									<c:when test="${empty cart.getPaymentMethod().getPaymentName()}">
+         										<td>Chưa chọn hình thức/Chưa thanh toán</td>
+         									</c:when>
+         									<c:otherwise>
+         										<td>Đã thanh toán</td>
+         									</c:otherwise>
+         								</c:choose>
          								<td>${cart.getCartStatus()}</td>
+         								<td><a href="javascript:void(0);">Phân bổ</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

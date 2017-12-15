@@ -4,11 +4,12 @@ function addToCart(productid) {
 		$('span[id=site-url]').text()+'/Carts?AddToCart&idProduct='+productid,
 	type: 'POST',
 	cache: false,
-	dataType: 'text',
+	dataType: 'json',
 	success: function(result){
+		JSON.stringify(result);
 		switch (result) {
 			case "true":
-//				alert("Sản phẩm đã được thêm vào giỏ");
+				alert("Sản phẩm đã được thêm vào giỏ");
 				break;
 			case "false":
 				alert("Thêm sản phẩm không thành công!\nĐã có lỗi xảy ra vui lòng thử lại sau\nhoặc liên hệ với quản trị viên qua:\nsupport@markito.xyz");
@@ -61,6 +62,27 @@ function quantityUpdate (productid,action,quantity) {
 	})
 }
 
+function cancelCart(cartId){
+	$.ajax({
+		url:$('span[id=site-url]').text()+'/Carts?cancelCart&cartId='+cartId,
+		type: 'POST',
+		dataType: 'json',
+		cache: false,
+		success: function(result){
+			JSON.stringify(result);
+			switch (result.status) {
+				case "true":
+					$('tr[id=crt'+cartId+']').remove();
+					alert(result.Msg);
+					break;
+				case "false":
+					alert(result.Msg);
+					break;
+			}
+		}
+	});
+}
+
 function setValueToUpdate (productid) {
 	quantityUpdate (productid,'update',$('#'+productid+' .cart_quantity .cart_quantity_button input').val());
 }
@@ -70,15 +92,37 @@ $(document).ready(function() {
 		$.ajax({
 			url:$('span[id=site-url]').text()+'/Carts?paymentCheck',
 			type: 'POST',
-			dataType: 'text',
+			dataType: 'json',
 			cache: false,
 			success: function(result){
+				JSON.stringify(result);
 				switch (result) {
 					case "true":
 						alert("Oke");
 						break;
 					case "err":
 						alert("Bạn phải đăng nhập để thanh toán");
+						break;
+				}
+			}
+		})
+	});
+	
+	
+	$('.total_area a[class=check_out]').on('click', function() {
+		$.ajax({
+			url:$('span[id=site-url]').text()+'/Carts?confirmCheckOut',
+			type: 'POST',
+			dataType: 'json',
+			cache: false,
+			success: function(result){
+				switch(result.Status){
+					case 'true':
+						alert(result.Msg);
+						$('#current-cart').remove();
+						break;
+					case 'false':
+						alert(result.Msg);
 						break;
 				}
 			}
