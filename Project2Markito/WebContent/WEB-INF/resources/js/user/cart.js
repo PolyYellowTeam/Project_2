@@ -4,7 +4,7 @@ function addToCart(productid) {
 		$('span[id=site-url]').text()+'/Carts?AddToCart&idProduct='+productid,
 	type: 'POST',
 	cache: false,
-	dataType: 'json',
+	dataType: 'text',
 	success: function(result){
 		JSON.stringify(result);
 		switch (result) {
@@ -109,7 +109,7 @@ $(document).ready(function() {
 	});
 	
 	
-	$('.total_area a[class=check_out]').on('click', function() {
+	$('.total_area a[id=checkout]').on('click', function() {
 		$.ajax({
 			url:$('span[id=site-url]').text()+'/Carts?confirmCheckOut',
 			type: 'POST',
@@ -120,6 +120,7 @@ $(document).ready(function() {
 					case 'true':
 						alert(result.Msg);
 						$('#current-cart').remove();
+						$('#checkedCart' ).load(window.location.href + '#checkedCart tbody' );
 						break;
 					case 'false':
 						alert(result.Msg);

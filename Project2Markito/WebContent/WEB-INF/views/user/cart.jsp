@@ -10,7 +10,7 @@
 				</ol>
 			</div>
 			
-			<div class="table-responsive cart_info">
+			<div class="table-responsive cart_info" id="checkedCart">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
@@ -172,7 +172,7 @@
 							<li>Total <span>$61</span></li>
 						</ul>
 						<!-- <a class="btn btn-default update" href="">Update</a> --> 
-						<a class="btn btn-default check_out" href="javascript:void(0);">Xác nhận</a>
+						<a class="btn btn-default check_out" id="checkout" href="javascript:void(0);">Xác nhận</a>
 					</div>
 				</div>
 			</div>
