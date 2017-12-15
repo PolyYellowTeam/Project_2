@@ -27,4 +27,8 @@ $(document).ready(function(){
 	        zIndex: 2147483647 // Z-Index for the overlay
 		});
 	});
+	
+	function getUrlByTuan(){
+		return window.location.protocol + "//" + window.location.host + $('span[id=site-url]').text();
+	}
 });
