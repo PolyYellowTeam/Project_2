@@ -42,10 +42,7 @@
 		<jsp:include page="user/footer.jsp" />
 	</footer>
 	<!--/Footer-->
-<<<<<<< HEAD
 	<span hidden id="site-url"><%=request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()%></span>
-=======
->>>>>>> b4fe52ea8a1c010f6c711cdf771ba55075ec3c61
 	<script src="${pageContext.request.contextPath}/js/user/cart.js"></script>
 	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
