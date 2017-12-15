@@ -37,10 +37,6 @@ public class AccountsModel {
 		String hql = "from Accounts where Roles = 0 AND Status = 1 AND username='" + username + "' and password='" + password + "'";
 		Query query = session.createQuery(hql);
 		data = query.list();
-		System.out.println("something:"+data.size());
-		for (Accounts accounts : data) {
-			System.out.println(accounts);
-		}
 		if (data.size() != 0) {
 			Accounts user = data.get(0);
 			if (user.isStatus() == true) {

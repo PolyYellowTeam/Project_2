@@ -213,6 +213,10 @@ public class CartControllers {
 		List<Products> productList = null;
 		if (session.getAttribute("cart") != null) {
 			productList = (List<Products>) session.getAttribute("cart");
+		}else if (session.getAttribute("cart") != null && session.getAttribute("user") != null) {
+			productList = (List<Products>) session.getAttribute("cart");
+			List<Carts> cartList = (List<Carts>) new CartModels().getCheckedOutCart(session.getAttribute("user").toString());
+			model.addAttribute("cartCheckedList",cartList);
 		} else {
 			productList = new ArrayList<>();
 		}

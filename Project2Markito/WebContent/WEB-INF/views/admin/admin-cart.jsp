@@ -39,7 +39,7 @@
 								<c:forEach items="${cartList}" var="cart">
 									<tr class="gradeA">
 										<td>${cart.cartId}</td>
-										<td>Chưa có nhân viên tiếp nhận</td>
+										<%-- <td>${ }</td> --%>
 										<td>${cart.getCustomers().getCustomerName()}</td>
 										<td><fmt:formatDate type = "both" 
          dateStyle = "short" timeStyle = "short" value = "${cart.getCartDate()}" /></td>

@@ -94,17 +94,9 @@ public class AccountsController {
 		password = request.getParameter("password");
 		AccountsModel check = new AccountsModel();
 		if (check.userlogin(username, password) == true) {
-			if (check.isAdmin(username, password) == false) {
 				session.setAttribute("role", "user");
 				session.setAttribute("user", username);
 				return "redirect:/index";
-			} else {
-				mm.put("loginmsg", "Fail to login!");
-				return "login-page";
-				// session.setAttribute("user", username);
-				// session.setAttribute("role", "admin");
-				// return "admin/index";
-			}
 		} else {
 			mm.put("loginmsg", "Fail to login!");
 			return "login-page";
