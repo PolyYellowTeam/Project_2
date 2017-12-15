@@ -26,14 +26,22 @@
 						<c:choose>
 							<c:when test="${cartCheckedList.size() == 0}">
 								<tr class="cart_product">
-									<td><span>Bạn chưa có đơn hàng đã đặt nào</span></td>
+									<td class="cart_price"><span>Bạn chưa có đơn hàng đã đặt nào</span></td>
+								</tr>
+							</c:when>
+							<c:when test="${empty cartCheckedList}">
+								<tr class="cart_product">
+									<td class="cart_price"><span>Bạn chưa có đơn hàng đã đặt nào</span></td>
 								</tr>
 							</c:when>
 							<c:otherwise>
 								<c:forEach items="${cartCheckedList}" var="cart">
-									<tr id="${cart.cartId}">
-										<td>${cart.cartId}</td>
-										<td class="cart_delete"><a class="cart_quantity_delete" onclick="quantityUpdate('','delete')"
+									<tr style="margin-top: 20px;" id="${cart.cartId}">
+										<td><span style="margin-left: 50px;">${cart.cartId}</span></td>
+										<td><span><fmt:formatDate type = "both" dateStyle = "short" timeStyle = "short" value = "${cart.getCartDate()}" /></span></td>
+										<td><fmt:formatNumber type="number" pattern="###,###" value="${cart.getCartTotal()}"/> VNĐ</td>
+										<td>${cart.getPaymentMethod().getPaymentName()}</td>
+										<td class="cart_delete"><a class="cart_quantity_delete" onclick=""
 											href="javascript:void(0);"><i class="fa fa-times"></i></a></td>
 									</tr>
 								</c:forEach>
@@ -104,6 +112,9 @@
 		<div class="container">
 			<div class="heading">
 				<h3>Xác nhận đặt hàng</h3>
+				<c:if test="${not empty Msg}">
+					<h3 id="Msg">${Msg}</h3>
+				</c:if>
 			</div>
 			<div class="row">
 				<!-- <div class="col-sm-6">

@@ -196,36 +196,43 @@ public class CartControllers {
 	}
 
 	@RequestMapping(params = "confirmCheckOut")
-	public String ConfirmCheckOut(HttpSession session,HttpServletRequest request) {
+	public @ResponseBody String ConfirmCheckOut(HttpSession session,HttpServletRequest request) {
 		if (session.getAttribute("user") == null) {
-			return "redirect:"+BaseClass.getRootUrl(request)+"/login";
+			return "{\"Msg\":\"Bạn phải đăng nhập để đặt hàng\","
+					+ "\"Status\":\"false\"}";
 		} else if (session.getAttribute("cart") == null) {
-			return "redirect:"+BaseClass.getRootUrl(request)+"/";
-		} else {
+			return "{\"Msg\":\"Giỏ hàng của bạn đang trống\","
+					+ "\"Status\":\"false\"}";
+		} else if(session.getAttribute("user") != null && session.getAttribute("cart") != null){
 			boolean CartDetails = new CartModels().checkOut(session.getAttribute("user").toString(),
 					(List<Products>) session.getAttribute("cart"));
-			return "cart";
+			return "{\"Msg\":\"Bạn đã đặt hàng thành công\","
+			+ "\"Status\":\"true\"}";
+		}else {
+			return "{\"Msg\":\"Không có sản phẩm trong giỏ\nĐặt hàng thất bại\","
+					+ "\"Status\":\"false\"}";
 		}
 	}
 
 	@RequestMapping(params = "checkCart")
 	public String CheckCart(HttpSession session, ModelMap model) {
 		List<Products> productList = null;
-		
-		if (session.getAttribute("user") != null) {
-			List<Carts> cartList = (List<Carts>) new CartModels().getCheckedOutCart(session.getAttribute("user").toString());
-			model.addAttribute("cartCheckedList",cartList);
-			for (Carts carts : cartList) {
-				System.out.println(carts.getCartId());
+		List<Carts> cartList = null;
+		if (session.getAttribute("user") != null ) {
+			cartList = (List<Carts>) new CartModels().getCheckedOutCart(session.getAttribute("user").toString());
+			if (session.getAttribute("cart") != null) {
+				productList = (List<Products>) session.getAttribute("cart");
+			}else {
+				productList = new ArrayList<>();
+			}
+		}else {
+			if (session.getAttribute("cart") != null) {
+				productList = (List<Products>) session.getAttribute("cart");
+			}else {
+				productList = new ArrayList<>();
 			}
 		}
-		
-		if (session.getAttribute("cart") != null) {
-			productList = (List<Products>) session.getAttribute("cart");
-		}else {
-			productList = new ArrayList<>();
-		}
-
+		model.addAttribute("cartCheckedList",cartList);
 		model.addAttribute("checkCart", productList);
 		return "cart";
 	}
