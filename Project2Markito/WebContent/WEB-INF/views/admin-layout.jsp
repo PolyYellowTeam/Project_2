@@ -64,7 +64,7 @@
     </li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Tiện ích</span> <span class="label label-important">3</span></a>
       <ul>
-        <li><a href="form-common.html">Từ khóa SEO</a></li>
+        <li><a href="QLSKdata">Từ khóa SEO</a></li>
         <li><a href="QLBAdata">Banner Khuyến mại</a></li>
         <li><a href="form-validation.html">Từ khóa nổi bật</a></li>
         <li><a href="form-wizard.html">Phương thức thanh toán</a></li>

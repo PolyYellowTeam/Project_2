@@ -124,9 +124,9 @@ INSERT INTO Products VALUES('pr25',N'Áo da nam cao cấp AD-383','cate06',2,20,
 
 SELECT * FROM Banners
 
-INSERT INTO Banners VALUES (1,'girl1.jpg',N'Khuyến mại tháng 12','Yellow Blended Cotton "still fresh" t-shirt','10');
-INSERT INTO Banners VALUES (2,'girl2.jpg',N'Khuyến mại tháng 12','Red Blended Cotton "still fresh" t-shirt','20');
-INSERT INTO Banners VALUES (3,'girl3.jpg',N'Khuyến mại tháng 12','Black Blended Cotton "still fresh" t-shirt','30');
+INSERT INTO Banners VALUES ('girl1.jpg',N'Khuyến mại tháng 12','Yellow Blended Cotton "still fresh" t-shirt','10');
+INSERT INTO Banners VALUES ('girl2.jpg',N'Khuyến mại tháng 12','Red Blended Cotton "still fresh" t-shirt','20');
+INSERT INTO Banners VALUES ('girl3.jpg',N'Khuyến mại tháng 12','Black Blended Cotton "still fresh" t-shirt','30');
 
 DELETE FROM Banners;
 

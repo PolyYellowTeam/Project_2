@@ -41,6 +41,20 @@ public class BannerModel {
 		sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
+
+		if (banners.getBannerName().trim().length() == 0) {
+			return false;
+		}
+		if (banners.getbanner_content().trim().length() == 0) {
+			return false;
+		}
+		if (banners.getSale_off().trim().length() == 0) {
+			return false;
+		}
+		if (banners.getBannerImgUrl().trim().length() == 0) {
+			return false;
+		}
+
 		try {
 			session.save(banners);
 			transaction.commit();
@@ -86,6 +100,20 @@ public class BannerModel {
 		sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
+		
+		if (banners.getBannerName().trim().length() == 0) {
+			return false;
+		}
+		if (banners.getbanner_content().trim().length() == 0) {
+			return false;
+		}
+		if (banners.getSale_off().trim().length() == 0) {
+			return false;
+		}
+		if (banners.getBannerImgUrl().trim().length() == 0) {
+			return false;
+		}
+		
 		try {
 			session.update(banners);
 			transaction.commit();

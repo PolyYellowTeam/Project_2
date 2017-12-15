@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/views/admin-layout.jsp=UTF-8
 encoding//src/com/Controllers/SearchController.java=UTF-8
+encoding//src/com/Entities/SeoKeywords.java=UTF-8
 encoding//src/com/manageControllers/manageBanner.java=UTF-8
+encoding//src/com/manageControllers/manageSeoKeyword.java=UTF-8

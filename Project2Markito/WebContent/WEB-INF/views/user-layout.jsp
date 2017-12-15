@@ -8,13 +8,10 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Home | E-Shopper</title>
-
 <c:forEach items="${listSeo }" var="seo">
-${seo.keyword }
+<meta name="keywords" content="${seo.keyword }"></c:forEach>
+<c:forEach items="${listSeo }" var="seo"><meta name="news_keywords" content="${seo.keyword }">
 </c:forEach>
-
-
-
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/prettyPhoto.css" rel="stylesheet">

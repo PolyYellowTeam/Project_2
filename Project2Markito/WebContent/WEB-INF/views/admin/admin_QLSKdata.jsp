@@ -7,7 +7,7 @@
 		<div id="breadcrumb">
 			<a href="#" title="Go to Home" class="tip-bottom"><i
 				class="icon-home"></i> Home</a> <a href="#" class="current">Quản lý
-				banner</a>
+				SEO-Keyword</a>
 		</div>
 		<h1 style="margin-top: 2px; margin-bottom: 0;">Danh sách</h1>
 	</div>
@@ -21,11 +21,15 @@
 						<h5>Data table</h5>
 					</div>
 					<div class="widget-title">
-						<span class="icon"><img onclick="QLBAadd()" style="width: 12px; cursor: pointer;" src="images/created.png" /></span>
-						<h5><a href="QLBAadd">Thêm mới</a></h5>
+						<span class="icon">
+							<img onclick="QLSKadd()" style="width: 12px; cursor: pointer;" src="images/created.png" />
+						</span>
+						<h5>
+							<a href="QLSKadd">Thêm mới</a>
+						</h5>
 						<script type="text/javascript">
-							function QLBAadd() {
-								location.href= 'QLBAadd';
+							function QLSKadd() {
+								location.href = 'QLSKadd';
 							}
 						</script>
 					</div>
@@ -33,28 +37,19 @@
 						<table class="table table-bordered data-table">
 							<thead>
 								<tr>
-									<th>Tên banner</th>
-									<th>Nội dung</th>
-									<th>Giảm giá</th>
-									<th>Ảnh</th>
+									<th>Keyword</th>
 									<th></th>
 									<th></th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${listBa}" var="ba">
+								<c:forEach items="${listSeo}" var="seo">
 									<tr class="gradeA">
-										<td style="text-align: center;">${ba.bannerName}</td>
-										<td>${ba.banner_content}</td>
-										<td style="text-align: center;">${ba.sale_off}</td>
-										<td><img
-											style="width: 100px; display: block; margin: 0 auto;" alt=""
-											src="images/home/${ba.bannerImgUrl}"></td>
-										<td style="text-align: center;"><a
-											href="QLBAupdate?bannerId=${ba.bannerId }">Sửa</a></td>
-										<td style="text-align: center;"><a
-											onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"
-											href="deletaba/${ba.bannerId }">Xoá</a></td>
+										<td>${seo.keyword}</td>
+										<td style="text-align: center;"><a href="QLSKupdate?seoId=${seo.keywordId }">Sửa</a></td>
+										<td style="text-align: center;">
+											<a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"	href="deletaseo/${seo.keywordId }">Xoá</a>
+										</td>
 									</tr>
 								</c:forEach>
 							</tbody>

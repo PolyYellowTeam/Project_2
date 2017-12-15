@@ -173,7 +173,7 @@ CONSTRAINT PK_Hotkeys PRIMARY KEY (hotkey_id),
 IF  EXISTS (SELECT * FROM SYSOBJECTS  WHERE name = 'Banners')	DROP TABLE Banners
 GO
 CREATE TABLE Banners(
-Banner_id INT not null,
+Banner_id INT IDENTITY Not null,
 Banner_img_url varchar(150),
 Banner_name nvarchar(50),
 Banner_content nvarchar(500),

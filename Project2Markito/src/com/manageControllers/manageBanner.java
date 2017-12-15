@@ -3,23 +3,20 @@ package com.manageControllers;
 import java.util.List;
 
 import javax.servlet.ServletContext;
-import javax.websocket.server.PathParam;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.portlet.ModelAndView;
 
 import com.Entities.Banners;
 import com.Models.BannerModel;
-import com.sun.java.swing.plaf.motif.resources.motif;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 @Controller
 public class manageBanner {
@@ -34,15 +31,31 @@ public class manageBanner {
 		return "admin_QLBAadd";
 	}
 
-	@RequestMapping(value = "save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("BA") Banners banners, ModelMap model) {
+	@RequestMapping(value = "saveBA", method = RequestMethod.POST)
+	public String save(@ModelAttribute("BA") Banners banners, ModelMap model, BindingResult errors) {
+		if(banners.getBannerName().trim().length()==0){
+			errors.rejectValue("bannerName", "banners", "Vui lòng nhập tên banners !");
+		}
+		if(banners.getbanner_content().trim().length()==0){
+			errors.rejectValue("banner_content", "banners", "Vui lòng nhập nội dung banners !");
+		}
+		if(banners.getSale_off().trim().length()==0){
+			errors.rejectValue("sale_off", "banners", "Vui lòng nhập nội dung số % giảm giá !");
+		}
+		if(banners.getBannerImgUrl().trim().length()==0){
+			errors.rejectValue("bannerImgUrl", "banners", "Vui lòng chọn ảnh cho banners !");
+		}
+		if(errors.hasErrors()){
+			model.addAttribute("messageerrors", "Vui lòng sửa các lỗi sau !");
+		}
+		
 		BannerModel baModel = new BannerModel();
 		boolean result = baModel.saveBanner(banners);
 		if (result) {
 			return "redirect:/QLBAdata";
 		} else {
 			model.addAttribute("message", "Không thêm mới được banner !");
-			return "redirect:/QLBAadd";
+			return "admin_QLBAadd";
 		}
 	}
 
@@ -64,15 +77,32 @@ public class manageBanner {
 		return "admin_QLBAupdate";
 	}
 
-	@RequestMapping(value = "QLBAupdate/updatesave", method = RequestMethod.POST)
-	public String updatesave(@ModelAttribute("BA") Banners banners, ModelMap model) {
+	@RequestMapping(value = "updateBA", method = RequestMethod.POST)
+	public String updatesave(@ModelAttribute("BA") Banners banners, ModelMap model, BindingResult errors) {
+		
+		if(banners.getBannerName().trim().length()==0){
+			errors.rejectValue("bannerName", "banners", "Vui lòng nhập tên banners !");
+		}
+		if(banners.getbanner_content().trim().length()==0){
+			errors.rejectValue("banner_content", "banners", "Vui lòng nhập nội dung banners !");
+		}
+		if(banners.getSale_off().trim().length()==0){
+			errors.rejectValue("sale_off", "banners", "Vui lòng nhập nội dung số % giảm giá !");
+		}
+		if(banners.getBannerImgUrl().trim().length()==0){
+			errors.rejectValue("bannerImgUrl", "banners", "Vui lòng chọn ảnh cho banners !");
+		}
+		if(errors.hasErrors()){
+			model.addAttribute("messageerrors", "Vui lòng sửa các lỗi sau !");
+		}
+		
 		BannerModel baModel = new BannerModel();
 		boolean result = baModel.updateBanner(banners);
 		if (result) {
 			return "redirect:/QLBAdata";
 		} else {
 			model.addAttribute("message", "Cập nhập bị lỗi !");
-			return "redirect:/QLBAupdate";
+			return "admin_QLBAupdate";
 		}
 	}
 

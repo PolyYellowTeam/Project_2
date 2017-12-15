@@ -25,7 +25,7 @@ public class SEOKeywordModel {
 		Session session = sessionFactory.openSession();
 		Transaction transaction = null;
 		try {
-			String hql = "FROM SEOkeywords";
+			String hql = "FROM SeoKeywords";
 			Query query = session.createQuery(hql);
 			List<SeoKeywords> listSeo = query.list();
 			return listSeo;
@@ -37,12 +37,15 @@ public class SEOKeywordModel {
 		return null;
 	}
 	
-	public boolean saveSeoKeywords(SeoKeywords SeoKeywords) {
+	public boolean saveSeoKeywords(SeoKeywords seoKeywords) {
 		sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
+		if(seoKeywords.getKeyword().trim().length()==0){
+			return false;
+		}
 		try {
-			session.save(SeoKeywords);
+			session.save(seoKeywords);
 			transaction.commit();
 			return true;
 		} catch (Exception e) {
@@ -76,7 +79,7 @@ public class SEOKeywordModel {
 		sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		String hql = "FROM SEO_keywords where keyword_id = " + seoId;
+		String hql = "FROM SeoKeywords where keywordId = " + seoId;
 		Query query = session.createQuery(hql);
 		List<SeoKeywords> listOneKey = query.list();
 		return listOneKey;
@@ -86,6 +89,9 @@ public class SEOKeywordModel {
 		sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
+		if(seoKeywords.getKeyword().trim().length()==0){
+			return false;
+		}
 		try {
 			session.update(seoKeywords);
 			transaction.commit();
