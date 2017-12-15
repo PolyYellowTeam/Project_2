@@ -20,12 +20,12 @@ import com.Models.BannerModel;
 @Controller
 public class BannerController {
 	
-	@RequestMapping(value = {"","/","/index"}, method = RequestMethod.GET)
-	public String banner(ModelMap model){
-		BannerModel baModel = new BannerModel();
-		List<Banners> listBa = baModel.getDataBanner();
-		model.addAttribute("listBanners", listBa);
-		return "index";
-	}
+//	@RequestMapping(value = {"","/","/index"}, method = RequestMethod.GET)
+//	public String banner(ModelMap model){
+//		BannerModel baModel = new BannerModel();
+//		List<Banners> listBa = baModel.getDataBanner();
+//		model.addAttribute("listBanners", listBa);
+//		return "index";
+//	}
 	
 }

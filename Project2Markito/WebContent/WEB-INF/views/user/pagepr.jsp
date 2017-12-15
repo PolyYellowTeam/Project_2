@@ -2,10 +2,10 @@
     pageEncoding="utf-8"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <ul class="pagination">
-	<li><a href="product?iddm=${iddm}&idlh=${idlh}&pages=${page-1}">&lsaquo;</a></li>
-	<li class="active"><a href="product?iddm=${iddm}&idlh=${idlh}&pages=${page}">1</a></li>
+	<li><a href="products?idCategory=${idCategory}&idCatalogs=${idCatalogs}&pages=${page-1}">&laquo;</a></li>
+	<li class="active"><a href="products?idCategory=${idCategory}&idCatalogs=${idCatalogs}&pages=${page-1}">1</a></li>
 	<c:forEach begin="2" end="${soluong/9+1}" varStatus="i">	
-	<li><a href="product?iddm=${iddm}&idlh=${idlh}&pages=${page}">${i.index}</a></li>	
+	<li><a href="products?idCategory=${idCategory}&idCatalogs=${idCatalogs}&pages=${page}">${i.index}</a></li>	
 	</c:forEach>
-	<li><a href="product?iddm=${iddm}&idlh=${idlh}&pages=${page+1}">&raquo;</a></li>
+	<li><a href="products?idCategory=${idCategory}&idCatalogs=${idCatalogs}&pages=${page+1}">&raquo;</a></li>
 </ul>

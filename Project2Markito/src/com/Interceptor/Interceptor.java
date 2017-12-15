@@ -32,16 +32,27 @@ public class Interceptor extends HandlerInterceptorAdapter {
 			ModelAndView modelAndView) throws Exception {
 		sessionFactory = new Configuration().configure().buildSessionFactory();		
 		Session session = sessionFactory.openSession();	
-		String hqlCatalogs = "FROM Catalogs";
+		String hqlCatalogs = "FROM Catalogs where catalogStatus=1";
 		Query query = session.createQuery(hqlCatalogs);
 		@SuppressWarnings("unchecked")
 		List<Catalogs>listCatalogs = query.list();
 		request.setAttribute("listCatalogs", listCatalogs);	
-		String hqlSuppliers = "FROM Suppliers";
+		String hqlSuppliers = "FROM Suppliers where suStatus=1";
 		Query querySuppliers = session.createQuery(hqlSuppliers);
 		@SuppressWarnings("unchecked")
 		List<Suppliers>listSuppliers = querySuppliers.list();
 		request.setAttribute("listSuppliers", listSuppliers);
+		String hqlCategories = "FROM Categories where caStatus=1";
+		Query queryCategories = session.createQuery(hqlCategories);
+		@SuppressWarnings("unchecked")
+		List<Categories> listCategories = queryCategories.list();
+		request.setAttribute("listCategories", listCategories);
+		
+		String hqlHotKey = "FROM Hotkeys";
+		Query queryHotKeys = session.createQuery(hqlHotKey);
+		@SuppressWarnings("unchecked")
+		List<Hotkeys> listHotKey = queryHotKeys.list();
+		request.setAttribute("listHotKeys", listHotKey);
 		
 		String hqlSeoKeyword = "FROM SeoKeywords";
 		Query querySeoKeyword = session.createQuery(hqlSeoKeyword);

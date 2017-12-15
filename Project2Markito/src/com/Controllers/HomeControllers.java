@@ -23,23 +23,23 @@ import com.Models.BannerModel;
 import com.Models.SEOKeywordModel;
 import com.Models.StaticModels;
 
+
 @Controller
 @Transactional
 @RequestMapping("/")
 public class HomeControllers {
 	@Autowired
 	SessionFactory sessionFactory;
-
 	@SuppressWarnings({ "deprecation", "unchecked" })
 	@Transactional
-	@RequestMapping(value = { "", "/", "index" })
-	public String home(ModelMap model, HttpServletRequest request) {
+	@RequestMapping(value= {"","index"})
+	public String  home(ModelMap model,HttpServletRequest request) {	
 		int pages = 1;
 		if (request.getParameter("pages") != null) {
 			pages = Integer.parseInt(request.getParameter("pages"));
 		}
-		List<Products> listProducts = null;
-		sessionFactory = new Configuration().configure().buildSessionFactory();
+		List<Products> listProducts = null;		
+		sessionFactory = new Configuration().configure().buildSessionFactory();		
 		Session session = sessionFactory.openSession();
 		String hql = "FROM Products";
 		Query query = session.createQuery(hql);
@@ -47,27 +47,29 @@ public class HomeControllers {
 		int slpr = listProducts.size();
 		query.setFirstResult((pages - 1) * 9);
 		query.setMaxResults(9);
-		@SuppressWarnings("unchecked")
 		List<Products> list2 = query.list();
 		model.addAttribute("product", list2);
 		model.addAttribute("soluong", slpr);
 		model.addAttribute("page", pages);
 		return "index";
 	}
-
 	@SuppressWarnings("unchecked")
-	@RequestMapping(params = "idCatalogs")
-	public String show(ModelMap model, HttpServletRequest request, @RequestParam("idCatalogs") int idCatalogs) {
+	@RequestMapping(value= {"/products"},params="idCatalogs")
+	public String showpr(ModelMap model,HttpServletRequest request, @RequestParam("idCatalogs") String idCatalogs){	
 		int pages = 1;
-		String hql = "FROM Categories where idCategory=:idCatalogs";
-		sessionFactory = new Configuration().configure().buildSessionFactory();
+		if (request.getParameter("pages") != null) {
+			pages = Integer.parseInt(request.getParameter("pages"));
+		}
+		sessionFactory = new Configuration().configure().buildSessionFactory();		
 		Session session = sessionFactory.openSession();
+		String hql = "FROM Categories where catalogs.catalogId=:idCatalogs";
 		Query query = session.createQuery(hql);
-		query.setParameter("idCategory", idCatalogs);
+		query.setParameter("idCatalogs",idCatalogs);
 		List<Categories> list = query.list();
-		Categories ca = list.get(0);
-		String malh = ca.getCategoryId();
-		String hql1 = "FROM Products where categoryid='" + malh + "'";
+		model.addAttribute("category", list);		
+		Categories ca=list.get(0);
+		String idCategory=ca.getCategoryId();
+		String hql1 = "FROM Products where categories.categoryId='"+idCategory+"'";
 		Query query1 = session.createQuery(hql1);
 		List<Products> list1 = query1.list();
 		int slpr = list1.size();
@@ -76,24 +78,12 @@ public class HomeControllers {
 		List<Products> list2 = query1.list();
 		model.addAttribute("product", list2);
 		model.addAttribute("category", list);
+		model.addAttribute("idCatalogs",idCatalogs);
+		model.addAttribute("idCategory",idCategory);
 		model.addAttribute("soluong", slpr);
 		model.addAttribute("page", pages);
 		return "product";
 	}
-	// @ModelAttribute("listCatalogs")
-	// public List<Catalogs> getAllProducts(){
-	// StaticModels catalogs = new StaticModels();
-	// @SuppressWarnings("unused")
-	// List<Catalogs> listCatalogs = catalogs.getCatalogs();
-	// return listCatalogs;
-	// }
-	// @ModelAttribute("listSuppliers")
-	// public List<Suppliers> getAllSuppliers(){
-	// StaticModels listSuppliers = new StaticModels();
-	// @SuppressWarnings("unused")
-	// List<Suppliers> listSupplier = listSuppliers.getSuppliers();
-	// return listSupplier;
-	// }
 
 	@ModelAttribute("listBanners")
 	public List<Banners> getBanners() {

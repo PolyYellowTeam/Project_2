@@ -11,22 +11,22 @@
 					<div class="col-sm-7">
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
-								<img src="images/home/iframe_1.png" alt="" />
+								<img src="${pageContext.servletContext.contextPath}/images/home/iframe_1.png" alt="" />
 							</div>
 						</div>						
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
-								<img src="images/home/iframe_2.png" alt="" />
+								<img src="${pageContext.servletContext.contextPath}/images/home/iframe_2.png" alt="" />
 							</div>
 						</div>						
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
-								<img src="images/home/iframe_03.png" alt="" />
+								<img src="${pageContext.servletContext.contextPath}/images/home/iframe_03.png" alt="" />
 							</div>
 						</div>		
 						<div class="col-sm-3">
 							<div class="video-gallery text-center">
-								<img src="images/home/iframe_042.png" alt="" />
+								<img src="${pageContext.servletContext.contextPath}/images/home/iframe_042.png" alt="" />
 							</div>
 						</div>
 					</div>
