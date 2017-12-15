@@ -42,6 +42,9 @@ function quantityUpdate (productid,action,quantity) {
 			case 'false':
 				alert('Cập nhật giỏ hàng không thành công');
 				break;
+			case 'deleted':
+				$('#'+productid).remove();
+				break;
 			default:
 				$('#'+productid+' .cart_quantity_input').val(result.cart_quantity_input);
 				$('#'+productid+' .cart_total_price').text(result.cart_total_price);

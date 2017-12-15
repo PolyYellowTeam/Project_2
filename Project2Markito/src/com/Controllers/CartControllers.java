@@ -6,6 +6,7 @@ package com.Controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.jasper.tagplugins.jstl.core.Remove;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -82,22 +83,23 @@ public class CartControllers {
 	}
 
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "QuantityUpdate",produces = "application/json; charset=utf-8")
-	public @ResponseBody String QuantityUpdate(HttpServletRequest request,HttpSession session,
-			@RequestParam(value="idProduct") String idProduct,@RequestParam(value="action") String action,@RequestParam(value="quantity", required=false) String quantity) {
+	@RequestMapping(value = "QuantityUpdate", produces = "application/json; charset=utf-8")
+	public @ResponseBody String QuantityUpdate(HttpServletRequest request, HttpSession session,
+			@RequestParam(value = "idProduct") String idProduct, @RequestParam(value = "action") String action,
+			@RequestParam(value = "quantity", required = false) String quantity) {
 		List<Products> cart = null;
 		String returnResult = "{\"status\":\"false\"}";
 		try {
 			int quanTiTy = 0;
-			if(!quantity.isEmpty()) {
-				 quanTiTy = Integer.parseInt(quantity);
+			if (!quantity.isEmpty()) {
+				quanTiTy = Integer.parseInt(quantity);
 			}
-			
+
 			if (idProduct.isEmpty()) {
 				returnResult = "{\"status\":\"false\"}";
 			} else {
 				Products getProduct = new CartModels().getProductToAddCart(idProduct);
-				if(getProduct != null) {
+				if (getProduct != null) {
 					if (session.getAttribute("cart") != null) {
 						cart = (List<Products>) session.getAttribute("cart");
 						returnResult = "{";
@@ -107,52 +109,54 @@ public class CartControllers {
 								prd.setProductName(getProduct.getProductName());
 								prd.setDiscount(getProduct.getDiscount());
 								prd.setPrice(getProduct.getPrice());
-								
-								switch(action) {
-									case "plus":
-										prd.setQuantity(prd.getQuantity() + 1);
-										break;
-									case "minus":
-										if(prd.getQuantity()<=1) {
-											return returnResult = "{\"status\":\"false\"}";
-										}else {
-											prd.setQuantity(prd.getQuantity() - 1);
-										}
-										break;
-									case "update":
-										if(quanTiTy<=0) {
-											return returnResult = "{\"status\":\"false\"}";
-										}else {
-											prd.setQuantity(quanTiTy);
-										}
-										break;
-									default:
+
+								switch (action) {
+								case "plus":
+									prd.setQuantity(prd.getQuantity() + 1);
+									break;
+								case "minus":
+									if (prd.getQuantity() <= 1) {
 										return returnResult = "{\"status\":\"false\"}";
+									} else {
+										prd.setQuantity(prd.getQuantity() - 1);
+									}
+									break;
+								case "update":
+									if (quanTiTy <= 0) {
+										return returnResult = "{\"status\":\"false\"}";
+									} else {
+										prd.setQuantity(quanTiTy);
+									}
+									break;
+								case "delete":
+									cart.remove(prd);
+									session.setAttribute("cart", cart);
+									return returnResult = "{\"status\":\"deleted\"}";
+								default:
+									return returnResult = "{\"status\":\"false\"}";
 								}
-								
-								double totalPrice = (Double.parseDouble(prd.getPrice().toString().trim())*(double)(100-prd.getDiscount())/100)*prd.getQuantity();
-								
+
+								double totalPrice = (Double.parseDouble(prd.getPrice().toString().trim())
+										* (double) (100 - prd.getDiscount()) / 100) * prd.getQuantity();
+
 								NumberFormat formatter = new DecimalFormat("###,###");
-						        String resp = formatter.format(totalPrice).replace(",", ".");
-						        String price = formatter.format(prd.getPrice()).replace(",", ".");
-								
-						        
-						        
-						        returnResult = returnResult+"\"status\":\"true\","
-						        		+ "\"cart_quantity_input\":\""+prd.getQuantity()+"\","
-										+"\"cart_total_price\":\""+resp+" VNĐ\","
-										+ "\"cart_description_p\":\""+prd.getDiscount()+"\","
-										+ "\"cart_product\":\""+request.getContextPath()+"/"+prd.getPicture1()+"\","
-										+ "\"cart_price\":\""+price+" VNĐ\","
-										+ "\"cart_description_a\":\""+prd.getProductName()+"\"";
+								String resp = formatter.format(totalPrice).replace(",", ".");
+								String price = formatter.format(prd.getPrice()).replace(",", ".");
+
+								returnResult = returnResult + "\"status\":\"true\"," + "\"cart_quantity_input\":\""
+										+ prd.getQuantity() + "\"," + "\"cart_total_price\":\"" + resp + " VNĐ\","
+										+ "\"cart_description_p\":\"" + prd.getDiscount() + "\","
+										+ "\"cart_product\":\"" + request.getContextPath() + "/" + prd.getPicture1()
+										+ "\"," + "\"cart_price\":\"" + price + " VNĐ\"," + "\"cart_description_a\":\""
+										+ prd.getProductName() + "\"";
 							}
 						}
-						returnResult = returnResult+"}";
+						returnResult = returnResult + "}";
 						session.setAttribute("cart", cart);
 					} else {
 						returnResult = "{\"status\":\"false\"}";
 					}
-				}else {
+				} else {
 					returnResult = "{\"status\":\"false\"}";
 				}
 			}
@@ -160,30 +164,31 @@ public class CartControllers {
 			System.out.println("Cart addtocart " + e.getMessage());
 			return "{\"status\":\"false\"}";
 		}
-		
+
 		return returnResult;
 	}
 
 	@RequestMapping(value = "paymentCheck")
 	public @ResponseBody String CheckOut(HttpSession session) {
 		if (session.getAttribute("user") == null) {
-			return "err";			
+			return "err";
 		} else {
 			return "true";
 		}
-		
+
 	}
-	
+
 	@RequestMapping(value = "confirmCheckOut")
-	public String ConfirmCheckOut(HttpSession session,HttpServletRequest request) {
-		if(session.getAttribute("user") == null){
+	public String ConfirmCheckOut(HttpSession session, HttpServletRequest request) {
+		if (session.getAttribute("user") == null) {
 			String path = request.getContextPath();
 			return "redirect:../login";
-		}else if(session.getAttribute("cart") == null){
+		} else if (session.getAttribute("cart") == null) {
 			String path = request.getContextPath();
 			return "redirect:../login";
-		}else{
-			boolean CartDetails = new CartModels().checkOut(session.getAttribute("user").toString(),(List<Products>)session.getAttribute("cart"));
+		} else {
+			boolean CartDetails = new CartModels().checkOut(session.getAttribute("user").toString(),
+					(List<Products>) session.getAttribute("cart"));
 			return "cart";
 		}
 	}

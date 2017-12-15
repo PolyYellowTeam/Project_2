@@ -54,8 +54,8 @@
 										<td class="cart_total">
 											<p class="cart_total_price"><fmt:formatNumber type="number" pattern="###,###" value="${(product.price*((100-product.discount)/100))*product.quantity}" /> VNĐ</p>
 										</td>
-										<td class="cart_delete"><a class="cart_quantity_delete"
-											href=""><i class="fa fa-times"></i></a></td>
+										<td class="cart_delete"><a class="cart_quantity_delete" onclick="quantityUpdate('${product.productId}','delete')"
+											href="javascript:void(0);"><i class="fa fa-times"></i></a></td>
 									</tr>
 								</c:forEach>
 							</c:otherwise>
