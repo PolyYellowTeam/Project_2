@@ -54,7 +54,7 @@
 											href="QLBAupdate?bannerId=${ba.bannerId }">Sửa</a></td>
 										<td style="text-align: center;"><a
 											onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"
-											href="deletaba/${ba.bannerId }">Xoá</a></td>
+											href="deleteba/${ba.bannerId }">Xoá</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

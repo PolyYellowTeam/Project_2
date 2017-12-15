@@ -10,11 +10,7 @@ import javax.persistence.Table;
 public class Hotkeys {
 	private int hotkeyId;
 	private String hotkeyname;
-
-	public Hotkeys() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 	public Hotkeys(int hotkeyId, String hotkeyname) {
 		super();
 		this.hotkeyId = hotkeyId;
@@ -34,5 +30,6 @@ public class Hotkeys {
 	}
 	public void setHotkeyname(String hotkeyname) {
 		this.hotkeyname = hotkeyname;
-	}	
+	}
+	
 }

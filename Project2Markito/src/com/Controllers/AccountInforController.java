@@ -19,7 +19,7 @@ import com.Models.AccountsModel;
 public class AccountInforController {
 	@RequestMapping(value = "account-infor", method = RequestMethod.GET)
 	public String infor() {
-		return "account-infor";
+		return "admin_account-infor";
 	}
 
 	@RequestMapping(value = "account-infor", method = RequestMethod.POST)
@@ -42,10 +42,10 @@ public class AccountInforController {
 		Customers customer = new Customers(account, username, cusgender, email, phone, address);
 		if (aci.addInfor(customer) == true) {
 			mm.put("accmsg", "Save successfull");
-			return "account-infor";
+			return "admin_account-infor";
 		} else {
 			mm.put("accmsg", "Error on saving profile");
-			return "account-infor";
+			return "admin_account-infor";
 		}
 	}
 }
