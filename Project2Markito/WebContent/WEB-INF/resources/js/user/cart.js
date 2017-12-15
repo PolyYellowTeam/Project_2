@@ -1,7 +1,7 @@
 function addToCart(productid) {
 	$.ajax({
 	url:
-	'http://localhost:8080/Project2Markito/Carts/AddToCart?idProduct='+productid,
+		$('#site-url').val()+'/Carts/AddToCart?idProduct='+productid,
 	type: 'POST',
 	cache: false,
 	dataType: 'text',
@@ -11,7 +11,7 @@ function addToCart(productid) {
 //				alert("Sản phẩm đã được thêm vào giỏ");
 				break;
 			case "false":
-				alert("Thêm sản phẩm không thành công!\nĐã có lỗi xảy ra vui lòng thử lại sau\nhoặc liên hệ với quản trị viên qua:\nmarkitosp@gmail.com");
+				alert("Thêm sản phẩm không thành công!\nĐã có lỗi xảy ra vui lòng thử lại sau\nhoặc liên hệ với quản trị viên qua:\nsupport@markito.xyz");
 				break;
 		}
 	}
@@ -23,9 +23,9 @@ function quantityUpdate (productid,action,quantity) {
 	if(productid){
 		if(action){
 			if(!quantity){
-				url = 'http://localhost:8080/Project2Markito/Carts/QuantityUpdate?idProduct='+productid+'&action='+action+'&quantity=';
+				url = $('#site-url').val()+'/Carts/QuantityUpdate?idProduct='+productid+'&action='+action+'&quantity=';
 			}else{
-				url = 'http://localhost:8080/Project2Markito/Carts/QuantityUpdate?idProduct='+productid+'&action='+action+'&quantity='+quantity;
+				url = $('#site-url').val()+'/Carts/QuantityUpdate?idProduct='+productid+'&action='+action+'&quantity='+quantity;
 			}
 		}
 	}
@@ -66,7 +66,7 @@ function setValueToUpdate (productid) {
 $(document).ready(function() {
 	$('#payment-href').on('click', function() {
 		$.ajax({
-			url:'http://localhost:8080/Project2Markito/Carts/paymentCheck',
+			url:$('#site-url').val()+'/Project2Markito/Carts/paymentCheck',
 			type: 'POST',
 			dataType: 'text',
 			cache: false,
