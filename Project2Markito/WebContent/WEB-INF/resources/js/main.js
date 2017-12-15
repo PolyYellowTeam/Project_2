@@ -27,7 +27,4 @@ $(document).ready(function(){
 	        zIndex: 2147483647 // Z-Index for the overlay
 		});
 	});
-	
-	$('span[id=site-url]').text(window.location.protocol + "//" + window.location.host + $('span[id=context-path]').text());
-	
 });

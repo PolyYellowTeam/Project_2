@@ -106,7 +106,7 @@ public class manageBanner {
 		}
 	}
 
-	@RequestMapping(value = "/deletaba/{bannerId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteba/{bannerId}", method = RequestMethod.GET)
 	public String delete(@PathVariable int bannerId) {
 		BannerModel baModel = new BannerModel();
 		Banners banners = baModel.getbannerId(bannerId);

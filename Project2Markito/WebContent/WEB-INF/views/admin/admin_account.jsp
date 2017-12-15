@@ -1,48 +1,69 @@
+<%@ page pageEncoding="utf-8"%>
 <%@page import="com.Models.AccountsModel"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="f"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Accounts</title>
-</head>
-<body>
-	<%
-		AccountsModel acc = new AccountsModel();
-	%>
-	<center>
-		<br>
-		<h3>Quản lý tài khoản</h3>
-		<br>
-		<table class="table table-hover" cellpadding="1" cellspacing="3" border="1">
-			<tr>
-				<th>Tên đăng nhập</th>
-				<th>Mật khẩu</th>
-				<th>Quyền tài khoản</th>
-				<th>Trạng thái tài khoản</th>
-				<th>Thao tác</th>
-			</tr>
-			<c:forEach var="acc" items="<%=acc.getAll()%>">
-				<tr>
-					<td>${acc.username}</td>
-					<td>******</td>
-					<td>${acc.roles?'Người dùng':'Quản lý'}</td>
-					<td>${acc.status?'Active':'De-active'}</td>
-					<td><h4>
-							<a
-								href="${pageContext.request.contextPath }/update?un=${acc.username}">Sửa</a>
-						</h4></td>
-				</tr>
-			</c:forEach>
-		</table>
-		<br> <br>
-	</center>
-</body>
-</html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE html>
+<div id="content">
+	<div id="content-header">
+		<div id="breadcrumb">
+			<a href="#" title="Go to Home" class="tip-bottom"><i
+				class="icon-home"></i> Home</a> <a href="#" class="current">Quản lý
+				tài khoản</a>
+		</div>
+		<h1 style="margin-top: 2px; margin-bottom: 0;">Danh sách</h1>
+	</div>
+	<div class="container-fluid">
+		<hr style="margin-bottom: 4px; margin-top: 2px;">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon"><i class="icon-th"></i></span>
+						<h5>Data table</h5>
+					</div>
+					<div class="widget-title">
+						<span class="icon"><img onclick="QLBAadd()"
+							style="width: 12px; cursor: pointer;" src="images/created.png" /></span>
+						<h5>
+							<a href="create-account">Thêm mới</a>
+						</h5>
+						<script type="text/javascript">
+							function QLBAadd() {
+								location.href = 'create-account';
+							}
+						</script>
+					</div>
+					<%
+						AccountsModel acc = new AccountsModel();
+					%>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered data-table">
+							<thead>
+								<tr>
+									<th>Tên đăng nhập</th>
+									<th>Mật khẩu</th>
+									<th>Quyền tài khoản</th>
+									<th>Trạng thái tài khoản</th>
+									<th>Thao tác</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="<%=acc.getAll()%>" var="acc">
+									<tr class="gradeA">
+										<td>${acc.username}</td>
+										<td>******</td>
+										<td>${acc.roles?'Người dùng':'Quản lý'}</td>
+										<td>${acc.status?'Active':'De-active'}</td>
+										<td>
+										<a href="${pageContext.request.contextPath }/update?un=${acc.username}">Sửa</a>
+										</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

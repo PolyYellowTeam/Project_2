@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/fullcalendar.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/matrix-style.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/matrix-media.css" />
-  <link href="${pageContext.request.contextPath}/static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="static/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <!--Header-part-->
 <div id="header">
   <div style="width: 220px;padding-top: 25px;padding-left: 60px;">
-  <img src="${pageContext.request.contextPath}/images/logo.png"/>
+  <img src="images/logo.png"/>
   </div>
 </div>
 <!--close-Header-part-->
@@ -57,8 +57,8 @@
     <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Quản lý Danh Muc</span></a> </li>    
     <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Quản lý Loại sản phẩm</span></a> </li>
     <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Quản lý Sản Phẩm</span></a> </li>
-    <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Quản lý Nhân viên</span></a> </li>
-    <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Quản lý Tài khoản</span></a> </li>
+    <li> <a href="QLEdata"><i class="icon icon-inbox"></i> <span>Quản lý Nhân viên</span></a> </li>
+    <li> <a href="account"><i class="icon icon-inbox"></i> <span>Quản lý Tài khoản</span></a> </li>
     <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Quản lý Khách hàng</span></a> </li>
     <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Nhà cung cấp</span></a> </li>
    	<li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Báo cáo</span> <span class="label label-important">2</span></a>
@@ -90,8 +90,7 @@
 <!--main-container-part-->
 <jsp:include page="admin/${param.view}" />
 <!--end-main-container-part-->
-	<span hidden id="context-path">${pageContext.request.contextPath}</span>
-	<span hidden id="site-url"></span>
+
 <script src="${pageContext.request.contextPath}/static/js/excanvas.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/jquery.ui.custom.js"></script>
@@ -113,7 +112,7 @@
 <script src="${pageContext.request.contextPath}/static/js/jquery.dataTables.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/matrix.tables.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/admin/functions.js"></script>
-<script src="${pageContext.request.contextPath}/js/main.js"></script>
+
 <script type="text/javascript">
     // This function is called from the pop-up menus to transfer to
     // a different page. Ignore if the value returned is a null string:

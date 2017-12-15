@@ -47,12 +47,12 @@ public class AccountsController {
 
 	@RequestMapping(value = "account", method = RequestMethod.GET)
 	public String account() {
-		return "account";
+		return "admin_account";
 	}
 
 	@RequestMapping(value = "update", method = RequestMethod.GET)
 	public String update(String username) {
-		return "update";
+		return "admin_updateacc";
 	}
 
 	@RequestMapping(value = "admin-login", method = RequestMethod.POST)
@@ -65,7 +65,7 @@ public class AccountsController {
 			if (check.isAdmin(username, password) == true) {
 				session.setAttribute("user", username);
 				session.setAttribute("role", "admin");
-				return "admin/index";
+				return "admin_index";
 			} else {
 				mm.put("loginmsg", "Fail to login!");
 				return "admin_admin-login";
@@ -153,7 +153,6 @@ public class AccountsController {
 		username = request.getParameter("username");
 		password = request.getParameter("password");
 		status = request.getParameter("status");
-		System.out.println("update" + password);
 		boolean newstt;
 		boolean role;
 		if (status.equals("true")) {
@@ -168,10 +167,10 @@ public class AccountsController {
 		}
 		Accounts account = new Accounts(username, password, role, newstt);
 		if (change.update(account) == true) {
-			return "admin/admin_account";
+			return "admin_account";
 		} else {
 			System.out.println("Fail to update");
-			return "admin/admin_account";
+			return "admin_account";
 		}
 	}
 
@@ -196,10 +195,10 @@ public class AccountsController {
 		Accounts account = new Accounts(username, password, accrole, accstatus);
 		AccountsModel createacc = new AccountsModel();
 		if (createacc.create(account) == true) {
-			return "admin/admin_account";
+			return "redirect:/account";
 		} else {
 			mm.put("createmsg", "Lỗi tạo tài khoản");
-			return "admin/admin_create-account";
+			return "admin_create-account";
 		}
 	}
 }

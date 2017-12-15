@@ -17,7 +17,11 @@ import com.Models.AdminCartModels;
  *
  */
 @Controller
-@RequestMapping(value="admin/Carts")
+<<<<<<< HEAD
+@RequestMapping(value="/CartsManagement")
+=======
+@RequestMapping(value="Admin/Carts")
+>>>>>>> b4fe52ea8a1c010f6c711cdf771ba55075ec3c61
 public class manageCarts {
 	
 	@RequestMapping(value= {"","/","index"})

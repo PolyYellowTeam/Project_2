@@ -9,7 +9,7 @@
 </head>
 <body>
 	<center>
-		<s:form method="post" action="${pageContext.request.contextPath}/register">
+		<s:form method="post" action="register">
 			<table cellpadding="2" cellspacing="2">
 				<tr>
 					<td>Tên đăng nhập/ Email</td>

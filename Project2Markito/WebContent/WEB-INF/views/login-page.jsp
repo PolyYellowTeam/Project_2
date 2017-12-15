@@ -14,7 +14,7 @@
 	<br />
 	<br />
 	<center>
-		<s:form method="post" action="${pageContext.request.contextPath}/login" >
+		<s:form method="post" action="login" >
 			<h3>Login to shop</h3>
 			<br />
 			<table cellpadding="2" cellspacing="2">
@@ -47,7 +47,7 @@
 								ký</a>
 						</center></td>
 					<td><center>
-							<a href="${pageContext.request.contextPath }/login/forgot">Quên
+							<a href="${pageContext.request.contextPath }/forgot">Quên
 								mật khẩu</a>
 						</center></td>
 				</tr>
