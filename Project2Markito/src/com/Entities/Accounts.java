@@ -18,7 +18,7 @@ import javax.persistence.Table;
 public class Accounts{
 	private String username;
 	private String password;
-	private boolean roles;
+	private int roles;
 	private boolean status;
 	private Set<Customers> customerses = new HashSet<Customers>(0);
 	private Set<Employees> employeeses = new HashSet<Employees>(0);
@@ -26,14 +26,14 @@ public class Accounts{
 	public Accounts() {
 	}
 
-	public Accounts(String username, String password, boolean roles, boolean status) {
+	public Accounts(String username, String password, int roles, boolean status) {
 		this.username = username;
 		this.password = password;
 		this.roles = roles;
 		this.status = status;
 	}
 
-	public Accounts(String username, String password, boolean roles, boolean status, Set<Customers> customerses,
+	public Accounts(String username, String password, int roles, boolean status, Set<Customers> customerses,
 			Set<Employees> employeeses) {
 		this.username = username;
 		this.password = password;
@@ -63,11 +63,11 @@ public class Accounts{
 	}
 
 	@Column(name = "Roles", nullable = false)
-	public boolean isRoles() {
+	public int isRoles() {
 		return this.roles;
 	}
 
-	public void setRoles(boolean roles) {
+	public void setRoles(int roles) {
 		this.roles = roles;
 	}
 

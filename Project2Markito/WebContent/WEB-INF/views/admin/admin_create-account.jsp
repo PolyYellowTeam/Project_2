@@ -52,8 +52,10 @@
 								<label class="control-label">Quyền tài khoản :</label>
 								<div class="controls">
 									<select name="role">
-										<option value="false">Admin</option>
-										<option value="true">Người dùng</option>
+										<option value="1">Admin</option>
+										<option value="2">Nhân viên</option>
+										<option value="3">Quản lý</option>
+										<option value="0">Người dùng</option>
 									</select>
 								</div>
 							</div>

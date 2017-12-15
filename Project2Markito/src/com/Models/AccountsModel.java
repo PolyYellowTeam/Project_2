@@ -29,15 +29,19 @@ public class AccountsModel {
 		return acc;
 	}
 
-	public boolean login(String username, String password) {
+	public boolean userlogin(String username, String password) {
+		System.out.println("login model");
 		List<Accounts> data = new ArrayList<Accounts>();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-		String hql = "from Accounts where username='" + username + "' and password='" + password + "'";
+		String hql = "from Accounts where Roles = 0 AND Status = 1 AND username='" + username + "' and password='" + password + "'";
 		Query query = session.createQuery(hql);
 		data = query.list();
-		System.out.println(data);
-		if (data.size() == 1) {
+		System.out.println("something:"+data.size());
+		for (Accounts accounts : data) {
+			System.out.println(accounts);
+		}
+		if (data.size() != 0) {
 			Accounts user = data.get(0);
 			if (user.isStatus() == true) {
 				session.close();
@@ -46,19 +50,42 @@ public class AccountsModel {
 				session.close();
 				return false;
 			}
-		} else
+		} else {
 			session.close();
-		return false;
+			return false;
+		}
+	}
+	
+	public boolean adminlogin(String username, String password) {
+		List<Accounts> data = new ArrayList<Accounts>();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		String hql = "from Accounts where Roles > 0 AND Status = 1 AND username='" + username + "' and password='" + password + "'";
+		Query query = session.createQuery(hql);
+		data = query.list();
+		if (data.size() != 0) {
+			Accounts user = data.get(0);
+			if (user.isStatus() == true) {
+				session.close();
+				return true;
+			} else {
+				session.close();
+				return false;
+			}
+		} else {
+			session.close();
+			return false;
+		}
 	}
 
 	public boolean isAdmin(String username, String password) {
 		List<Accounts> data = new ArrayList<Accounts>();
 		Session session = sessionFactory.openSession();
-		String hql = "from Accounts where username='" + username + "' and password='" + password + "'";
+		String hql = "from Accounts where Roles > 0 AND Status = 1 AND username='" + username + "' and password='" + password + "'";
 		Query query = session.createQuery(hql);
 		data = query.list();
 		Accounts user = data.get(0);
-		if (user.isRoles() == true) {
+		if (user.isRoles() != 0) {
 			session.close();
 			return true;
 		} else {
@@ -67,19 +94,19 @@ public class AccountsModel {
 		}
 	}
 
-	public boolean isAdmin2(String username) {
+	public int checkRoles(String username) {
 		List<Accounts> data = new ArrayList<Accounts>();
 		Session session = sessionFactory.openSession();
-		String hql = "from Accounts where username='" + username + "'";
+		String hql = "from Accounts where Roles > 0 AND Status = 1 AND username='" + username + "'";
 		Query query = session.createQuery(hql);
 		data = query.list();
 		Accounts user = data.get(0);
-		if (user.isRoles() == true) {
+		if (user != null) {
 			session.close();
-			return true;
+			return user.isRoles();
 		} else {
 			session.close();
-			return false;
+			return -1;
 		}
 	}
 
