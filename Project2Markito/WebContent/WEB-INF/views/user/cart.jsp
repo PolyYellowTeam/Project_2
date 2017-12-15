@@ -47,15 +47,15 @@
 											<div class="cart_quantity_button">
 												<a class="cart_quantity_up" href="javascript:void(0);" onclick="quantityUpdate('${product.productId}','plus');"> + </a> <input
 													class="cart_quantity_input" id="changeQuantity" type="text" name="quantity"
-													value="${product.quantity}" autocomplete="off" size="2" onchange="setValueToUpdate('${product.productId}');" required="required"> <a
+													value="${product.quantity}" currentQuantity="${product.quantity}" autocomplete="off" size="2" onchange="setValueToUpdate('${product.productId}');" required="required"> <a
 													class="cart_quantity_down" href="javascript:void(0);" onclick="quantityUpdate('${product.productId}','minus');"> - </a>
 											</div>
 										</td>
 										<td class="cart_total">
 											<p class="cart_total_price"><fmt:formatNumber type="number" pattern="###,###" value="${(product.price*((100-product.discount)/100))*product.quantity}" /> VNĐ</p>
 										</td>
-										<td class="cart_delete"><a class="cart_quantity_delete"
-											href=""><i class="fa fa-times"></i></a></td>
+										<td class="cart_delete"><a class="cart_quantity_delete" onclick="quantityUpdate('${product.productId}','delete')"
+											href="javascript:void(0);"><i class="fa fa-times"></i></a></td>
 									</tr>
 								</c:forEach>
 							</c:otherwise>
@@ -114,16 +114,16 @@
 					<div class="total_area">
 						<ul>
 							<li>Thời gian giao hàng:
-								<span><input size="10" type="date"></span></li>
+								<span><input size="10" type="text"></span></li>
 							<li class="zip-field">Địa chỉ giao hàng:
 								<span><input type="text"></span></li>
 							<li>Phí giao hàng<span>Free</span></li>
 							<li>Total <span>$61</span></li>
 						</ul>
 						<!-- <a class="btn btn-default update" href="">Update</a> --> 
-						<a class="btn btn-default check_out" href="${pageContext.request.contextPath}/Carts/confirmCheckOut">Xác nhận</a>
+						<a class="btn btn-default check_out" href="${pageContext.request.contextPath}/Carts?confirmCheckOut">Xác nhận</a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+</section>

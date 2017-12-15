@@ -66,8 +66,8 @@ $(function(){  $("a[data-lang]").click(function(){
 						<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 						<li><a href="javascript:void(0);" id="payment-href"><i class="fa fa-crosshairs"></i>Thanh
 								toán</a></li>
-						<li><a href="${pageContext.request.contextPath}/Carts/checkCart"><i class="fa fa-shopping-cart"></i>Giỏ
-								hàng</a></li>
+						<li><a href="${pageContext.request.contextPath}/Carts?checkCart"><i class="fa fa-shopping-cart"></i>Giỏ
+						hàng</a></li>
 						<c:choose>								
 						<c:when test="${user==null}" >
 						<li><a href="login"><i class="fa fa-lock"></i>Đăng nhập</a></li>

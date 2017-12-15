@@ -18,20 +18,27 @@ public class AccountInfor {
 		AccountsModel am = new AccountsModel();
 		Accounts ac = am.getAcc(username);
 		Customers customer = new Customers(ac, username, true, "Chưa có email", 0, "Chưa cập nhập");
+		System.out.println(customer);
 		try {
 			session.save(customer);
 			transaction.commit();
 		} catch (Exception e) {
 			System.out.println("rollback");
+			e.getMessage();
+			e.getCause();
+			e.printStackTrace();
 			transaction.rollback();
 		}finally {
-			session.clear();
 			session.close();
 		}
 		return false;
-	}
+}
 
 	public boolean addInfor(Customers customer) {
+		System.out.println(customer.getCustomerId());
+		System.out.println(customer.getCustomerName());
+		System.out.println(customer.getAccounts().getUsername());
+		System.out.println(customer.getAccounts().getPassword());
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		try {
@@ -40,6 +47,9 @@ public class AccountInfor {
 			transaction.commit();
 		} catch (Exception e) {
 			transaction.rollback();
+			e.getMessage();
+			e.getCause();
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}

@@ -61,7 +61,7 @@ public class CartModels {
 		Session session =sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
 		try {
-			//Láº¥y id khÃ¡ch hÃ ng
+			//Láº¥y id khÃ¡ch hÃ ng
 			Query query = session.createSQLQuery("SELECT Customer_id FROM Customers WHERE Username = '"+userName+"'");
 			List cusIdTemp = query.list();
 			int cusId = (int) cusIdTemp.get(0);
@@ -75,7 +75,7 @@ public class CartModels {
 				total = total + totalPrice;
 			}
 			
-			//Táº¡o má»™t giá»� hÃ ng má»›i
+			//Táº¡o má»™t giá»� hÃ ng má»›i
 			String sql = String.format("INSERT INTO Carts (Customer_id,Cart_date,Cart_total,Ship_address,Ship_date,Cart_status,Ship_status) "
 					+ "VALUES ("+cusId+""
 					+ ",'"+BaseClass.getCurrentDateTime()+"'"
@@ -87,7 +87,7 @@ public class CartModels {
 			session.flush();
 			session.clear();
 			
-			//Láº¥y id giá»� hÃ ng
+			//Láº¥y id giá»� hÃ ng
 			query = session.createSQLQuery("SELECT Cart_Id FROM Carts WHERE Cart_status = 1 AND Customer_id = '"+cusId+"'");
 			List cartIdTemp = query.list();
 			int cartId = (int) cartIdTemp.get(cartIdTemp.size()-1);

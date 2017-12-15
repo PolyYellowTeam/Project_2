@@ -47,12 +47,12 @@ public class AccountsController {
 
 	@RequestMapping(value = "account", method = RequestMethod.GET)
 	public String account() {
-		return "admin_account";
+		return "account";
 	}
 
 	@RequestMapping(value = "update", method = RequestMethod.GET)
 	public String update(String username) {
-		return "admin_updateacc";
+		return "update";
 	}
 
 	@RequestMapping(value = "admin-login", method = RequestMethod.POST)
@@ -65,7 +65,7 @@ public class AccountsController {
 			if (check.isAdmin(username, password) == true) {
 				session.setAttribute("user", username);
 				session.setAttribute("role", "admin");
-				return "admin_index";
+				return "admin/index";
 			} else {
 				mm.put("loginmsg", "Fail to login!");
 				return "admin_admin-login";
@@ -111,6 +111,7 @@ public class AccountsController {
 			Accounts account = new Accounts(username, repassword, false, true);
 			AccountInfor ai = new AccountInfor();
 			if (register.register(account) == true) {
+				ai.savenew(account.getUsername());
 				mm.put("loginmsg", "Register successfully!");
 				return "login-page";
 			} else {
@@ -121,7 +122,7 @@ public class AccountsController {
 			mm.put("registermsg", "Password does not map!");
 			return "register";
 		}
-	}
+}
 
 	@RequestMapping(value = "changepassword", method = RequestMethod.POST)
 	public String changepassword(String password, String repassword, ModelMap mm, HttpServletRequest request,
@@ -153,6 +154,7 @@ public class AccountsController {
 		username = request.getParameter("username");
 		password = request.getParameter("password");
 		status = request.getParameter("status");
+		System.out.println("update" + password);
 		boolean newstt;
 		boolean role;
 		if (status.equals("true")) {
@@ -167,10 +169,10 @@ public class AccountsController {
 		}
 		Accounts account = new Accounts(username, password, role, newstt);
 		if (change.update(account) == true) {
-			return "admin_account";
+			return "admin/admin_account";
 		} else {
 			System.out.println("Fail to update");
-			return "admin_account";
+			return "admin/admin_account";
 		}
 	}
 
@@ -195,10 +197,10 @@ public class AccountsController {
 		Accounts account = new Accounts(username, password, accrole, accstatus);
 		AccountsModel createacc = new AccountsModel();
 		if (createacc.create(account) == true) {
-			return "redirect:/account";
+			return "admin/admin_account";
 		} else {
 			mm.put("createmsg", "Lỗi tạo tài khoản");
-			return "admin_create-account";
+			return "admin/admin_create-account";
 		}
 	}
 }
