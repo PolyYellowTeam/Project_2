@@ -42,7 +42,8 @@
 		<jsp:include page="user/footer.jsp" />
 	</footer>
 	<!--/Footer-->
-	<span hidden id="site-url">${pageContext.request.contextPath}</span>
+	<span hidden id="context-path">${pageContext.request.contextPath}</span>
+	<span hidden id="site-url"></span>
 	<script src="${pageContext.request.contextPath}/js/user/cart.js"></script>
 	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
