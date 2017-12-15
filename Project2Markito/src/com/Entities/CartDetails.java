@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -39,7 +40,7 @@ public class CartDetails{
 	}
 
 	@Id
-
+	@GeneratedValue
 	@Column(name = "Cart_details_id", unique = true, nullable = false)
 	public int getCartDetailsId() {
 		return this.cartDetailsId;
@@ -49,7 +50,7 @@ public class CartDetails{
 		this.cartDetailsId = cartDetailsId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Cart_id")
 	public Carts getCarts() {
 		return this.carts;
@@ -59,7 +60,7 @@ public class CartDetails{
 		this.carts = carts;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Product_id", nullable = false)
 	public Products getProducts() {
 		return this.products;

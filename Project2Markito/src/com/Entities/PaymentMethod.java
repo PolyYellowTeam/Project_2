@@ -78,7 +78,7 @@ public class PaymentMethod{
 		this.paymentDescription = paymentDescription;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "paymentMethod")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "paymentMethod")
 	public Set<Carts> getCartses() {
 		return this.cartses;
 	}

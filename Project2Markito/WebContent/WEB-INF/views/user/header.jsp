@@ -64,9 +64,9 @@ $(function(){  $("a[data-lang]").click(function(){
 					<ul class="nav navbar-nav">
 						<li><a href="#"><i class="fa fa-user"></i>Tài Khoản</a></li>
 						<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-						<li><a href="checkout"><i class="fa fa-crosshairs"></i>Thanh
+						<li><a href="javascript:void(0);" id="payment-href"><i class="fa fa-crosshairs"></i>Thanh
 								toán</a></li>
-						<li><a href="cart"><i class="fa fa-shopping-cart"></i>Giỏ
+						<li><a href="${pageContext.request.contextPath}/Carts/checkCart"><i class="fa fa-shopping-cart"></i>Giỏ
 								hàng</a></li>
 						<c:choose>								
 						<c:when test="${user==null}" >

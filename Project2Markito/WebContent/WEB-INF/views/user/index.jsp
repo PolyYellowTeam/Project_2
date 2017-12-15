@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 	<section id="slider"><!--slider-->
 	<jsp:include page="slide.jsp"/>	
 	</section><!--/slider-->
@@ -20,15 +21,15 @@
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img src="${pr.picture1}" alt="" height="207px" width="183px"/>
-										<h2>${pr.price} $</h2>
+										<h2><fmt:formatNumber type="number" pattern="###,###" value="${pr.price}" /> VNĐ</h2>
 										<p>${pr.productName}</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+										<a href="javascript:void(0);" class="btn btn-default add-to-cart" onclick="addToCart('${pr.productId}');"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>${pr.price}</h2>
+											<h2><fmt:formatNumber type="number" pattern="###,###" value="${pr.price}" /> VNĐ</h2>
 											<p>${pr.productName}</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+											<a href="javascript:void(0);" class="btn btn-default add-to-cart" onclick="addToCart('${pr.productId}');"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
 										</div>
 									</div>
 								</div>

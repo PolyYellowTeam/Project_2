@@ -32,14 +32,16 @@ public class Carts{
 	private Date shipDate;
 	private int cartStatus;
 	private int shipStatus;
-	private int payStatus;
+//	private int payStatus;
 	private Set<CartDetails> cartDetailses = new HashSet<CartDetails>(0);
 
 	public Carts() {
 	}
 
 	public Carts(int cartId, Date cartDate, BigDecimal cartTotal, String shipAddress, Date shipDate, int cartStatus,
-			int shipStatus, int payStatus) {
+			int shipStatus
+//			, int payStatus
+			) {
 		this.cartId = cartId;
 		this.cartDate = cartDate;
 		this.cartTotal = cartTotal;
@@ -47,11 +49,12 @@ public class Carts{
 		this.shipDate = shipDate;
 		this.cartStatus = cartStatus;
 		this.shipStatus = shipStatus;
-		this.payStatus = payStatus;
+//		this.payStatus = payStatus;
 	}
 
 	public Carts(int cartId, Customers customers, Employees employees, PaymentMethod paymentMethod, Date cartDate,
-			BigDecimal cartTotal, String shipAddress, Date shipDate, int cartStatus, int shipStatus, int payStatus,
+			BigDecimal cartTotal, String shipAddress, Date shipDate, int cartStatus, int shipStatus, 
+//			int payStatus,
 			Set<CartDetails> cartDetailses) {
 		this.cartId = cartId;
 		this.customers = customers;
@@ -63,7 +66,7 @@ public class Carts{
 		this.shipDate = shipDate;
 		this.cartStatus = cartStatus;
 		this.shipStatus = shipStatus;
-		this.payStatus = payStatus;
+//		this.payStatus = payStatus;
 		this.cartDetailses = cartDetailses;
 	}
 
@@ -78,7 +81,7 @@ public class Carts{
 		this.cartId = cartId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Customer_id")
 	public Customers getCustomers() {
 		return this.customers;
@@ -88,7 +91,7 @@ public class Carts{
 		this.customers = customers;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Emp_id")
 	public Employees getEmployees() {
 		return this.employees;
@@ -98,7 +101,7 @@ public class Carts{
 		this.employees = employees;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "Payment_id")
 	public PaymentMethod getPaymentMethod() {
 		return this.paymentMethod;
@@ -164,16 +167,16 @@ public class Carts{
 		this.shipStatus = shipStatus;
 	}
 
-	@Column(name = "Pay_status", nullable = false)
-	public int getPayStatus() {
-		return this.payStatus;
-	}
+//	@Column(name = "Pay_status", nullable = false)
+//	public int getPayStatus() {
+//		return this.payStatus;
+//	}
+//
+//	public void setPayStatus(int payStatus) {
+//		this.payStatus = payStatus;
+//	}
 
-	public void setPayStatus(int payStatus) {
-		this.payStatus = payStatus;
-	}
-
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "carts")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "carts")
 	public Set<CartDetails> getCartDetailses() {
 		return this.cartDetailses;
 	}
