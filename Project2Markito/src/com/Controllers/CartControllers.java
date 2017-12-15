@@ -29,66 +29,81 @@ import java.util.*;
 @Controller
 @RequestMapping(value = "Carts")
 public class CartControllers {
+
+	// Thêm sản phẩm vào giỏ
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "AddToCart")
+	@RequestMapping(params = "AddToCart")
 	public @ResponseBody String AddToCart(HttpSession session, @RequestParam("idProduct") String idProduct) {
 		List<Products> cart = null;
+
 		try {
+			// Nếu idProducts thì trả về false
 			if (idProduct.isEmpty()) {
 				return "false";
-			} else {
+			}
+			// Ngược lại thì thực hiện
+			else {
+				// Lấy product từ db
 				Products getProduct = new CartModels().getProductToAddCart(idProduct);
+				// Mặc định số lượng = 1
 				getProduct.setQuantity(1);
+
+				// Nếu lấy product bị null thì trả về false
 				if (getProduct == null) {
 					return "false";
-				} else {
+				}
+				// Ngược lại nếu không null
+				else {
+					// Nếu tồn tại giỏ hàng trong session
 					if (session.getAttribute("cart") != null) {
+
+						// Lấy giỏ hàng trong session
 						cart = (List<Products>) session.getAttribute("cart");
 						int count = 0;
 						for (Products prd : cart) {
+							// Nếu sản phẩm đã có trong giỏ thì tăng số lượng lên 1
 							if (idProduct.equals(prd.getProductId())) {
 								prd.setQuantity(prd.getQuantity() + 1);
-								// DecimalFormat decimalFormat = new DecimalFormat();
-								// decimalFormat.setParseBigDecimal(true);
-								// BigDecimal price = (BigDecimal) decimalFormat.parse(
-								// (Double.parseDouble(prd.getPrice().toString()) * prd.getQuantity()) + "");
-								// prd.setPrice(price);
 								count = count + 1;
 							}
 						}
+
+						// Ngược lại thì thêm mới một sản phẩm vào giỏ
 						if (count <= 0) {
 							cart.add(getProduct);
 						}
+
+						// Ghi giỏ hàng vào session
 						session.setAttribute("cart", cart);
-					} else {
+
+					}
+					// Nếu giỏ hàng không tồn tại trong session thì tạo mới giỏ hàng và thêm sản
+					// phẩm vào
+					else {
 						cart = new ArrayList<>();
 						cart.add(getProduct);
 						session.setAttribute("cart", cart);
 					}
-					// cart = (List<Products>) session.getAttribute("cart");
-					// for (Products products : cart) {
-					// System.out.println(
-					// products.getProductName() + "|" + products.getPrice() + "|" +
-					// products.getQuantity());
-					// }
 					return "true";
 				}
 			}
-		} catch (
-
-		Exception e) {
+		} catch (Exception e) {
 			System.out.println("Cart addtocart " + e.getMessage());
 			return "false";
 		}
 	}
 
+	
+	//Sửa giỏ hàng
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "QuantityUpdate", produces = "application/json; charset=utf-8")
+	@RequestMapping(params = "QuantityUpdate", produces = "application/json; charset=utf-8")
 	public @ResponseBody String QuantityUpdate(HttpServletRequest request, HttpSession session,
 			@RequestParam(value = "idProduct") String idProduct, @RequestParam(value = "action") String action,
 			@RequestParam(value = "quantity", required = false) String quantity) {
 		List<Products> cart = null;
+		
 		String returnResult = "{\"status\":\"false\"}";
+		
 		try {
 			int quanTiTy = 0;
 			if (!quantity.isEmpty()) {
@@ -168,7 +183,7 @@ public class CartControllers {
 		return returnResult;
 	}
 
-	@RequestMapping(value = "paymentCheck")
+	@RequestMapping(params = "paymentCheck")
 	public @ResponseBody String CheckOut(HttpSession session) {
 		if (session.getAttribute("user") == null) {
 			return "err";
@@ -178,7 +193,7 @@ public class CartControllers {
 
 	}
 
-	@RequestMapping(value = "confirmCheckOut")
+	@RequestMapping(params = "confirmCheckOut")
 	public String ConfirmCheckOut(HttpSession session, HttpServletRequest request) {
 		if (session.getAttribute("user") == null) {
 			String path = request.getContextPath();
@@ -193,7 +208,7 @@ public class CartControllers {
 		}
 	}
 
-	@RequestMapping(value = "checkCart")
+	@RequestMapping(params = "checkCart")
 	public String CheckCart(HttpSession session, ModelMap model) {
 		List<Products> productList = null;
 		if (session.getAttribute("cart") != null) {

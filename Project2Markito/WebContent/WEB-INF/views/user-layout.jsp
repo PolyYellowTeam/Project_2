@@ -19,15 +19,15 @@
 <link href="${pageContext.request.contextPath}/css/animate.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/responsive.css" rel="stylesheet">
-<link rel="shortcut icon" href="images/ico/favicon.ico">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/images/ico/favicon.ico">
 <link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="images/ico/apple-touch-icon-144-precomposed.png">
+	href="${pageContext.request.contextPath}/images/ico/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114"
-	href="images/ico/apple-touch-icon-114-precomposed.png">
+	href="${pageContext.request.contextPath}/images/ico/apple-touch-icon-114-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="images/ico/apple-touch-icon-72-precomposed.png">
+	href="${pageContext.request.contextPath}/images/ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed"
-	href="images/ico/apple-touch-icon-57-precomposed.png">
+	href="${pageContext.request.contextPath}/images/ico/apple-touch-icon-57-precomposed.png">
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 </head>
 <!--/head-->

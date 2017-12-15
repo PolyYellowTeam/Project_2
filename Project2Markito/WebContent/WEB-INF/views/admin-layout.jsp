@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/fullcalendar.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/matrix-style.css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/matrix-media.css" />
-  <link href="static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="${pageContext.request.contextPath}/static/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <!--Header-part-->
 <div id="header">
   <div style="width: 220px;padding-top: 25px;padding-left: 60px;">
-  <img src="images/logo.png"/>
+  <img src="${pageContext.request.contextPath}/images/logo.png"/>
   </div>
 </div>
 <!--close-Header-part-->
