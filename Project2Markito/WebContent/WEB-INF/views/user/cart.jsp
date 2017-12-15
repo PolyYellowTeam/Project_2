@@ -47,7 +47,7 @@
 											<div class="cart_quantity_button">
 												<a class="cart_quantity_up" href="javascript:void(0);" onclick="quantityUpdate('${product.productId}','plus');"> + </a> <input
 													class="cart_quantity_input" id="changeQuantity" type="text" name="quantity"
-													value="${product.quantity}" autocomplete="off" size="2" onchange="setValueToUpdate('${product.productId}');" required="required"> <a
+													value="${product.quantity}" currentQuantity="${product.quantity}" autocomplete="off" size="2" onchange="setValueToUpdate('${product.productId}');" required="required"> <a
 													class="cart_quantity_down" href="javascript:void(0);" onclick="quantityUpdate('${product.productId}','minus');"> - </a>
 											</div>
 										</td>
@@ -114,7 +114,7 @@
 					<div class="total_area">
 						<ul>
 							<li>Thời gian giao hàng:
-								<span><input size="10" type="date"></span></li>
+								<span><input size="10" type="text"></span></li>
 							<li class="zip-field">Địa chỉ giao hàng:
 								<span><input type="text"></span></li>
 							<li>Phí giao hàng<span>Free</span></li>
