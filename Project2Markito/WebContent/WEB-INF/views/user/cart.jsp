@@ -9,15 +9,49 @@
 					<li class="active">Shopping Cart</li>
 				</ol>
 			</div>
+			
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
+							<td class="image">Mã đơn hàng</td>
+							<td class="description">Ngày đặt</td>
+							<td class="price">Tổng hóa đơn</td>
+							<td class="quantity">Trạng thái</td>
+							<td class="total">Phương thức thanh toán</td>
+							<td class="price">Thao tác</td>
+						</tr>
+					</thead>
+					<tbody>
+						<c:choose>
+							<c:when test="${cartCheckedList.size() == 0}">
+								<tr class="cart_product">
+									<td><span>Bạn chưa có đơn hàng đã đặt nào</span></td>
+								</tr>
+							</c:when>
+							<c:otherwise>
+								<c:forEach items="${cartCheckedList}" var="cart">
+									<tr id="${cart.cartId}">
+										<td>${cart.cartId}</td>
+										<td class="cart_delete"><a class="cart_quantity_delete" onclick="quantityUpdate('','delete')"
+											href="javascript:void(0);"><i class="fa fa-times"></i></a></td>
+									</tr>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Sản phẩm</td>
 							<td class="description"></td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
+							<td class="price">Giá</td>
+							<td class="quantity">Số lượng</td>
+							<td class="total">Tổng tiền(Đã tính sale)</td>
 							<td></td>
 						</tr>
 					</thead>

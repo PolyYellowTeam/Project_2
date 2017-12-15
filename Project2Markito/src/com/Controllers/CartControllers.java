@@ -211,13 +211,18 @@ public class CartControllers {
 	@RequestMapping(params = "checkCart")
 	public String CheckCart(HttpSession session, ModelMap model) {
 		List<Products> productList = null;
-		if (session.getAttribute("cart") != null) {
-			productList = (List<Products>) session.getAttribute("cart");
-		}else if (session.getAttribute("cart") != null && session.getAttribute("user") != null) {
-			productList = (List<Products>) session.getAttribute("cart");
+		
+		if (session.getAttribute("user") != null) {
 			List<Carts> cartList = (List<Carts>) new CartModels().getCheckedOutCart(session.getAttribute("user").toString());
 			model.addAttribute("cartCheckedList",cartList);
-		} else {
+			for (Carts carts : cartList) {
+				System.out.println(carts.getCartId());
+			}
+		}
+		
+		if (session.getAttribute("cart") != null) {
+			productList = (List<Products>) session.getAttribute("cart");
+		}else {
 			productList = new ArrayList<>();
 		}
 
