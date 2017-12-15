@@ -204,15 +204,20 @@ public class CartControllers {
 		} else if (session.getAttribute("cart") == null) {
 			return "{\"Msg\":\"Giỏ hàng của bạn đang trống\","
 					+ "\"Status\":\"false\"}";
-		} else if(session.getAttribute("user") != null && session.getAttribute("cart") != null){
-			boolean CartDetails = new CartModels().checkOut(session.getAttribute("user").toString(),
-					(List<Products>) session.getAttribute("cart"));
-			List<Products> cart = new ArrayList<Products>();
-			session.removeValue("cart");
-			session.setAttribute("cart", cart);
-			return "{\"Msg\":\"Bạn đã đặt hàng thành công\","
-			+ "\"Status\":\"true\"}";
-			
+		} else if(session.getAttribute("user") != null && session.getAttribute("cart") != null ){
+			List<Products> prdList = (List<Products>) session.getAttribute("cart");
+			if(prdList.size() > 0) {
+				boolean CartDetails = new CartModels().checkOut(session.getAttribute("user").toString(),
+						prdList);
+				List<Products> cart = new ArrayList<Products>();
+				session.removeValue("cart");
+				session.setAttribute("cart", cart);
+				return "{\"Msg\":\"Bạn đã đặt hàng thành công\","
+				+ "\"Status\":\"true\"}";
+			}else {
+				return "{\"Msg\":\"Giỏ hàng của bạn đang trống\","
+						+ "\"Status\":\"false\"}";
+			}
 		}else {
 			return "{\"Msg\":\"Không có sản phẩm trong giỏ\nĐặt hàng thất bại\","
 					+ "\"Status\":\"false\"}";
