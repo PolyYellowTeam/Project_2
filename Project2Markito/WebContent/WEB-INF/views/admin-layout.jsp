@@ -55,7 +55,7 @@
     <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Trang chủ</span></a> </li>
     <li class="submenu"> <a href="javascript:void(0);"><i class="icon icon-inbox"></i> <span>Đơn hàng</span> <span class="label label-important">2</span></a>
       <ul>
-        <li><a href="${pageContext.request.contextPath}/CartsManagement">Quản lý đơn hàng</a></li>
+        <li><a href="${pageContext.request.contextPath}/admin/CartsManagement">Quản lý đơn hàng</a></li>
       </ul>
     </li>
     <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>Quản lý Danh Muc</span></a> </li>    

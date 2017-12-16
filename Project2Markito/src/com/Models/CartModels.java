@@ -68,13 +68,14 @@ public class CartModels {
 			List cusIdTemp = query.list();
 			int cusId = (int) cusIdTemp.get(0);
 			session.flush();
-			session.clear();String hql = "FROM Carts where Customer_id = :cusId AND Cart_status = 1 ";
+			session.clear();
+			String hql = "FROM Carts where Customer_id = :cusId AND Cart_status = 1 OR Cart_status = 5";
 			query = session.createQuery(hql);
 			query.setParameter("cusId", cusId);
 			cartList = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("getCheckedOutCart(): e.getMessage()");
+			System.out.println("getCheckedOutCart():" +e.getMessage());
 			return null;
 		} finally {
 			session.flush();
@@ -153,7 +154,7 @@ public class CartModels {
 			Query query = session.createQuery(hql);
 			query.setParameter("cartId", cartId);
 			Carts cart = (Carts) query.uniqueResult();
-			cart.setCartStatus(0);
+			cart.setCartStatus(6);
 			
 			session.update(cart);
 			trans.commit();

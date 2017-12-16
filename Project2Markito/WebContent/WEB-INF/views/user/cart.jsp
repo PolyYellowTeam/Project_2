@@ -47,8 +47,8 @@
 												<td>Có thể thanh toán</td>
 											</c:when>
 										</c:choose>							
-										<td class="cart_delete"><a class="cart_quantity_delete" onclick="cancelCart('${cart.cartId}');"
-											href="javascript:void(0);"><i class="fa fa-times"></i></a></td>
+										<td class="cart_delete"></label><a class="cart_quantity_delete" onclick="cancelCart('${cart.cartId}');"
+											href="javascript:void(0);">Hủy giỏ hàng</i></a></td>
 									</tr>
 								</c:forEach>
 							</c:otherwise>

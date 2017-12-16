@@ -119,8 +119,7 @@ $(document).ready(function() {
 				switch(result.Status){
 					case 'true':
 						alert(result.Msg);
-						$('html').load(document.URL);
-						
+						location.reload();
 						break;
 					case 'false':
 						alert(result.Msg);

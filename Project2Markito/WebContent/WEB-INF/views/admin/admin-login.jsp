@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="form-actions">
-                    <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Register</a></span>
+                    <%-- <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Register</a></span> --%>
                     <span class="pull-right"><input type="submit" class="btn btn-success" value="Login"/></span>
                 </div>
             </form>

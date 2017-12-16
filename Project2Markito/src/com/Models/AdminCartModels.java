@@ -49,4 +49,31 @@ public class AdminCartModels {
 		}	
 	}
 	
+	public Carts getCart(String cartId) {
+		Carts cart = null;
+		sessionFactory = new Configuration().configure().buildSessionFactory();
+
+		Session session = sessionFactory.openSession();
+
+		if(!cartId.isEmpty()) {
+			return null;
+		}
+		
+		try {
+			String hql = "FROM Carts where Cart_Id = :cartId AND Cart_status > 0";
+			Query query = session.createQuery(hql);
+			query.setParameter("cartId", cartId);
+			cart = (Carts) query.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("getCheckedOutCart(): e.getMessage()");
+			return null;
+		} finally {
+			session.flush();
+			session.clear();
+			session.close();
+		}
+		return cart;
+	}
+	
 }
