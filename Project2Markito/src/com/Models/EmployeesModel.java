@@ -106,6 +106,9 @@ public class EmployeesModel {
 		Transaction transaction = session.beginTransaction();
 		try {
 			session.update(emp);
+			System.out.println(emp.getEmpId());
+			System.out.println(emp.getAccounts().getUsername());
+			System.out.println(emp.isStatus());
 			transaction.commit();
 			return true;
 		} catch (Exception e) {

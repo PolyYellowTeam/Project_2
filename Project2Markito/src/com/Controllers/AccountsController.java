@@ -40,9 +40,9 @@ public class AccountsController {
 		return "login-page";
 	}
 
-	@RequestMapping(value = "admin-login", method = RequestMethod.GET)
+	@RequestMapping(value = "login-admin", method = RequestMethod.GET)
 	public String adminlogin(HttpSession session) {
-		return "admin-login";
+		return "login-admin";
 	}
 
 	@RequestMapping(value = "account", method = RequestMethod.GET)
@@ -55,7 +55,7 @@ public class AccountsController {
 		return "update";
 	}
 
-	@RequestMapping(value = "admin-login", method = RequestMethod.POST)
+	@RequestMapping(value = "login-admin", method = RequestMethod.POST)
 	public String checkloginadmin(String username, String password, ModelMap mm, HttpServletRequest request,
 			HttpSession session) {
 		if(request.getAttribute("role") == null) {
@@ -70,11 +70,11 @@ public class AccountsController {
 					return "admin_index";
 				} else {
 					mm.put("loginmsg", "Fail to login!");
-					return "admin-login";
+					return "login-admin";
 				}
 			} else {
 				mm.put("loginmsg", "Fail to login!");
-				return "admin-login";
+				return "login-admin";
 			}
 		}else {
 			return "admin_index";
